@@ -51,6 +51,7 @@ heiaxis-sprint/
 └── docs/
     ├── product_interpretation_memo.md
     ├── data_dictionary.md
+    ├── working_prototype.md
     ├── evaluation_logic.md
     └── architecture.md
 ```
@@ -72,5 +73,6 @@ python3 src/self_consistency_check.py # optional, self-consistency check against
 
 - `docs/product_interpretation_memo.md` – the full reasoning behind every major decision, including alternatives considered.
 - `docs/data_dictionary.md` – schema, field definitions, and how the synthetic data was generated.
+- `docs/working_prototype.md` – what the pipeline actually does step by step, the confidence scale, and what a larger-scale version could add.
 - `docs/evaluation_logic.md` – how usefulness would actually be tested, and what would be needed before trusting this on real data.
 - `docs/architecture.md` – how this fits into a real HEIAXIS system, and how it scales beyond a single prototype.
