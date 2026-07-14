@@ -18,13 +18,15 @@ heiaxis-sprint/
 │   ├── pipeline.py       runs the full pipeline, writes output/
 │   └── self_consistency_check.py
 ├── tests/
-│   └── test_pipeline.py  structural and logic validation checks
+│   ├── test_pipeline.py  Tier 1: unit-level and boundary-condition tests
+│   └── test_system.py    Tier 2: end-to-end, regression, and edge-case tests
 ├── output/               generated on each pipeline.py run
 └── docs/
     ├── product_interpretation_memo.md
     ├── data_dictionary.md
     ├── working_prototype.md
     ├── evaluation_logic.md
+    ├── testing_strategy.md
     └── architecture.md
 ```
 
@@ -37,7 +39,8 @@ cd heiaxis-sprint
 
 python3 src/generate_data.py          # regenerate the synthetic dataset (already included)
 python3 src/pipeline.py               # clean, engineer features, detect signals, write output/
-python3 tests/test_pipeline.py        # basic validation checks
+python3 tests/test_pipeline.py        # Tier 1: unit and boundary-condition tests
+python3 tests/test_system.py          # Tier 2: end-to-end, regression, and edge-case tests
 python3 src/self_consistency_check.py # optional, self-consistency check against generator ground truth
 ```
 
@@ -47,4 +50,5 @@ python3 src/self_consistency_check.py # optional, self-consistency check against
 - **`docs/data_dictionary.md`**: the schema field by field, how the synthetic data was generated, and what additional data a larger-scale version could reasonably add.
 - **`docs/working_prototype.md`**: what the code actually does, step by step, both required ranked outputs explained, and the confidence scale defined.
 - **`docs/evaluation_logic.md`**: how usefulness would actually get tested against real data, how to avoid mistaking correlation for causation, and the open questions not yet solved.
+- **`docs/testing_strategy.md`**: why the tests exist and what they actually protect, the two-tier test plan, and what real bugs the edge-case tests already caught.
 - **`docs/architecture.md`**: how this fits into a real HEIAXIS system end to end, stage by stage, with the options and scaling path considered at each one.
