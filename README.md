@@ -9,6 +9,7 @@ The reasoning behind every major decision, what's included, what's deliberately 
 ```
 heiaxis-sprint/
 ├── README.md
+├── requirements.txt      the only two dependencies: pandas, numpy
 ├── data/                 synthetic dataset (7 CSV tables)
 ├── src/
 │   ├── generate_data.py  synthetic data generator
@@ -32,10 +33,14 @@ heiaxis-sprint/
 
 ## Running the Prototype
 
-Requires Python 3.9+ with pandas and numpy.
+Requires Python 3.9+. Only two third-party dependencies, pinned in `requirements.txt`: pandas and numpy.
 
 ```bash
 cd heiaxis-sprint
+
+python3 -m venv venv
+source venv/bin/activate     # on Windows: venv\Scripts\activate
+pip install -r requirements.txt
 
 python3 src/generate_data.py          # regenerate the synthetic dataset (already included)
 python3 src/pipeline.py               # clean, engineer features, detect signals, write output/
