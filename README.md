@@ -1,36 +1,8 @@
-# HEIAXIS — Early Signal Intelligence Prototype
+# HEIAXIS Early Signal Intelligence Prototype
 
-A small, transparent prototype exploring how HEIAXIS might surface early signals in campus care, before a formal risk flag appears, using synthetic data only.
+HEIAXIS is building an infrastructure layer for campus care and student continuity, built on the belief that institutions mostly fail at executing on risk, not detecting it. This repository is a small, deliberately scoped prototype exploring two things: early signs of student disconnection, and care-continuity gaps where the institution's own handling of a case, not the student, is the signal. It uses synthetic data only, no real student, staff, or institutional data appears anywhere in this repository.
 
-## Why This Exists
-
-HEIAXIS is building an infrastructure layer for campus care and student continuity. It is not a dashboard, and not an "AI predicts risk" product. The belief behind that positioning is that institutions don't mainly fail at detecting risk, they fail at executing on it: an alert fires and nobody owns the next step, a referral opens and never closes, a handoff between two offices quietly dies. Solving that fully is a large, multi-year infrastructure problem involving data integration across offices, workflow ownership, and institutional trust-building.
-
-This project does not attempt that whole problem. Its scope is narrow and deliberate: prove, on synthetic data, that two specific kinds of early signal can be surfaced before a formal flag would otherwise appear, and do it in a way that is honest about its own limits.
-
-## What "Early Signal" Means Here
-
-Two distinct things, kept separate rather than blended into one score. The first is a change in a student's own behavior relative to their own baseline, not how they compare to other students, but how they compare to how they looked a few weeks earlier. The second is a change in how the institution itself is handling a case: a referral sitting open with no closure, a handoff with no named owner, an outreach that went unanswered with no follow-up. That second kind of signal doesn't require knowing anything about the student at all. The system's own state is the evidence.
-
-The second kind is treated as the more central output of this prototype, because it is the one that is actually specific to HEIAXIS's stated thesis, and the one a simple, rule-based approach can answer with real confidence rather than an inference.
-
-## What This Prototype Proves, and What It Doesn't
-
-It demonstrates that a small number of transparent, auditable rules, applied to messy multi-source data, can produce a genuinely useful shortlist of students and institutional cases worth a human's attention, with every flag traceable to specific field values and never presented as more certain than it is.
-
-It does not demonstrate that this would work on real students. It is not a validated clinical or predictive tool, the thresholds used throughout are placeholders rather than tuned recommendations, and nothing here should be read as evidence that the approach generalizes beyond the synthetic patterns built into this dataset. Real thresholds can only be set with a real institution's care staff, against their actual tolerance for false positives and actual capacity to respond.
-
-## Approach
-
-The dataset represents about 700 synthetic students over a 7 week term, spread across five operational tables (students, weekly engagement, belonging pulse, care interactions, weekly outcomes) plus two reference tables added beyond the brief's minimum: an academic calendar and a staff roster. Both exist for a reason: the calendar prevents a normal dip during midterms from being scored like an unexplained one, and the staff roster lets a stalled office be read as a capacity problem rather than an implied accusation against an individual.
-
-Detection is entirely rule-based, no trained model. A student is only flagged when decline shows up across at least two independent, relative-to-self sources at once, which keeps a noisy single data feed from flagging a person on its own. Institutional gaps are detected directly from timestamps and null fields, a referral open past a threshold, an outreach with no follow-up, a handoff with nobody's name on it. Every flag, on either side, ships with a reason, the leading signal behind it, and a confidence level, so a human reviewer knows exactly how much weight to give it.
-
-## What Was Deliberately Left Out
-
-Given the time available, several things were cut on purpose rather than attempted shallowly: any machine learning model (the brief itself cautions against black-box approaches, and explainability mattered more here than raw accuracy), a user interface (spreadsheets and console output are enough to prove the logic), an identifier crosswalk across office systems, and a detailed audit log of every action taken on a case. Formal statistical validation was also cut, since there is no real ground truth to validate against with synthetic data; testing detection logic against data generated by the same person who wrote the detection logic would mostly prove nothing. In its place is a clearly labeled self-consistency check and an honest accounting of what real validation would actually require.
-
-The full reasoning behind each of these choices, including the alternatives considered and why they were rejected, is in `docs/product_interpretation_memo.md`.
+The reasoning behind every major decision, what's included, what's deliberately cut, and why, lives in the documentation below rather than being repeated here. This file is an orientation point, not the argument itself.
 
 ## Repository Structure
 
@@ -69,10 +41,10 @@ python3 tests/test_pipeline.py        # basic validation checks
 python3 src/self_consistency_check.py # optional, self-consistency check against generator ground truth
 ```
 
-## Further Reading
+## Where to Go for What
 
-- `docs/product_interpretation_memo.md` – the full reasoning behind every major decision, including alternatives considered.
-- `docs/data_dictionary.md` – schema, field definitions, and how the synthetic data was generated.
-- `docs/working_prototype.md` – what the pipeline actually does step by step, the confidence scale, and what a larger-scale version could add.
-- `docs/evaluation_logic.md` – how usefulness would actually be tested, and what would be needed before trusting this on real data.
-- `docs/architecture.md` – how this fits into a real HEIAXIS system, and how it scales beyond a single prototype.
+- **`docs/product_interpretation_memo.md`**: the actual reasoning. How the product problem is understood, what "early signal" means, what data was chosen and why, what the prototype does and doesn't prove, and what was cut. Every section shows the alternatives considered, not just the conclusion reached.
+- **`docs/data_dictionary.md`**: the schema field by field, how the synthetic data was generated, and what additional data a larger-scale version could reasonably add.
+- **`docs/working_prototype.md`**: what the code actually does, step by step, both required ranked outputs explained, and the confidence scale defined.
+- **`docs/evaluation_logic.md`**: how usefulness would actually get tested against real data, how to avoid mistaking correlation for causation, and the open questions not yet solved.
+- **`docs/architecture.md`**: how this fits into a real HEIAXIS system end to end, stage by stage, with the options and scaling path considered at each one.
