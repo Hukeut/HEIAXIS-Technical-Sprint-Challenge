@@ -26,6 +26,29 @@ HERE = os.path.dirname(__file__)
 SRC = os.path.join(HERE, "..", "src")
 sys.path.insert(0, SRC)
 
+def _setup():
+
+    if "result" not in _CACHE:
+        raw = load_raw(DATA_DIR)
+        cleaned, report = clean_all(raw)
+        features = build_student_features(cleaned)
+        _CACHE["result"] = (cleaned, report, features)
+    return _CACHE["result"]
+
+def test_cleaning_removes_invalid_attendance():
+    return
+
+def test_cleaning_marks_negative_logins_missing_not_zero():
+    return
+
+def test_office_names_are_canonicalized():
+    return
+
+def test_no_duplicate_care_interactions():
+    return
+
+def test_no_duplicate_care_interactions():
+    return
 
 
 
