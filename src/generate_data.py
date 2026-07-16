@@ -1,3 +1,25 @@
+"""
+HEIAXIS Early Signal Intelligence - Synthetic Data Generator
+==============================================================
+Generates a synthetic, non-identifiable dataset representing ~700 students
+over 7 weeks, across five student-facing sources plus two reference tables.
+
+No real student data is used or referenced. All IDs, names of offices,
+and values are fabricated.
+
+Design note on "ground truth":
+Each student is secretly assigned one generation ARCHETYPE (stable,
+disconnecting, care_gap, improving, dropped_course, noisy_false_flag_bait).
+The archetype drives how their weekly rows are generated. This lets us
+later sanity-check whether our detection logic (built independently of
+this generator) recovers something like the intended pattern -- while
+being explicit that this is a *self-consistency* check, not real
+validation (see docs/evaluation_logic.md).
+
+The archetype is written to data/_ground_truth_archetypes.csv, kept
+separate from the "operational" tables and clearly marked as
+generator-only -- a real prototype would never have access to this file.
+"""
 
 import csv
 import random
@@ -47,6 +69,15 @@ ARCHETYPE_WEIGHTS = {
 
 
 def weighted_choice(weights_dict):
+    """Pick one key from a dict of weights, proportionally to its weight.
+
+    Args:
+        weights_dict: Mapping of choice -> probability weight. Weights are
+            expected to sum to (approximately) 1.0, but this isn't enforced.
+
+    Returns:
+        One of the dict's keys, selected at random according to its weight.
+    """
     r = random.random()
     cum = 0.0
     for k, w in weights_dict.items():
@@ -57,10 +88,30 @@ def weighted_choice(weights_dict):
 
 
 def clamp(v, lo, hi):
+    """Restrict a value to the inclusive range [lo, hi].
+
+    Args:
+        v: The value to clamp.
+        lo: The minimum allowed value.
+        hi: The maximum allowed value.
+
+    Returns:
+        v itself if already within range, otherwise the nearer bound.
+    """
     return max(lo, min(hi, v))
 
 
 def generate_staff():
+    """Build the synthetic staff roster across the five canonical offices.
+
+    Staffing is deliberately uneven per office (see counts_per_office
+    below), so that per-office caseload pressure is a real, discoverable
+    pattern in the generated data rather than a flat baseline.
+
+    Returns:
+        A list of dicts, one per staff member, with keys staff_id, office,
+        and role.
+    """
     staff = []
     staff_id = 1
     counts_per_office = {
@@ -84,6 +135,20 @@ def generate_staff():
 
 
 def generate_students():
+    """Create the synthetic student roster and assign each a hidden archetype.
+
+    The archetype (drawn from ARCHETYPE_WEIGHTS) is not written to any
+    operational table -- it silently drives how that student's rows are
+    generated in every other generate_* function below, and is written
+    separately to _ground_truth_archetypes.csv for self-consistency
+    checking only (see module docstring).
+
+    Returns:
+        A tuple (students, archetypes):
+            students: list of dicts with student_id, program, class_year,
+                and enrollment_status.
+            archetypes: dict mapping student_id -> archetype name.
+    """
     students = []
     archetypes = {}
     for i in range(1, N_STUDENTS + 1):
@@ -104,6 +169,22 @@ def generate_students():
 
 
 def generate_engagement(students, archetypes):
+    """Generate weekly attendance/LMS/participation rows for every student.
+
+    Each student's values drift over the term according to their
+    archetype (e.g. steadily declining for "disconnecting", flat but low
+    for "noisy_false_flag_bait"), then have Gaussian noise and a small
+    amount of deliberate data-quality noise (out-of-range attendance,
+    negative logins) layered on top for the cleaning step to catch.
+
+    Args:
+        students: List of student dicts, as returned by generate_students().
+        archetypes: Mapping of student_id -> archetype name.
+
+    Returns:
+        A list of dicts, one row per student per week, matching the
+        engagement_weekly.csv schema.
+    """
     rows = []
     for s in students:
         sid = s["student_id"]
@@ -156,6 +237,22 @@ def generate_engagement(students, archetypes):
 
 
 def generate_belonging(students, archetypes):
+    """Generate weekly pulse-survey rows for every student.
+
+    Survey response is itself modeled as a signal, not just noise: a
+    "disconnecting" student's response rate declines over the term. Weeks
+    with no submission are written with blank belonging_score and
+    peer_interaction_count rather than an imputed value, so the cleaning
+    and feature-engineering steps have real missingness to handle.
+
+    Args:
+        students: List of student dicts, as returned by generate_students().
+        archetypes: Mapping of student_id -> archetype name.
+
+    Returns:
+        A list of dicts, one row per student per week, matching the
+        belonging_pulse.csv schema.
+    """
     rows = []
     for s in students:
         sid = s["student_id"]
@@ -203,6 +300,27 @@ def generate_belonging(students, archetypes):
 
 
 def generate_care_interactions(students, archetypes, staff):
+    """Generate care/support interaction events (outreach, referrals, etc.).
+
+    The number and shape of interactions per student depends on
+    archetype: "care_gap" students get more interactions, biased toward
+    open referrals, unanswered outreach, and unowned handoffs, since for
+    that archetype it's the institution's response -- not the student's
+    own behavior -- that's meant to be the signal. A small number of
+    duplicate rows are appended afterward to simulate a realistic
+    multi-office ETL artifact.
+
+    Args:
+        students: List of student dicts, as returned by generate_students().
+        archetypes: Mapping of student_id -> archetype name.
+        staff: List of staff dicts, as returned by generate_staff(), used
+            to assign handoff owners within the correct office.
+
+    Returns:
+        A list of dicts, one row per interaction event (including the
+        appended duplicates), matching the care_interactions.csv schema,
+        shuffled so rows aren't grouped by student.
+    """
     rows = []
     interaction_id = 1
     staff_by_office = {}
@@ -293,6 +411,22 @@ def generate_care_interactions(students, archetypes, staff):
 
 
 def generate_outcomes(students, archetypes):
+    """Generate a weekly institutional status row for every student.
+
+    This field is generated directly from archetype, not inferred from
+    the other tables -- it represents a plausible downstream field an
+    institution would already track (e.g. from a case management system),
+    and is never used as a prediction target by the detection logic in
+    src/signals.py.
+
+    Args:
+        students: List of student dicts, as returned by generate_students().
+        archetypes: Mapping of student_id -> archetype name.
+
+    Returns:
+        A list of dicts, one row per student per week, matching the
+        weekly_outcome.csv schema.
+    """
     rows = []
     for s in students:
         sid = s["student_id"]
@@ -316,6 +450,15 @@ def generate_outcomes(students, archetypes):
 
 
 def write_csv(path, rows, fieldnames):
+    """Write a list of dicts to a CSV file with a fixed column order.
+
+    Args:
+        path: Destination file path.
+        rows: List of dicts to write, one per output row.
+        fieldnames: Column names, in the order they should appear in the
+            file. Any dict keys not listed here are silently ignored by
+            csv.DictWriter.
+    """
     with open(path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -323,6 +466,13 @@ def write_csv(path, rows, fieldnames):
 
 
 def main():
+    """Generate the full synthetic dataset and write every CSV to data/.
+
+    Orchestrates all the generate_* functions above in dependency order,
+    writes each table to data/ (including the generator-only
+    _ground_truth_archetypes.csv, see module docstring), and prints a
+    summary of row counts and archetype distribution to stdout.
+    """
     import os
     out_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     os.makedirs(out_dir, exist_ok=True)
