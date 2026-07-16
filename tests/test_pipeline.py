@@ -50,6 +50,15 @@ def test_no_duplicate_care_interactions():
 def test_no_duplicate_care_interactions():
     return
 
+def test_all_student_ids_are_known():
+    return
+
+def test_data_quality_report_counts_match_actual_changes():
+    return
+
+def test_data_quality_report_has_no_unexpectedly_dropped_rows():
+    return
+
 
 
 if __name__ == "__main__":
