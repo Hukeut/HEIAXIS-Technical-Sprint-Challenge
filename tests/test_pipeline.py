@@ -16,6 +16,12 @@ hand-constructed inputs with known expected outputs (feature math, signal
 detection boundary conditions). The second kind matters more, it's the only
 way to test a boundary condition (like "exactly 2 declining sources") that
 the real synthetic dataset might not happen to contain an example of.
+
+In short: this is Tier 1, granular checks on individual pieces of logic
+in isolation, including the exact boundary conditions of the detection
+rules, for example confirming exactly one declining source never
+flags, but two does, and confirming a stale referral fires at exactly
+its threshold week and not one week early or late.
 """
 import os
 import sys
