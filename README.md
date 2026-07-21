@@ -19,6 +19,7 @@ heiaxis-sprint/
 │   ├── features.py       baseline-relative feature engineering
 │   ├── signals.py        both detectors, plus office caseload rollup
 │   ├── pipeline.py       runs the full pipeline, writes output/
+│   ├── api.py            read-only JSON API in front of output/
 │   └── self_consistency_check.py
 ├── tests/
 │   ├── test_pipeline.py  Tier 1: unit-level and boundary-condition tests
@@ -30,7 +31,8 @@ heiaxis-sprint/
     ├── working_prototype.md
     ├── evaluation_logic.md
     ├── testing_strategy.md
-    └── architecture.md
+    ├── architecture.md
+    └── api.md
 ```
 
 ## Running the Prototype
@@ -49,9 +51,28 @@ python3 src/pipeline.py               # clean, engineer features, detect signals
 python3 tests/test_pipeline.py        # Tier 1: unit and boundary-condition tests
 python3 tests/test_system.py          # Tier 2: end-to-end, regression, and edge-case tests
 python3 src/self_consistency_check.py # optional, self-consistency check against generator ground truth
+
+pip install flask                     # not yet pinned in requirements.txt, needed only for the API below
+python3 src/api.py                    # optional, serves output/ as JSON, see docs/api.md
 ```
 
-## Output Description
+### Trying the API
+
+`python3 src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000`. It only reads whatever is already in `output/`, so run `python3 src/pipeline.py` at least once first. Once it's running:
+
+```bash
+curl http://127.0.0.1:5000/health
+curl http://127.0.0.1:5000/students/flagged
+curl "http://127.0.0.1:5000/students/flagged?confidence=High"
+curl http://127.0.0.1:5000/students/flagged/S0017
+curl http://127.0.0.1:5000/continuity-gaps
+curl http://127.0.0.1:5000/office-caseload
+curl http://127.0.0.1:5000/data-quality-report
+```
+
+Full endpoint reference, including query parameters and error responses, is in `docs/api.md`.
+
+## What You'll See When You Run It
 
 `python3 src/pipeline.py` prints a data-quality report first (what was capped, nulled, deduplicated, or dropped during cleaning, and why), followed by a preview of both required outputs and a bonus one, then writes four files to `output/`:
 
@@ -64,9 +85,11 @@ Every row on both required outputs carries its own explanation and confidence le
 
 ## Current Scope and What I'd Add Next
 
-This prototype uses no machine learning or AI. Both outputs come from explicit, hand-written rules and thresholds over the engineered features (see `src/signals.py`), a deliberate choice explained in `docs/product_interpretation_memo.md`: given the time budget and the fact that a wrong flag reaches a human who may act on it, a fully explainable rule set was worth more here than a fitted model's marginal accuracy gain. This prototype also has no API. It runs as local scripts that read CSVs and write CSVs, there is no server, no endpoint, and no way for another system to call it yet.
+This prototype uses no machine learning or AI. Both outputs come from explicit, hand-written rules and thresholds over the engineered features (see `src/signals.py`), a deliberate choice explained in `docs/product_interpretation_memo.md`: given the time budget and the fact that a wrong flag reaches a human who may act on it, a fully explainable rule set was worth more here than a fitted model's marginal accuracy gain.
 
-Two things I'd want to add on top of this, given more time: a REST API in front of the pipeline so the outputs could actually be consumed by a review dashboard or another institutional system instead of read as a file, and a lightweight, still-explainable model (logistic regression, not a black box) trained once real, human-reviewed outcome data exists, evaluated side by side against the rule-based approach rather than replacing it outright. Both are discussed in more depth, along with why they were left out of this scope, in `docs/architecture.md` and `docs/evaluation_logic.md`.
+A read-only JSON API (`src/api.py`) now sits in front of the pipeline's output, see `docs/api.md` for the full design reasoning and endpoint reference. It serves whatever is currently in `output/` over HTTP instead of only as files, but it doesn't solve authentication, pagination, or deployment, all named explicitly in that doc as intentionally out of scope here.
+
+One thing I'd still want to add given more time: a lightweight, still-explainable model (logistic regression, not a black box) trained once real, human-reviewed outcome data exists, evaluated side by side against the rule-based approach rather than replacing it outright. Discussed in more depth, along with why it's left out of this scope, in `docs/evaluation_logic.md`.
 
 ## Where to Go for What
 
@@ -76,3 +99,4 @@ Two things I'd want to add on top of this, given more time: a REST API in front 
 - **`docs/evaluation_logic.md`**: how usefulness would actually get tested against real data, how to avoid mistaking correlation for causation, and the open questions not yet solved.
 - **`docs/testing_strategy.md`**: why the tests exist and what they actually protect, the two-tier test plan, and what real bugs the edge-case tests already caught.
 - **`docs/architecture.md`**: how this fits into a real HEIAXIS system end to end, stage by stage, with the options and scaling path considered at each one.
+- **`docs/api.md`**: the read-only JSON API in front of the pipeline's output, framework choice, scope, and the endpoint reference.
