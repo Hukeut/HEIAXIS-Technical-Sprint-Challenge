@@ -71,6 +71,8 @@ curl http://127.0.0.1:5000/data-quality-report
 
 Full endpoint reference, including query parameters and error responses, is in `docs/api.md`.
 
+Note: visiting `http://127.0.0.1:5000` alone (the bare root URL) in a browser will show a 404, there is no route registered at `/`, only the specific paths above. That's expected, not a bug, always include a path, e.g. `http://127.0.0.1:5000/health`.
+
 ## What You'll See When You Run It
 
 `python3 src/pipeline.py` prints a data-quality report first (what was capped, nulled, deduplicated, or dropped during cleaning, and why), followed by a preview of both required outputs and a bonus one, then writes four files to `output/`:
