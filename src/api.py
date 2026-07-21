@@ -6,8 +6,8 @@ solve, and the endpoint reference.
 
 Run with:
     cd heiaxis-sprint
-    python3 src/pipeline.py    # generate output/ first, if not already done
-    python3 src/api.py
+    python src/pipeline.py    # generate output/ first, if not already done
+    python src/api.py
 
 In short: this serves whatever is currently sitting in output/, written by
 the last pipeline.py run. It computes nothing new and never re-runs the
@@ -23,9 +23,10 @@ definition of every field in each row, and the confidence scale (or gap type
 list, where relevant) actually used, alongside the data itself.
 """
 import os
+from html import escape
 
 import pandas as pd
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 
 HERE = os.path.dirname(__file__)
 DATA_DIR = os.path.join(HERE, "..", "data")
@@ -192,37 +193,99 @@ def _missing_output_response(filename):
     """
     return jsonify({
         "error": f"{filename} not found in output/",
-        "hint": "run `python3 src/pipeline.py` first to generate output/",
+        "hint": "run `python src/pipeline.py` first to generate output/",
     }), 503
+
+
+def _build_terminal_report():
+    """Rebuild the same plain-text summary pipeline.py prints to the
+    console, but sourced from whatever is already in output/ instead of
+    re-running the pipeline. Returns None if output/ hasn't been
+    generated yet.
+
+    Returns:
+        The report as a single string, or None if flagged_students.csv
+        or continuity_gaps.csv is missing.
+    """
+    students_df = _load_csv(STUDENTS_PATH)
+    flagged_df = _load_csv(FLAGGED_STUDENTS_PATH)
+    gaps_df = _load_csv(CONTINUITY_GAPS_PATH)
+    office_df = _load_csv(OFFICE_CASELOAD_PATH)
+
+    if flagged_df is None or gaps_df is None:
+        return None
+
+    lines = []
+    lines.append("=" * 70)
+    lines.append("HEIAXIS Early Signal Intelligence -- prototype run")
+    lines.append("=" * 70)
+
+    if os.path.exists(DATA_QUALITY_REPORT_PATH):
+        lines.append("\n--- Data quality report ---")
+        with open(DATA_QUALITY_REPORT_PATH) as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    lines.append(f"  {line}")
+
+    n_students = len(students_df) if students_df is not None else None
+    n_flagged = len(flagged_df)
+    if n_students:
+        lines.append(f"\n--- Output A: Students flagged for attention "
+                      f"({n_flagged} of {n_students}, {n_flagged / n_students:.1%}) ---")
+    else:
+        lines.append(f"\n--- Output A: Students flagged for attention ({n_flagged} found) ---")
+    if n_flagged:
+        lines.append(flagged_df.head(10).to_string(index=False))
+
+    n_gaps = len(gaps_df)
+    lines.append(f"\n--- Output B: Care-continuity gaps ({n_gaps} found) ---")
+    if n_gaps:
+        by_type = gaps_df["gap_type"].value_counts()
+        lines.append(by_type.to_string())
+        lines.append("")
+        cols = ["gap_type", "student_id", "office", "confidence", "weeks_elapsed", "leading_signal"]
+        lines.append(gaps_df.head(10)[cols].to_string(index=False))
+
+    if office_df is not None and len(office_df):
+        lines.append("\n--- Office caseload context (bonus, not one of the two required outputs) ---")
+        lines.append(office_df.to_string(index=False))
+
+    lines.append(f"\nReading from {os.path.abspath(OUTPUT_DIR)}/ "
+                  "(last written by pipeline.py)")
+    return "\n".join(lines)
 
 
 @app.route("/")
 def index():
-    """A self-documenting directory of every endpoint, so hitting the bare
-    root URL explains the API instead of returning an unhelpful 404."""
-    return jsonify({
-        "description": "Read-only JSON API in front of the HEIAXIS Early "
-                        "Signal Intelligence prototype's output. See "
-                        "docs/api.md for the full reference.",
-        "endpoints": {
-            "GET /health": "Basic status check, and whether output/ has "
-                            "been generated yet.",
-            "GET /summary": "The headline numbers, how many students "
-                             "flagged, at what confidence, how many "
-                             "continuity gaps and of what type, each with "
-                             "a plain-English explanation. Start here.",
-            "GET /students/flagged": "Students flagged for attention, "
-                                      "optional ?confidence= filter.",
-            "GET /students/flagged/<student_id>": "A single flagged "
-                                                   "student's detail.",
-            "GET /continuity-gaps": "Institutional care-continuity gaps, "
-                                     "optional ?gap_type= filter.",
-            "GET /office-caseload": "Bonus office caseload rollup, not "
-                                     "one of the two required outputs.",
-            "GET /data-quality-report": "The cleaning report from the "
-                                         "last pipeline.py run.",
-        },
-    })
+    """The front page: a big HEIAXIS title and the same plain-text summary
+    pipeline.py prints to the terminal, rendered as HTML instead of JSON
+    so it's readable straight in a browser. Every other route below still
+    returns JSON, for anything that wants to consume this programmatically,
+    see docs/api.md for the full endpoint reference."""
+    report = _build_terminal_report()
+    if report is None:
+        body = "output/ has not been generated yet. Run `python src/pipeline.py` first."
+    else:
+        body = report
+
+    html = f"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HEIAXIS</title>
+<style>
+  body {{ font-family: monospace; background: #111; color: #eee; padding: 2rem; }}
+  h1 {{ font-size: 3rem; margin: 0 0 1rem 0; }}
+  pre {{ white-space: pre-wrap; font-size: 1rem; }}
+</style>
+</head>
+<body>
+<h1>HEIAXIS</h1>
+<pre>{escape(body)}</pre>
+</body>
+</html>"""
+    return Response(html, mimetype="text/html")
 
 
 @app.route("/summary")
@@ -263,7 +326,7 @@ def summary():
         "description": "The headline numbers behind both required "
                         "outputs, with a plain-English explanation next "
                         "to each one. This is a read of whatever is "
-                        "currently in output/, run `python3 src/pipeline.py` "
+                        "currently in output/, run `python src/pipeline.py` "
                         "again first if you want fresh numbers.",
         "students_flagged_for_attention": {
             "count": n_flagged,
@@ -301,7 +364,7 @@ def health():
     return jsonify({
         "status": "ok",
         "output_available": output_exists,
-        "hint": None if output_exists else "run `python3 src/pipeline.py` first",
+        "hint": None if output_exists else "run `python src/pipeline.py` first",
     })
 
 
