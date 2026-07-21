@@ -42,22 +42,22 @@ Requires Python 3.9+. Three third-party dependencies, all pinned in `requirement
 ```bash
 cd heiaxis-sprint
 
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate     # on Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-python3 src/generate_data.py          # regenerate the synthetic dataset (already included)
-python3 src/pipeline.py               # clean, engineer features, detect signals, write output/
-python3 tests/test_pipeline.py        # Tier 1: unit and boundary-condition tests
-python3 tests/test_system.py          # Tier 2: end-to-end, regression, and edge-case tests
-python3 src/self_consistency_check.py # optional, self-consistency check against generator ground truth
+python src/generate_data.py          # regenerate the synthetic dataset (already included)
+python src/pipeline.py               # clean, engineer features, detect signals, write output/
+python tests/test_pipeline.py        # Tier 1: unit and boundary-condition tests
+python tests/test_system.py          # Tier 2: end-to-end, regression, and edge-case tests
+python src/self_consistency_check.py # optional, self-consistency check against generator ground truth
 
-python3 src/api.py                    # optional, serves output/ as JSON, see docs/api.md
+python src/api.py                    # optional, serves output/ as JSON, see docs/api.md
 ```
 
 ### Trying the API
 
-`python3 src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000` (flask is installed as part of `pip install -r requirements.txt` above). It only reads whatever is already in `output/`, so run `python3 src/pipeline.py` at least once first. Once it's running:
+`python src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000` (flask is installed as part of `pip install -r requirements.txt` above). It only reads whatever is already in `output/`, so run `python src/pipeline.py` at least once first. Once it's running:
 
 ```bash
 curl http://127.0.0.1:5000/health
@@ -75,7 +75,7 @@ Note: visiting `http://127.0.0.1:5000` alone (the bare root URL) in a browser wi
 
 ## What You'll See When You Run It
 
-`python3 src/pipeline.py` prints a data-quality report first (what was capped, nulled, deduplicated, or dropped during cleaning, and why), followed by a preview of both required outputs and a bonus one, then writes four files to `output/`:
+`python src/pipeline.py` prints a data-quality report first (what was capped, nulled, deduplicated, or dropped during cleaning, and why), followed by a preview of both required outputs and a bonus one, then writes four files to `output/`:
 
 - **`flagged_students.csv`**: one row per student flagged for attention, with `confidence` (High/Medium/Low), `n_sources_declined`, `leading_signal` (the single steepest-declining source), and a `reason` string spelling out every declining source in plain language, for example `"class participation down 38% vs. own early-term baseline; attendance down 26%..."`.
 - **`continuity_gaps.csv`**: one row per institutional gap, with `gap_type` (`stale_open_referral`, `unanswered_outreach_no_escalation`, `unowned_handoff`, or `uncoordinated_multi_office`), `confidence`, `weeks_elapsed`, and a `reason` explaining what was left unresolved and for how long.
