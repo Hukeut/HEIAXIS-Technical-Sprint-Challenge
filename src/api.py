@@ -256,19 +256,33 @@ def _build_terminal_report():
     return "\n".join(lines)
 
 
-@app.route("/")
-def index():
-    """The front page: a big HEIAXIS title and the same plain-text summary
-    pipeline.py prints to the terminal, rendered as HTML instead of JSON
-    so it's readable straight in a browser. Every other route below still
-    returns JSON, for anything that wants to consume this programmatically,
-    see docs/api.md for the full endpoint reference."""
-    report = _build_terminal_report()
-    if report is None:
-        body = "output/ has not been generated yet. Run `python src/pipeline.py` first."
-    else:
-        body = report
+def _build_office_caseload_text():
+    """Rebuild just the office caseload section of the terminal report,
+    on its own, without the two required outputs alongside it.
 
+    Returns:
+        The office caseload table as a plain-text string, or None if
+        office_caseload_summary.csv doesn't exist yet.
+    """
+    office_df = _load_csv(OFFICE_CASELOAD_PATH)
+    if office_df is None or len(office_df) == 0:
+        return None
+
+    lines = ["--- Office caseload context (bonus, not one of the two required outputs) ---"]
+    lines.append(office_df.to_string(index=False))
+    return "\n".join(lines)
+
+
+def _html_page(body_text):
+    """Wrap a plain-text body in the same minimal HEIAXIS page shell used
+    by the front page, a big title over a monospace <pre> block.
+
+    Args:
+        body_text: The already-built plain-text report to display.
+
+    Returns:
+        A Flask Response with mimetype text/html.
+    """
     html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -282,10 +296,34 @@ def index():
 </head>
 <body>
 <h1>HEIAXIS</h1>
-<pre>{escape(body)}</pre>
+<pre>{escape(body_text)}</pre>
 </body>
 </html>"""
     return Response(html, mimetype="text/html")
+
+
+@app.route("/office-caseload/print")
+def office_caseload_print():
+    """Just the office caseload section, on its own, as a plain HTML page,
+    for when the full front page at / is more than you want."""
+    text = _build_office_caseload_text()
+    if text is None:
+        return _html_page("office_caseload_summary.csv not found. "
+                           "Run `python src/pipeline.py` first.")
+    return _html_page(text)
+
+
+@app.route("/")
+def index():
+    """The front page: a big HEIAXIS title and the same plain-text summary
+    pipeline.py prints to the terminal, rendered as HTML instead of JSON
+    so it's readable straight in a browser. Every other route below still
+    returns JSON, for anything that wants to consume this programmatically,
+    see docs/api.md for the full endpoint reference."""
+    report = _build_terminal_report()
+    if report is None:
+        return _html_page("output/ has not been generated yet. Run `python src/pipeline.py` first.")
+    return _html_page(report)
 
 
 @app.route("/summary")

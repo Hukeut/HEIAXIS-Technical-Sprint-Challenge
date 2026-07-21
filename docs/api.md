@@ -48,6 +48,7 @@
 | `GET /students/flagged/<student_id>` | A single student's flag detail, same field definitions and confidence scale included. Returns `404` if that student isn't currently flagged. | none |
 | `GET /continuity-gaps` | Continuity gaps, wrapped with field definitions, the confidence scale, and gap-type definitions. | `gap_type` (optional, one of the four known gap types) |
 | `GET /office-caseload` | The bonus office rollup, wrapped with field definitions. | none |
+| `GET /office-caseload/print` | Just the office caseload table, as its own small HTML page in the same style as `/`, for when the full front page is more than you want. | none |
 | `GET /data-quality-report` | The cleaning report from the last `pipeline.py` run, with a description of what it represents. | none |
 
 Every list endpoint's `results` array is empty, not an error, when there's simply nothing to report, an empty `continuity_gaps.csv` is a valid, meaningful result (no gaps found), not a failure state. `count` on the envelope reflects the length of `results` after any filter was applied.
