@@ -28,8 +28,10 @@ import pandas as pd
 from flask import Flask, jsonify, request
 
 HERE = os.path.dirname(__file__)
+DATA_DIR = os.path.join(HERE, "..", "data")
 OUTPUT_DIR = os.path.join(HERE, "..", "output")
 
+STUDENTS_PATH = os.path.join(DATA_DIR, "students.csv")
 FLAGGED_STUDENTS_PATH = os.path.join(OUTPUT_DIR, "flagged_students.csv")
 CONTINUITY_GAPS_PATH = os.path.join(OUTPUT_DIR, "continuity_gaps.csv")
 OFFICE_CASELOAD_PATH = os.path.join(OUTPUT_DIR, "office_caseload_summary.csv")
@@ -205,6 +207,10 @@ def index():
         "endpoints": {
             "GET /health": "Basic status check, and whether output/ has "
                             "been generated yet.",
+            "GET /summary": "The headline numbers, how many students "
+                             "flagged, at what confidence, how many "
+                             "continuity gaps and of what type, each with "
+                             "a plain-English explanation. Start here.",
             "GET /students/flagged": "Students flagged for attention, "
                                       "optional ?confidence= filter.",
             "GET /students/flagged/<student_id>": "A single flagged "
@@ -216,6 +222,76 @@ def index():
             "GET /data-quality-report": "The cleaning report from the "
                                          "last pipeline.py run.",
         },
+    })
+
+
+@app.route("/summary")
+def summary():
+    """The headline numbers behind both outputs, with a plain-English
+    explanation next to each one, the same information pipeline.py prints
+    to the terminal, but reachable over the API instead of requiring
+    someone to run the script themselves and read the console output."""
+    students_df = _load_csv(STUDENTS_PATH)
+    flagged_df = _load_csv(FLAGGED_STUDENTS_PATH)
+    gaps_df = _load_csv(CONTINUITY_GAPS_PATH)
+    office_df = _load_csv(OFFICE_CASELOAD_PATH)
+
+    if flagged_df is None or gaps_df is None:
+        return _missing_output_response("flagged_students.csv / continuity_gaps.csv")
+
+    total_students = len(students_df) if students_df is not None else None
+    n_flagged = len(flagged_df)
+    flagged_pct = round(100 * n_flagged / total_students, 1) if total_students else None
+    by_confidence = flagged_df["confidence"].value_counts().to_dict() if n_flagged else {}
+
+    n_gaps = len(gaps_df)
+    by_gap_type = gaps_df["gap_type"].value_counts().to_dict() if n_gaps else {}
+
+    busiest_office = None
+    if office_df is not None and len(office_df):
+        top = office_df.sort_values("cases_per_staff", ascending=False).iloc[0]
+        busiest_office = {
+            "office": top["office"],
+            "cases_per_staff": None if pd.isna(top["cases_per_staff"]) else top["cases_per_staff"],
+            "explanation": "The office currently carrying the most open "
+                            "cases per staff member, useful context for "
+                            "reading a stale case as a capacity problem "
+                            "rather than negligence.",
+        }
+
+    return jsonify({
+        "description": "The headline numbers behind both required "
+                        "outputs, with a plain-English explanation next "
+                        "to each one. This is a read of whatever is "
+                        "currently in output/, run `python3 src/pipeline.py` "
+                        "again first if you want fresh numbers.",
+        "students_flagged_for_attention": {
+            "count": n_flagged,
+            "total_students": total_students,
+            "percent_of_students": flagged_pct,
+            "by_confidence": by_confidence,
+            "explanation": f"{n_flagged} of {total_students} students "
+                            f"({flagged_pct}%) have at least two "
+                            "independent sources declining relative to "
+                            "their own early-term baseline. "
+                            f"{by_confidence.get('High', 0)} of those are "
+                            "High confidence (3+ sources, or 2 sources "
+                            "plus peer corroboration)." if total_students else
+                            "Student total unavailable, data/students.csv not found.",
+        },
+        "institutional_continuity_gaps": {
+            "count": n_gaps,
+            "by_gap_type": by_gap_type,
+            "explanation": f"{n_gaps} cases were found where the "
+                            "institution's own handling, not the "
+                            "student's behavior, is the signal: a stale "
+                            "open referral, an unanswered outreach with "
+                            "no follow-up, an unowned handoff, or "
+                            "uncoordinated cases across offices. See "
+                            "gap_types on /continuity-gaps for what each "
+                            "category means.",
+        },
+        "busiest_office": busiest_office,
     })
 
 
