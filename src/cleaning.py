@@ -6,6 +6,15 @@ data-quality report (dict of counts) describing what was found and how
 it was handled. Nothing is silently dropped or altered without being
 counted in the report -- the report is printed by pipeline.py and is
 part of the "clean and validate" requirement, not an afterthought.
+
+In short: this module is where every deliberate imperfection injected
+by generate_data.py gets caught and accounted for. Out-of-range
+attendance values are capped rather than left as garbage. Negative
+login counts become missing, not silently zeroed, since a negative
+reading is a bad ETL value, not evidence of zero activity. Office
+names are canonicalized through a lookup table. Duplicate care
+interaction rows are dropped. Every one of these actions is counted in
+the report this module returns, nothing is silently altered.
 """
 import os
 import pandas as pd

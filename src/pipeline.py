@@ -7,6 +7,9 @@ Run:
 Loads the synthetic dataset from ../data, cleans and validates it,
 builds features, runs both detectors, and writes ranked outputs to
 ../output/. Prints a data-quality report and a summary to the console.
+
+In short: this is the single entry point that ties every other module
+together, load, clean, engineer, detect, write, print, in that order.
 """
 import os
 import sys

@@ -19,6 +19,17 @@ validation (see docs/evaluation_logic.md).
 The archetype is written to data/_ground_truth_archetypes.csv, kept
 separate from the "operational" tables and clearly marked as
 generator-only -- a real prototype would never have access to this file.
+
+In short: this script is the source of every realistic imperfection the
+rest of the pipeline has to handle. It creates 700 synthetic students
+across a 7-week term, plus an unevenly staffed roster across five
+offices, and secretly assigns each student one of six archetypes
+(stable, disconnecting, care_gap, improving, dropped_course,
+noisy_false_flag_bait) that drives their weekly values in every table
+below. Realistic data-quality problems, out-of-range attendance values,
+negative login counts, inconsistent office-name casing, duplicate
+interaction rows, and missing survey responses, are injected on
+purpose, so cleaning.py has real work to do downstream.
 """
 
 import csv

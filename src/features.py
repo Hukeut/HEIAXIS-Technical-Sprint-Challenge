@@ -14,6 +14,11 @@ right definition of "early signal" in the first place.
 Missing data (e.g. unanswered pulse surveys) is never imputed. If there
 isn't enough data to compute a feature, the feature is marked
 "insufficient_data" and excluded from scoring rather than guessed at.
+
+In short: this is the layer where the project's central design choice,
+decline measured against each student's own baseline rather than a
+population-wide cutoff, actually gets computed, before signals.py
+applies any thresholds to the result.
 """
 import pandas as pd
 import numpy as np

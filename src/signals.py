@@ -14,6 +14,15 @@ Two independent detectors:
   2. Institutional care-continuity gaps -- the system is the signal.
      Stale open referrals, unanswered outreach with no follow-up,
      unowned handoffs, and uncoordinated multi-office cases.
+
+In short: the student-side detector requires decline across at least
+two of four independent sources before flagging anyone, a single noisy
+source is never enough. The institutional-gap detector looks for four
+patterns in the care data: stale open referrals, unanswered outreach
+with no follow-up, unowned handoffs, and uncoordinated multi-office
+cases. A third, bonus function rolls up open cases per office against
+staff headcount for added context, it isn't one of the two required
+ranked outputs.
 """
 import pandas as pd
 import numpy as np
