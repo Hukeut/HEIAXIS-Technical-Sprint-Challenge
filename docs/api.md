@@ -30,25 +30,26 @@
 
 **Options considered:**
 - A. JSON endpoints plus one or two server-rendered HTML pages, so results are viewable as formatted tables directly in a browser.
-- B. JSON endpoints plus FastAPI-style automatic interactive documentation.
-- C. JSON only, no HTML, no generated docs page.
+- B. Bare JSON arrays or objects mirroring the CSV columns exactly, nothing else in the response.
+- C. Self-explanatory JSON envelopes: every response includes what the endpoint is, what each field means, and (where relevant) the confidence scale or gap-type definitions, alongside the actual data.
 
-**Chosen Answer:** Option A would make this genuinely more useful to look at directly, but it starts drifting toward exactly the "please don't spend time making the UI beautiful" territory the original brief explicitly de-scoped, and it isn't needed for the API's actual purpose, being a layer other systems or a future dashboard can consume. Option B isn't available at zero cost given the Flask choice above. C keeps this squarely a data layer: predictable, easy to consume from any client, and honest about not trying to be a finished product surface.
+**Chosen Answer:** Option A would make this genuinely more useful to look at directly, but it starts drifting toward exactly the "please don't spend time making the UI beautiful" territory the original brief explicitly de-scoped, and it isn't needed for the API's actual purpose, being a layer other systems or a future dashboard can consume. Option B was the original approach, and it works, but it quietly reintroduces the exact problem this whole project is built to avoid: a caller sees a `confidence: "Medium"` or a `gap_type: "unowned_handoff"` with no explanation attached unless they already have `docs/data_dictionary.md` or `docs/working_prototype.md` open next to them. C carries the same explainability principle behind every CSV `reason` column into the API itself, a response should never require a second document to understand.
 
-**Low Level Explanation:** Every endpoint returns `application/json`. Responses mirror the column names already present in the CSVs (`confidence`, `leading_signal`, `reason`, `gap_type`, and so on) rather than renaming or restructuring fields, so anyone already familiar with `docs/data_dictionary.md` or `docs/working_prototype.md` doesn't need to learn a second vocabulary.
+**Low Level Explanation:** Every endpoint returns `application/json`. List endpoints (`/students/flagged`, `/continuity-gaps`, `/office-caseload`) return an envelope with `description` (what this endpoint is), `fields` (a plain-English definition of every column in each row), `count`, `filters_applied`, and `results` (the actual rows, unchanged from the CSV's field names). Where relevant, the envelope also includes `confidence_scale` and, for continuity gaps, `gap_types`, so the meaning of every value in `results` is defined in the same response, not just its name. The single-student endpoint and the data-quality-report endpoint follow the same pattern at a smaller scale. `GET /` returns a directory of every endpoint with a one-line description, so visiting the bare root URL explains the API instead of returning an unhelpful 404.
 
 ## Endpoints Reference
 
 | Method & Path | Description | Query Parameters |
 |---|---|---|
+| `GET /` | Self-documenting directory of every endpoint below. | none |
 | `GET /health` | Basic status check, confirms the API is running and whether `output/` currently exists. | none |
-| `GET /students/flagged` | Every row from `flagged_students.csv`, as a JSON array. | `confidence` (optional, one of `High`/`Medium`/`Low`) |
-| `GET /students/flagged/<student_id>` | A single student's flag detail. Returns `404` if that student isn't currently flagged. | none |
-| `GET /continuity-gaps` | Every row from `continuity_gaps.csv`, as a JSON array. | `gap_type` (optional, one of the four known gap types) |
-| `GET /office-caseload` | The bonus office rollup from `office_caseload_summary.csv`. | none |
-| `GET /data-quality-report` | The cleaning report from `data_quality_report.txt`, parsed into a JSON object. | none |
+| `GET /students/flagged` | Flagged students, wrapped with field definitions and the confidence scale. | `confidence` (optional, one of `High`/`Medium`/`Low`) |
+| `GET /students/flagged/<student_id>` | A single student's flag detail, same field definitions and confidence scale included. Returns `404` if that student isn't currently flagged. | none |
+| `GET /continuity-gaps` | Continuity gaps, wrapped with field definitions, the confidence scale, and gap-type definitions. | `gap_type` (optional, one of the four known gap types) |
+| `GET /office-caseload` | The bonus office rollup, wrapped with field definitions. | none |
+| `GET /data-quality-report` | The cleaning report from the last `pipeline.py` run, with a description of what it represents. | none |
 
-Every list endpoint returns an empty JSON array, not an error, when there's simply nothing to report, an empty `output/continuity_gaps.csv` is a valid, meaningful result (no gaps found), not a failure state.
+Every list endpoint's `results` array is empty, not an error, when there's simply nothing to report, an empty `continuity_gaps.csv` is a valid, meaningful result (no gaps found), not a failure state. `count` on the envelope reflects the length of `results` after any filter was applied.
 
 ## What This Doesn't Solve
 
