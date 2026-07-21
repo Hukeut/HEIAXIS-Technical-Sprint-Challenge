@@ -11,7 +11,7 @@ The reasoning behind every major decision, what's included, what's deliberately 
 ```
 heiaxis-sprint/
 ├── README.md
-├── requirements.txt      the only two dependencies: pandas, numpy
+├── requirements.txt      the three dependencies: pandas, numpy, flask
 ├── data/                 synthetic dataset (7 CSV tables)
 ├── src/
 │   ├── generate_data.py  synthetic data generator
@@ -37,7 +37,7 @@ heiaxis-sprint/
 
 ## Running the Prototype
 
-Requires Python 3.9+. Only two third-party dependencies, pinned in `requirements.txt`: pandas and numpy.
+Requires Python 3.9+. Three third-party dependencies, all pinned in `requirements.txt`: pandas, numpy, and flask (flask is only needed for the optional API below).
 
 ```bash
 cd heiaxis-sprint
@@ -52,13 +52,12 @@ python3 tests/test_pipeline.py        # Tier 1: unit and boundary-condition test
 python3 tests/test_system.py          # Tier 2: end-to-end, regression, and edge-case tests
 python3 src/self_consistency_check.py # optional, self-consistency check against generator ground truth
 
-pip install flask                     # not yet pinned in requirements.txt, needed only for the API below
 python3 src/api.py                    # optional, serves output/ as JSON, see docs/api.md
 ```
 
 ### Trying the API
 
-`python3 src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000`. It only reads whatever is already in `output/`, so run `python3 src/pipeline.py` at least once first. Once it's running:
+`python3 src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000` (flask is installed as part of `pip install -r requirements.txt` above). It only reads whatever is already in `output/`, so run `python3 src/pipeline.py` at least once first. Once it's running:
 
 ```bash
 curl http://127.0.0.1:5000/health
