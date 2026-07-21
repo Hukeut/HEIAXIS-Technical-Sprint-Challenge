@@ -56,6 +56,22 @@ pip install flask                     # not yet pinned in requirements.txt, need
 python3 src/api.py                    # optional, serves output/ as JSON, see docs/api.md
 ```
 
+### Trying the API
+
+`python3 src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000`. It only reads whatever is already in `output/`, so run `python3 src/pipeline.py` at least once first. Once it's running:
+
+```bash
+curl http://127.0.0.1:5000/health
+curl http://127.0.0.1:5000/students/flagged
+curl "http://127.0.0.1:5000/students/flagged?confidence=High"
+curl http://127.0.0.1:5000/students/flagged/S0017
+curl http://127.0.0.1:5000/continuity-gaps
+curl http://127.0.0.1:5000/office-caseload
+curl http://127.0.0.1:5000/data-quality-report
+```
+
+Full endpoint reference, including query parameters and error responses, is in `docs/api.md`.
+
 ## What You'll See When You Run It
 
 `python3 src/pipeline.py` prints a data-quality report first (what was capped, nulled, deduplicated, or dropped during cleaning, and why), followed by a preview of both required outputs and a bonus one, then writes four files to `output/`:
