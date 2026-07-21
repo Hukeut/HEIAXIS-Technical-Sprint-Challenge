@@ -37,6 +37,8 @@
 
 **Low Level Explanation:** `GET /` returns `text/html`: a large "HEIAXIS" heading followed by a `<pre>` block containing the same report `pipeline.py` prints to the terminal (data-quality report, both outputs' previews, office caseload), rebuilt from whatever is currently in `output/` rather than by re-running the pipeline. Every other endpoint returns `application/json`. List endpoints (`/students/flagged`, `/continuity-gaps`, `/office-caseload`) return an envelope with `description`, `fields` (a plain-English definition of every column), `count`, `filters_applied`, and `results`. Where relevant, the envelope also includes `confidence_scale` and, for continuity gaps, `gap_types`. The single-student, summary, and data-quality-report endpoints follow the same explanatory pattern at a smaller scale.
 
+`GET /office-caseload` and `GET /office-caseload/print` go a step further than the other list endpoints: alongside the table itself, both include `what_this_means` (a fixed explanation of what `cases_per_staff` actually measures and what it doesn't prove on its own), `right_now` (a short, data-specific sentence naming whichever office currently has the highest ratio, computed fresh from the current `output/office_caseload_summary.csv` on every request), and `what_this_suggests_for_the_institution` (a non-causal, checkable starting point: cross-reference the busiest offices against `/continuity-gaps` before assuming a staffing problem, rather than treating the ratio alone as a verdict on any office).
+
 ## Endpoints Reference
 
 | Method & Path | Description | Query Parameters |
@@ -47,8 +49,8 @@
 | `GET /students/flagged` | Flagged students, wrapped with field definitions and the confidence scale. | `confidence` (optional, one of `High`/`Medium`/`Low`) |
 | `GET /students/flagged/<student_id>` | A single student's flag detail, same field definitions and confidence scale included. Returns `404` if that student isn't currently flagged. | none |
 | `GET /continuity-gaps` | Continuity gaps, wrapped with field definitions, the confidence scale, and gap-type definitions. | `gap_type` (optional, one of the four known gap types) |
-| `GET /office-caseload` | The bonus office rollup, wrapped with field definitions. | none |
-| `GET /office-caseload/print` | Just the office caseload table, as its own small HTML page in the same style as `/`, for when the full front page is more than you want. | none |
+| `GET /office-caseload` | The bonus office rollup, wrapped with field definitions, plus what the ratio means and a non-causal, checkable read on what it suggests for the institution. | none |
+| `GET /office-caseload/print` | The office caseload table as its own small HTML page in the same style as `/`, followed by the same explanation of what the numbers mean and what they suggest doing next. | none |
 | `GET /data-quality-report` | The cleaning report from the last `pipeline.py` run, with a description of what it represents. | none |
 
 Every list endpoint's `results` array is empty, not an error, when there's simply nothing to report, an empty `continuity_gaps.csv` is a valid, meaningful result (no gaps found), not a failure state. `count` on the envelope reflects the length of `results` after any filter was applied.

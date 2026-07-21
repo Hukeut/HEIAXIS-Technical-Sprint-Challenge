@@ -116,6 +116,61 @@ OFFICE_CASELOAD_FIELDS = {
                         "staff_count is zero rather than a division error.",
 }
 
+OFFICE_CASELOAD_WHAT_IT_MEANS = (
+    "cases_per_staff is how many currently open, active cases each staff "
+    "member in that office is carrying at once (open referrals and "
+    "unowned handoffs, the same active cases counted in the "
+    "continuity-gap detector). It is not a measure of how hard anyone is "
+    "working, only of how much is currently on each person's plate. A "
+    "high number does not prove an office is failing its cases, but it "
+    "is one plausible, checkable explanation for why cases from that "
+    "office might be going stale: there may simply not be enough people "
+    "to get to everything in time."
+)
+
+OFFICE_CASELOAD_WHAT_TO_DO = (
+    "This number by itself is not a verdict, it is a starting point for "
+    "a conversation. What it suggests checking: (1) look at whether the "
+    "offices with the highest cases_per_staff here are also the offices "
+    "showing up most in GET /continuity-gaps, if they are, that is a "
+    "concrete, checkable case for reviewing staffing levels in that "
+    "office before assuming individual case handling is the problem; "
+    "(2) if an office has a high ratio but few or no continuity gaps, "
+    "that office may be managing its load fine and doesn't need the "
+    "same attention; (3) treat this as one input among several, not a "
+    "ranking of which office to blame, the goal is matching support to "
+    "where the caseload actually is, not assigning fault."
+)
+
+
+def _build_office_caseload_narrative(office_df):
+    """Build a short, data-specific paragraph naming which office(s)
+    currently carry the highest caseload per staff member, on top of the
+    general explanation in OFFICE_CASELOAD_WHAT_IT_MEANS.
+
+    Args:
+        office_df: The office caseload DataFrame, already loaded.
+
+    Returns:
+        A plain-language string naming the busiest office(s) by
+        cases_per_staff, or a fallback string if the data is empty.
+    """
+    valid = office_df.dropna(subset=["cases_per_staff"])
+    if len(valid) == 0:
+        return "No office currently has both open cases and staff on record to compare."
+
+    ranked = valid.sort_values("cases_per_staff", ascending=False)
+    top = ranked.iloc[0]
+    lines = [f"Right now, {top['office']} has the highest load, "
+             f"{top['cases_per_staff']:.2f} open cases per staff member "
+             f"({int(top['open_cases'])} open cases across "
+             f"{int(top['staff_count'])} staff)."]
+    if len(ranked) > 1:
+        second = ranked.iloc[1]
+        lines.append(f"{second['office']} is next at "
+                      f"{second['cases_per_staff']:.2f} per staff member.")
+    return " ".join(lines)
+
 app = Flask(__name__)
 
 
@@ -270,6 +325,14 @@ def _build_office_caseload_text():
 
     lines = ["--- Office caseload context (bonus, not one of the two required outputs) ---"]
     lines.append(office_df.to_string(index=False))
+    lines.append("")
+    lines.append("What this means:")
+    lines.append(OFFICE_CASELOAD_WHAT_IT_MEANS)
+    lines.append("")
+    lines.append(_build_office_caseload_narrative(office_df))
+    lines.append("")
+    lines.append("What this suggests for the institution:")
+    lines.append(OFFICE_CASELOAD_WHAT_TO_DO)
     return "\n".join(lines)
 
 
@@ -508,6 +571,11 @@ def office_caseload():
                      "accusation against one person.",
         results=_records(df),
         fields=OFFICE_CASELOAD_FIELDS,
+        extra={
+            "what_this_means": OFFICE_CASELOAD_WHAT_IT_MEANS,
+            "right_now": _build_office_caseload_narrative(df),
+            "what_this_suggests_for_the_institution": OFFICE_CASELOAD_WHAT_TO_DO,
+        },
     ))
 
 

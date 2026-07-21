@@ -71,7 +71,7 @@ curl http://127.0.0.1:5000/data-quality-report
 
 Full endpoint reference, including query parameters and error responses, is in `docs/api.md`.
 
-Note: visiting `http://127.0.0.1:5000` alone (the bare root URL) in a browser will show a 404, there is no route registered at `/`, only the specific paths above. That's expected, not a bug, always include a path, e.g. `http://127.0.0.1:5000/health`.
+Note: visiting `http://127.0.0.1:5000` alone (the bare root URL) in a browser shows a plain HTML page, a big "HEIAXIS" title followed by the same summary `pipeline.py` prints to the terminal. That page is meant for a person glancing at a browser; the paths above return JSON and are meant for scripts or `curl`. There's also `http://127.0.0.1:5000/office-caseload/print`, the same style of page but showing only the office caseload table and what it means.
 
 ## What You'll See When You Run It
 
