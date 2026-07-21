@@ -1,0 +1,701 @@
+student_id,program,class_year,enrollment_status
+S0001,Computer Science,Freshman,active
+S0002,Psychology,Senior,active
+S0003,Psychology,Sophomore,active
+S0004,Computer Science,Freshman,active
+S0005,Business,Junior,active
+S0006,Undeclared,Junior,active
+S0007,Engineering,Senior,active
+S0008,Biology,Freshman,active
+S0009,Sociology,Junior,active
+S0010,Engineering,Freshman,active
+S0011,Psychology,Junior,active
+S0012,Sociology,Sophomore,active
+S0013,Biology,Junior,active
+S0014,Sociology,Junior,active
+S0015,Computer Science,Sophomore,active
+S0016,Engineering,Freshman,active
+S0017,Psychology,Sophomore,active
+S0018,Biology,Junior,active
+S0019,Engineering,Sophomore,active
+S0020,Sociology,Freshman,active
+S0021,Business,Junior,active
+S0022,Business,Sophomore,active
+S0023,Undeclared,Junior,active
+S0024,Biology,Senior,active
+S0025,Engineering,Senior,active
+S0026,Psychology,Sophomore,active
+S0027,Undeclared,Junior,active
+S0028,Biology,Senior,active
+S0029,Psychology,Senior,active
+S0030,Business,Freshman,active
+S0031,Psychology,Senior,active
+S0032,Biology,Senior,active
+S0033,Biology,Junior,active
+S0034,Sociology,Freshman,active
+S0035,Business,Junior,active
+S0036,Computer Science,Freshman,active
+S0037,Psychology,Senior,active
+S0038,Engineering,Junior,active
+S0039,Sociology,Sophomore,active
+S0040,Business,Junior,active
+S0041,Undeclared,Sophomore,active
+S0042,Sociology,Sophomore,active
+S0043,Sociology,Freshman,active
+S0044,Biology,Freshman,active
+S0045,Computer Science,Junior,active
+S0046,Psychology,Freshman,active
+S0047,Biology,Freshman,active
+S0048,Undeclared,Sophomore,active
+S0049,Biology,Sophomore,active
+S0050,Sociology,Senior,active
+S0051,Undeclared,Sophomore,active
+S0052,Biology,Junior,active
+S0053,Undeclared,Senior,active
+S0054,Psychology,Freshman,active
+S0055,Undeclared,Sophomore,active
+S0056,Business,Freshman,active
+S0057,Business,Sophomore,active
+S0058,Business,Junior,active
+S0059,Psychology,Junior,active
+S0060,Psychology,Sophomore,active
+S0061,Undeclared,Senior,active
+S0062,Biology,Senior,active
+S0063,Business,Senior,active
+S0064,Biology,Senior,active
+S0065,Business,Freshman,active
+S0066,Engineering,Junior,active
+S0067,Business,Sophomore,active
+S0068,Undeclared,Senior,active
+S0069,Psychology,Junior,active
+S0070,Sociology,Freshman,active
+S0071,Sociology,Freshman,active
+S0072,Undeclared,Freshman,active
+S0073,Sociology,Sophomore,active
+S0074,Biology,Senior,active
+S0075,Biology,Freshman,active
+S0076,Business,Senior,active
+S0077,Sociology,Senior,active
+S0078,Engineering,Senior,active
+S0079,Computer Science,Sophomore,active
+S0080,Undeclared,Freshman,active
+S0081,Business,Freshman,active
+S0082,Undeclared,Sophomore,active
+S0083,Undeclared,Freshman,active
+S0084,Business,Freshman,active
+S0085,Psychology,Senior,active
+S0086,Undeclared,Sophomore,active
+S0087,Business,Freshman,active
+S0088,Undeclared,Junior,active
+S0089,Psychology,Junior,active
+S0090,Biology,Sophomore,active
+S0091,Computer Science,Senior,active
+S0092,Sociology,Freshman,active
+S0093,Undeclared,Freshman,active
+S0094,Psychology,Junior,active
+S0095,Computer Science,Freshman,active
+S0096,Computer Science,Junior,active
+S0097,Sociology,Junior,active
+S0098,Sociology,Freshman,active
+S0099,Undeclared,Junior,active
+S0100,Business,Sophomore,active
+S0101,Business,Sophomore,active
+S0102,Undeclared,Sophomore,active
+S0103,Psychology,Junior,active
+S0104,Computer Science,Freshman,active
+S0105,Biology,Junior,active
+S0106,Computer Science,Sophomore,active
+S0107,Computer Science,Sophomore,active
+S0108,Undeclared,Senior,active
+S0109,Business,Freshman,active
+S0110,Engineering,Sophomore,active
+S0111,Sociology,Junior,active
+S0112,Psychology,Senior,active
+S0113,Computer Science,Junior,active
+S0114,Sociology,Freshman,active
+S0115,Psychology,Sophomore,active
+S0116,Computer Science,Senior,active
+S0117,Engineering,Sophomore,active
+S0118,Psychology,Sophomore,active
+S0119,Sociology,Sophomore,active
+S0120,Business,Sophomore,active
+S0121,Computer Science,Senior,active
+S0122,Sociology,Sophomore,active
+S0123,Sociology,Freshman,active
+S0124,Business,Senior,active
+S0125,Sociology,Senior,active
+S0126,Sociology,Sophomore,active
+S0127,Engineering,Sophomore,active
+S0128,Computer Science,Freshman,active
+S0129,Computer Science,Junior,active
+S0130,Biology,Junior,active
+S0131,Business,Junior,active
+S0132,Computer Science,Freshman,active
+S0133,Biology,Junior,active
+S0134,Computer Science,Senior,active
+S0135,Undeclared,Freshman,active
+S0136,Undeclared,Sophomore,active
+S0137,Engineering,Senior,active
+S0138,Sociology,Sophomore,active
+S0139,Business,Junior,active
+S0140,Engineering,Freshman,active
+S0141,Computer Science,Junior,active
+S0142,Computer Science,Senior,active
+S0143,Undeclared,Sophomore,active
+S0144,Engineering,Senior,active
+S0145,Psychology,Junior,active
+S0146,Sociology,Freshman,active
+S0147,Psychology,Senior,active
+S0148,Undeclared,Junior,active
+S0149,Biology,Sophomore,active
+S0150,Sociology,Sophomore,active
+S0151,Computer Science,Junior,active
+S0152,Sociology,Sophomore,active
+S0153,Psychology,Sophomore,active
+S0154,Business,Sophomore,active
+S0155,Undeclared,Freshman,active
+S0156,Engineering,Sophomore,active
+S0157,Biology,Senior,active
+S0158,Psychology,Freshman,active
+S0159,Sociology,Freshman,active
+S0160,Psychology,Sophomore,active
+S0161,Engineering,Senior,active
+S0162,Psychology,Freshman,active
+S0163,Sociology,Senior,active
+S0164,Undeclared,Junior,active
+S0165,Biology,Senior,active
+S0166,Undeclared,Senior,active
+S0167,Engineering,Senior,active
+S0168,Sociology,Sophomore,active
+S0169,Computer Science,Senior,active
+S0170,Computer Science,Senior,active
+S0171,Computer Science,Sophomore,active
+S0172,Computer Science,Freshman,active
+S0173,Psychology,Senior,active
+S0174,Engineering,Sophomore,active
+S0175,Biology,Junior,active
+S0176,Biology,Freshman,active
+S0177,Biology,Senior,active
+S0178,Undeclared,Freshman,active
+S0179,Sociology,Senior,active
+S0180,Computer Science,Junior,active
+S0181,Sociology,Senior,active
+S0182,Engineering,Sophomore,active
+S0183,Computer Science,Senior,active
+S0184,Biology,Junior,active
+S0185,Sociology,Senior,active
+S0186,Sociology,Senior,active
+S0187,Undeclared,Freshman,active
+S0188,Undeclared,Freshman,active
+S0189,Biology,Sophomore,active
+S0190,Psychology,Freshman,active
+S0191,Computer Science,Sophomore,active
+S0192,Computer Science,Senior,active
+S0193,Sociology,Senior,active
+S0194,Business,Senior,active
+S0195,Undeclared,Freshman,active
+S0196,Computer Science,Sophomore,active
+S0197,Sociology,Freshman,active
+S0198,Psychology,Sophomore,active
+S0199,Undeclared,Sophomore,active
+S0200,Biology,Freshman,active
+S0201,Psychology,Senior,active
+S0202,Sociology,Junior,active
+S0203,Undeclared,Freshman,active
+S0204,Psychology,Junior,active
+S0205,Business,Junior,active
+S0206,Biology,Senior,active
+S0207,Psychology,Freshman,active
+S0208,Sociology,Sophomore,active
+S0209,Sociology,Junior,active
+S0210,Undeclared,Freshman,active
+S0211,Undeclared,Freshman,active
+S0212,Biology,Junior,active
+S0213,Engineering,Junior,active
+S0214,Biology,Senior,active
+S0215,Computer Science,Senior,active
+S0216,Biology,Sophomore,active
+S0217,Engineering,Junior,active
+S0218,Undeclared,Senior,active
+S0219,Sociology,Junior,active
+S0220,Psychology,Freshman,active
+S0221,Biology,Sophomore,active
+S0222,Undeclared,Senior,active
+S0223,Biology,Junior,active
+S0224,Psychology,Junior,active
+S0225,Computer Science,Junior,active
+S0226,Engineering,Junior,active
+S0227,Undeclared,Sophomore,active
+S0228,Engineering,Senior,active
+S0229,Sociology,Sophomore,active
+S0230,Engineering,Senior,active
+S0231,Business,Freshman,active
+S0232,Biology,Sophomore,active
+S0233,Undeclared,Junior,active
+S0234,Undeclared,Junior,active
+S0235,Engineering,Junior,active
+S0236,Biology,Junior,active
+S0237,Psychology,Freshman,active
+S0238,Computer Science,Freshman,active
+S0239,Sociology,Sophomore,active
+S0240,Engineering,Senior,active
+S0241,Undeclared,Junior,active
+S0242,Sociology,Sophomore,active
+S0243,Computer Science,Sophomore,active
+S0244,Engineering,Sophomore,active
+S0245,Business,Junior,active
+S0246,Psychology,Senior,active
+S0247,Business,Junior,active
+S0248,Biology,Junior,active
+S0249,Business,Junior,active
+S0250,Biology,Freshman,active
+S0251,Biology,Senior,active
+S0252,Engineering,Freshman,active
+S0253,Sociology,Junior,active
+S0254,Psychology,Freshman,active
+S0255,Biology,Sophomore,active
+S0256,Biology,Senior,active
+S0257,Computer Science,Senior,active
+S0258,Undeclared,Freshman,active
+S0259,Engineering,Freshman,active
+S0260,Psychology,Sophomore,active
+S0261,Business,Sophomore,active
+S0262,Undeclared,Freshman,active
+S0263,Biology,Senior,active
+S0264,Biology,Junior,active
+S0265,Computer Science,Junior,active
+S0266,Biology,Freshman,active
+S0267,Computer Science,Sophomore,active
+S0268,Undeclared,Sophomore,active
+S0269,Computer Science,Sophomore,active
+S0270,Psychology,Junior,active
+S0271,Sociology,Junior,active
+S0272,Biology,Junior,active
+S0273,Computer Science,Senior,active
+S0274,Undeclared,Freshman,active
+S0275,Engineering,Junior,active
+S0276,Business,Freshman,active
+S0277,Engineering,Freshman,active
+S0278,Engineering,Junior,active
+S0279,Sociology,Sophomore,active
+S0280,Engineering,Senior,active
+S0281,Psychology,Senior,active
+S0282,Biology,Freshman,active
+S0283,Biology,Junior,active
+S0284,Business,Sophomore,active
+S0285,Engineering,Senior,active
+S0286,Biology,Freshman,active
+S0287,Computer Science,Junior,active
+S0288,Sociology,Senior,active
+S0289,Sociology,Freshman,active
+S0290,Undeclared,Senior,active
+S0291,Psychology,Junior,active
+S0292,Biology,Senior,active
+S0293,Psychology,Junior,active
+S0294,Computer Science,Senior,active
+S0295,Biology,Freshman,active
+S0296,Engineering,Sophomore,active
+S0297,Computer Science,Freshman,active
+S0298,Business,Sophomore,active
+S0299,Business,Senior,active
+S0300,Engineering,Sophomore,active
+S0301,Engineering,Junior,active
+S0302,Computer Science,Senior,active
+S0303,Biology,Sophomore,active
+S0304,Psychology,Senior,active
+S0305,Undeclared,Sophomore,active
+S0306,Computer Science,Senior,active
+S0307,Sociology,Junior,active
+S0308,Computer Science,Junior,active
+S0309,Undeclared,Senior,active
+S0310,Biology,Senior,active
+S0311,Undeclared,Senior,active
+S0312,Computer Science,Sophomore,active
+S0313,Psychology,Senior,active
+S0314,Sociology,Senior,active
+S0315,Engineering,Senior,active
+S0316,Sociology,Senior,active
+S0317,Engineering,Sophomore,active
+S0318,Business,Sophomore,active
+S0319,Undeclared,Junior,active
+S0320,Sociology,Senior,active
+S0321,Biology,Freshman,active
+S0322,Biology,Sophomore,active
+S0323,Sociology,Junior,active
+S0324,Engineering,Senior,active
+S0325,Sociology,Junior,active
+S0326,Sociology,Senior,active
+S0327,Engineering,Senior,active
+S0328,Business,Freshman,active
+S0329,Engineering,Junior,active
+S0330,Engineering,Freshman,active
+S0331,Business,Freshman,active
+S0332,Engineering,Junior,active
+S0333,Business,Junior,active
+S0334,Computer Science,Junior,active
+S0335,Psychology,Sophomore,active
+S0336,Undeclared,Sophomore,active
+S0337,Business,Senior,active
+S0338,Psychology,Senior,active
+S0339,Psychology,Sophomore,active
+S0340,Computer Science,Senior,active
+S0341,Business,Senior,active
+S0342,Engineering,Sophomore,active
+S0343,Computer Science,Junior,active
+S0344,Biology,Junior,active
+S0345,Computer Science,Sophomore,active
+S0346,Sociology,Senior,active
+S0347,Biology,Junior,active
+S0348,Engineering,Junior,active
+S0349,Sociology,Senior,active
+S0350,Undeclared,Freshman,active
+S0351,Engineering,Senior,active
+S0352,Computer Science,Sophomore,active
+S0353,Computer Science,Sophomore,active
+S0354,Undeclared,Junior,active
+S0355,Engineering,Sophomore,active
+S0356,Engineering,Freshman,active
+S0357,Biology,Freshman,active
+S0358,Engineering,Sophomore,active
+S0359,Computer Science,Junior,active
+S0360,Psychology,Sophomore,active
+S0361,Undeclared,Junior,active
+S0362,Computer Science,Sophomore,active
+S0363,Sociology,Senior,active
+S0364,Computer Science,Junior,active
+S0365,Biology,Freshman,active
+S0366,Psychology,Senior,active
+S0367,Sociology,Junior,active
+S0368,Biology,Freshman,active
+S0369,Business,Senior,active
+S0370,Engineering,Junior,active
+S0371,Sociology,Junior,active
+S0372,Psychology,Senior,active
+S0373,Undeclared,Junior,active
+S0374,Psychology,Freshman,active
+S0375,Biology,Junior,active
+S0376,Business,Sophomore,active
+S0377,Business,Junior,active
+S0378,Business,Freshman,active
+S0379,Undeclared,Sophomore,active
+S0380,Computer Science,Senior,active
+S0381,Engineering,Sophomore,active
+S0382,Engineering,Freshman,active
+S0383,Undeclared,Senior,active
+S0384,Computer Science,Freshman,active
+S0385,Psychology,Senior,active
+S0386,Psychology,Junior,active
+S0387,Engineering,Junior,active
+S0388,Engineering,Junior,active
+S0389,Computer Science,Sophomore,active
+S0390,Sociology,Senior,active
+S0391,Psychology,Freshman,active
+S0392,Computer Science,Sophomore,active
+S0393,Sociology,Sophomore,active
+S0394,Sociology,Sophomore,active
+S0395,Sociology,Sophomore,active
+S0396,Psychology,Freshman,active
+S0397,Psychology,Sophomore,active
+S0398,Sociology,Sophomore,active
+S0399,Sociology,Freshman,active
+S0400,Computer Science,Sophomore,active
+S0401,Business,Sophomore,active
+S0402,Psychology,Senior,active
+S0403,Engineering,Freshman,active
+S0404,Sociology,Junior,active
+S0405,Business,Senior,active
+S0406,Undeclared,Freshman,active
+S0407,Sociology,Junior,active
+S0408,Business,Freshman,active
+S0409,Sociology,Senior,active
+S0410,Business,Senior,active
+S0411,Biology,Freshman,active
+S0412,Computer Science,Sophomore,active
+S0413,Computer Science,Junior,active
+S0414,Undeclared,Junior,active
+S0415,Undeclared,Senior,active
+S0416,Engineering,Freshman,active
+S0417,Engineering,Sophomore,active
+S0418,Psychology,Senior,active
+S0419,Biology,Senior,active
+S0420,Business,Junior,active
+S0421,Engineering,Junior,active
+S0422,Psychology,Senior,active
+S0423,Sociology,Freshman,active
+S0424,Business,Junior,active
+S0425,Undeclared,Freshman,active
+S0426,Undeclared,Junior,active
+S0427,Biology,Junior,active
+S0428,Sociology,Senior,active
+S0429,Engineering,Freshman,active
+S0430,Undeclared,Junior,active
+S0431,Undeclared,Sophomore,active
+S0432,Biology,Sophomore,active
+S0433,Computer Science,Junior,active
+S0434,Computer Science,Sophomore,active
+S0435,Sociology,Freshman,active
+S0436,Engineering,Junior,active
+S0437,Computer Science,Junior,active
+S0438,Computer Science,Freshman,active
+S0439,Psychology,Senior,active
+S0440,Engineering,Freshman,active
+S0441,Undeclared,Sophomore,active
+S0442,Biology,Junior,active
+S0443,Computer Science,Junior,active
+S0444,Undeclared,Freshman,active
+S0445,Psychology,Sophomore,active
+S0446,Business,Freshman,active
+S0447,Engineering,Senior,active
+S0448,Biology,Senior,active
+S0449,Sociology,Freshman,active
+S0450,Business,Junior,active
+S0451,Undeclared,Senior,active
+S0452,Computer Science,Freshman,active
+S0453,Undeclared,Freshman,active
+S0454,Computer Science,Sophomore,active
+S0455,Sociology,Junior,active
+S0456,Business,Freshman,active
+S0457,Biology,Sophomore,active
+S0458,Undeclared,Sophomore,active
+S0459,Sociology,Junior,active
+S0460,Sociology,Freshman,active
+S0461,Biology,Freshman,active
+S0462,Undeclared,Senior,active
+S0463,Engineering,Senior,active
+S0464,Biology,Freshman,active
+S0465,Psychology,Senior,active
+S0466,Computer Science,Freshman,active
+S0467,Business,Sophomore,active
+S0468,Biology,Freshman,active
+S0469,Computer Science,Junior,active
+S0470,Sociology,Sophomore,active
+S0471,Engineering,Freshman,active
+S0472,Psychology,Junior,active
+S0473,Sociology,Sophomore,active
+S0474,Psychology,Junior,active
+S0475,Undeclared,Sophomore,active
+S0476,Engineering,Freshman,active
+S0477,Sociology,Senior,active
+S0478,Undeclared,Senior,active
+S0479,Undeclared,Junior,active
+S0480,Engineering,Junior,active
+S0481,Business,Senior,active
+S0482,Computer Science,Junior,active
+S0483,Computer Science,Freshman,active
+S0484,Biology,Freshman,active
+S0485,Sociology,Junior,active
+S0486,Sociology,Freshman,active
+S0487,Undeclared,Senior,active
+S0488,Undeclared,Freshman,active
+S0489,Sociology,Sophomore,active
+S0490,Biology,Sophomore,active
+S0491,Biology,Freshman,active
+S0492,Sociology,Junior,active
+S0493,Business,Sophomore,active
+S0494,Engineering,Senior,active
+S0495,Undeclared,Sophomore,active
+S0496,Computer Science,Senior,active
+S0497,Computer Science,Freshman,active
+S0498,Engineering,Junior,active
+S0499,Business,Senior,active
+S0500,Engineering,Sophomore,active
+S0501,Undeclared,Sophomore,active
+S0502,Computer Science,Senior,active
+S0503,Engineering,Freshman,active
+S0504,Biology,Junior,active
+S0505,Engineering,Freshman,active
+S0506,Biology,Junior,active
+S0507,Computer Science,Sophomore,active
+S0508,Computer Science,Senior,active
+S0509,Psychology,Sophomore,active
+S0510,Sociology,Freshman,active
+S0511,Undeclared,Freshman,active
+S0512,Sociology,Sophomore,active
+S0513,Psychology,Sophomore,active
+S0514,Engineering,Sophomore,active
+S0515,Business,Senior,active
+S0516,Engineering,Sophomore,active
+S0517,Undeclared,Junior,active
+S0518,Sociology,Senior,active
+S0519,Psychology,Junior,active
+S0520,Sociology,Senior,active
+S0521,Psychology,Junior,active
+S0522,Undeclared,Senior,active
+S0523,Computer Science,Senior,active
+S0524,Biology,Sophomore,active
+S0525,Sociology,Sophomore,active
+S0526,Business,Senior,active
+S0527,Undeclared,Freshman,active
+S0528,Undeclared,Freshman,active
+S0529,Sociology,Sophomore,active
+S0530,Undeclared,Sophomore,active
+S0531,Business,Sophomore,active
+S0532,Computer Science,Freshman,active
+S0533,Biology,Junior,active
+S0534,Business,Junior,active
+S0535,Computer Science,Freshman,active
+S0536,Engineering,Junior,active
+S0537,Psychology,Freshman,active
+S0538,Sociology,Senior,active
+S0539,Psychology,Senior,active
+S0540,Business,Freshman,active
+S0541,Psychology,Sophomore,active
+S0542,Engineering,Senior,active
+S0543,Computer Science,Sophomore,active
+S0544,Business,Sophomore,active
+S0545,Sociology,Senior,active
+S0546,Sociology,Senior,active
+S0547,Business,Sophomore,active
+S0548,Computer Science,Senior,active
+S0549,Computer Science,Sophomore,active
+S0550,Psychology,Freshman,active
+S0551,Computer Science,Freshman,active
+S0552,Undeclared,Freshman,active
+S0553,Biology,Freshman,active
+S0554,Computer Science,Junior,active
+S0555,Computer Science,Freshman,active
+S0556,Engineering,Freshman,active
+S0557,Engineering,Junior,active
+S0558,Computer Science,Junior,active
+S0559,Psychology,Senior,active
+S0560,Biology,Sophomore,active
+S0561,Business,Senior,active
+S0562,Psychology,Freshman,active
+S0563,Business,Junior,active
+S0564,Undeclared,Senior,active
+S0565,Undeclared,Senior,active
+S0566,Sociology,Sophomore,active
+S0567,Sociology,Freshman,active
+S0568,Computer Science,Junior,active
+S0569,Computer Science,Senior,active
+S0570,Engineering,Senior,active
+S0571,Biology,Junior,active
+S0572,Biology,Senior,active
+S0573,Sociology,Junior,active
+S0574,Engineering,Senior,active
+S0575,Undeclared,Sophomore,active
+S0576,Computer Science,Freshman,active
+S0577,Engineering,Junior,active
+S0578,Undeclared,Senior,active
+S0579,Biology,Junior,active
+S0580,Engineering,Junior,active
+S0581,Biology,Junior,active
+S0582,Sociology,Freshman,active
+S0583,Engineering,Senior,active
+S0584,Sociology,Sophomore,active
+S0585,Psychology,Senior,active
+S0586,Business,Sophomore,active
+S0587,Computer Science,Junior,active
+S0588,Undeclared,Freshman,active
+S0589,Engineering,Senior,active
+S0590,Computer Science,Senior,active
+S0591,Undeclared,Sophomore,active
+S0592,Biology,Junior,active
+S0593,Psychology,Freshman,active
+S0594,Psychology,Senior,active
+S0595,Undeclared,Freshman,active
+S0596,Computer Science,Senior,active
+S0597,Undeclared,Junior,active
+S0598,Biology,Sophomore,active
+S0599,Sociology,Freshman,active
+S0600,Engineering,Senior,active
+S0601,Sociology,Junior,active
+S0602,Engineering,Freshman,active
+S0603,Computer Science,Junior,active
+S0604,Engineering,Sophomore,active
+S0605,Undeclared,Sophomore,active
+S0606,Psychology,Sophomore,active
+S0607,Biology,Freshman,active
+S0608,Undeclared,Junior,active
+S0609,Undeclared,Sophomore,active
+S0610,Business,Freshman,active
+S0611,Engineering,Senior,active
+S0612,Sociology,Senior,active
+S0613,Business,Sophomore,active
+S0614,Engineering,Freshman,active
+S0615,Engineering,Junior,active
+S0616,Sociology,Sophomore,active
+S0617,Psychology,Senior,active
+S0618,Sociology,Freshman,active
+S0619,Undeclared,Sophomore,active
+S0620,Psychology,Junior,active
+S0621,Psychology,Junior,active
+S0622,Undeclared,Junior,active
+S0623,Computer Science,Sophomore,active
+S0624,Undeclared,Junior,active
+S0625,Computer Science,Freshman,active
+S0626,Psychology,Sophomore,active
+S0627,Undeclared,Junior,active
+S0628,Undeclared,Freshman,active
+S0629,Business,Freshman,active
+S0630,Engineering,Junior,active
+S0631,Sociology,Senior,active
+S0632,Business,Senior,active
+S0633,Undeclared,Junior,active
+S0634,Computer Science,Senior,active
+S0635,Sociology,Senior,active
+S0636,Business,Freshman,active
+S0637,Biology,Senior,active
+S0638,Computer Science,Sophomore,active
+S0639,Engineering,Junior,active
+S0640,Sociology,Junior,active
+S0641,Psychology,Junior,active
+S0642,Business,Junior,active
+S0643,Business,Junior,active
+S0644,Psychology,Freshman,active
+S0645,Biology,Senior,active
+S0646,Sociology,Sophomore,active
+S0647,Undeclared,Junior,active
+S0648,Psychology,Senior,active
+S0649,Biology,Senior,active
+S0650,Biology,Freshman,active
+S0651,Biology,Senior,active
+S0652,Psychology,Junior,active
+S0653,Computer Science,Senior,active
+S0654,Sociology,Senior,active
+S0655,Business,Freshman,active
+S0656,Computer Science,Junior,active
+S0657,Computer Science,Freshman,active
+S0658,Undeclared,Sophomore,active
+S0659,Computer Science,Freshman,active
+S0660,Biology,Junior,active
+S0661,Undeclared,Freshman,active
+S0662,Business,Senior,active
+S0663,Computer Science,Junior,active
+S0664,Psychology,Senior,active
+S0665,Business,Freshman,active
+S0666,Computer Science,Senior,active
+S0667,Psychology,Sophomore,active
+S0668,Undeclared,Junior,active
+S0669,Undeclared,Junior,active
+S0670,Undeclared,Senior,active
+S0671,Computer Science,Senior,active
+S0672,Computer Science,Junior,active
+S0673,Biology,Junior,active
+S0674,Engineering,Freshman,active
+S0675,Computer Science,Sophomore,active
+S0676,Undeclared,Senior,active
+S0677,Engineering,Senior,active
+S0678,Engineering,Sophomore,active
+S0679,Engineering,Freshman,active
+S0680,Biology,Junior,active
+S0681,Biology,Sophomore,active
+S0682,Sociology,Senior,active
+S0683,Engineering,Freshman,active
+S0684,Undeclared,Sophomore,active
+S0685,Engineering,Senior,active
+S0686,Computer Science,Sophomore,active
+S0687,Undeclared,Junior,active
+S0688,Engineering,Junior,active
+S0689,Psychology,Sophomore,active
+S0690,Computer Science,Sophomore,active
+S0691,Computer Science,Junior,active
+S0692,Engineering,Senior,active
+S0693,Computer Science,Junior,active
+S0694,Undeclared,Senior,active
+S0695,Biology,Junior,active
+S0696,Sociology,Sophomore,active
+S0697,Computer Science,Freshman,active
+S0698,Biology,Junior,active
+S0699,Psychology,Sophomore,active
+S0700,Computer Science,Junior,active

@@ -1,0 +1,10 @@
+engagement.attendance_over_1_capped_to_1: 38
+engagement.negative_logins_treated_as_missing: 22
+engagement.rows_dropped_unknown_student: 0
+belonging.marked_submitted_but_score_missing: 0
+belonging.rows_dropped_unknown_student: 0
+care.office_names_normalized: 399
+care.duplicate_rows_removed: 8
+care.rows_dropped_unknown_student: 0
+care.handoff_owner_not_in_staff_roster: 0
+outcomes.rows_dropped_unknown_student: 0
