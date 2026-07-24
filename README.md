@@ -12,7 +12,7 @@ The reasoning behind every major decision, what's included, what's deliberately 
 heiaxis-sprint/
 ├── README.md
 ├── requirements.txt      the three dependencies: pandas, numpy, flask
-├── data/                 synthetic dataset (7 CSV tables)
+├── data/                 synthetic dataset (10 CSV tables, see below)
 ├── src/
 │   ├── generate_data.py  synthetic data generator
 │   ├── cleaning.py       load, clean, validate
@@ -32,8 +32,12 @@ heiaxis-sprint/
     ├── evaluation_logic.md
     ├── testing_strategy.md
     ├── architecture.md
-    └── api.md
+    ├── api.md
+    ├── baseline_audit_planning_note.md
+    └── baseline_audit_data_model.md
 ```
+
+The `data/` folder holds the original seven Early Signal Intelligence tables (students, staff, engagement, belonging, care interactions, weekly outcome, academic calendar) plus three Baseline Audit tables added in Week 1 of the current sprint phase: `departments.csv`, `service_interactions.csv`, and `action_plans.csv`. See `docs/baseline_audit_data_model.md` for how the two sets of tables relate to each other.
 
 ## Running the Prototype
 
@@ -57,7 +61,11 @@ python src/api.py                    # optional, serves output/ as JSON, see doc
 
 ### Trying the API
 
-`python src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000` (flask is installed as part of `pip install -r requirements.txt` above). It only reads whatever is already in `output/`, so run `python src/pipeline.py` at least once first. Once it's running:
+`python src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000` (flask is installed as part of `pip install -r requirements.txt` above). It only reads whatever is already in `output/`, so run `python src/pipeline.py` at least once first.
+
+The easiest way to explore it: open `http://127.0.0.1:5000` in a browser. The front page explains the project in a few sentences and lists a button for every other route, with a one-line description of what each one shows, so there's no need to memorize paths or type `curl` commands to look around.
+
+For scripting, every route also works directly, and the JSON ones are meant for exactly that:
 
 ```bash
 curl http://127.0.0.1:5000/health
@@ -71,8 +79,6 @@ curl http://127.0.0.1:5000/data-quality-report
 
 Full endpoint reference, including query parameters and error responses, is in `docs/api.md`.
 
-Note: visiting `http://127.0.0.1:5000` alone (the bare root URL) in a browser shows a plain HTML page, a big "HEIAXIS" title followed by the same summary `pipeline.py` prints to the terminal. That page is meant for a person glancing at a browser; the paths above return JSON and are meant for scripts or `curl`. There's also `http://127.0.0.1:5000/office-caseload/print`, the same style of page but showing only the office caseload table and what it means.
-
 ## What You'll See When You Run It
 
 `python src/pipeline.py` prints a data-quality report first (what was capped, nulled, deduplicated, or dropped during cleaning, and why), followed by a preview of both required outputs and a bonus one, then writes four files to `output/`:
@@ -83,6 +89,12 @@ Note: visiting `http://127.0.0.1:5000` alone (the bare root URL) in a browser sh
 - **`data_quality_report.txt`**: the same cleaning summary printed to the console, saved for reference.
 
 Every row on both required outputs carries its own explanation and confidence level rather than a bare flag, so a reviewer can see why a student or a case was surfaced without opening the code. This is only possible because no machine learning or AI sits behind these outputs: each `reason` string is a direct readout of the exact fields and thresholds that triggered it, not an approximation of what a model was picking up on. A fitted model could likely rank risk more precisely, but its output would be a score to interpret rather than a reason to check, and given that a wrong flag here reaches a human who may act on it, being able to fully justify every single row mattered more than squeezing out extra accuracy.
+
+## Baseline Audit Sprint (In Progress)
+
+This repository is now also the basis for a second, follow-on evaluation: extending Early Signal Intelligence into a "Baseline Audit" that looks at institutional workflow health more broadly, department bottlenecks, action-plan follow-through, and continuity gaps across a richer schema, rather than only the original two outputs. It continues from this same codebase rather than starting a new one, per that sprint's own instructions.
+
+Week 1 so far: `generate_data.py` and `cleaning.py` have been extended with three new tables (`departments.csv`, `service_interactions.csv`, `action_plans.csv`) and their validation, additive only, the original five tables and both Early Signal Intelligence outputs are unaffected and still reproduce their exact seed-42 baseline. The four Week 1 analysis outputs (department bottleneck summary, broadened continuity gaps, action-plan summary, student review list) and their tests are still in progress. `docs/baseline_audit_planning_note.md` and `docs/baseline_audit_data_model.md` cover the planning and schema reasoning behind this phase.
 
 ## Current Scope and What I'd Add Next
 
@@ -101,3 +113,5 @@ One thing I'd still want to add given more time: a lightweight, still-explainabl
 - **`docs/testing_strategy.md`**: why the tests exist and what they actually protect, the two-tier test plan, and what real bugs the edge-case tests already caught.
 - **`docs/architecture.md`**: how this fits into a real HEIAXIS system end to end, stage by stage, with the options and scaling path considered at each one.
 - **`docs/api.md`**: the read-only JSON API in front of the pipeline's output, framework choice, scope, and the endpoint reference.
+- **`docs/baseline_audit_planning_note.md`**: the one-page plan submitted before writing any Baseline Audit code, scope, time allocation, technical choices, and risks.
+- **`docs/baseline_audit_data_model.md`**: how the Baseline Audit tables relate to the original schema, and how workflow, case, referral, handoff, interaction, assignment, and signal are distinguished.
