@@ -1,0 +1,6 @@
+department,open_cases,avg_days_to_close,median_days_to_close,overdue_cases,unresolved_referrals,staff_count,cases_per_staff
+Dean of Students,46,11.0,11.0,24,17,2,23.0
+Financial Aid,44,11.1,11.0,23,21,3,14.67
+Residential Life,35,10.9,10.0,24,13,3,11.67
+Counseling,46,9.5,8.0,23,23,4,11.5
+Academic Advising,48,10.3,10.0,25,20,6,8.0

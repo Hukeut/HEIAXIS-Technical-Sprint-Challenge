@@ -1,27 +1,3 @@
-"""
-Self-consistency check -- NOT real-world validation.
-
-I generated this synthetic data AND built the detection logic, so any
-agreement between them is partly circular: I know what pattern I told
-the generator to produce, which makes it easy to unconsciously build
-detection logic that finds exactly that pattern. This script exists to
-be transparent about that, not to claim the detectors "work."
-
-What this actually checks: does the (independently designed) detection
-logic recover something resembling the archetypes I seeded into the
-data, using a ground-truth file (data/_ground_truth_archetypes.csv)
-that a real prototype would never have access to.
-
-See docs/evaluation_logic.md for how this differs from real validation,
-and what would be needed to validate this against real institutional
-data and real human-reviewer judgment.
-
-In short: this script compares the detectors' output against the
-generator's hidden archetypes, explicitly documented as circular and
-non-validating, since the detectors and generator were built with the
-same intent in mind, agreement between them can never prove real-world
-usefulness, only that the logic isn't obviously broken.
-"""
 import os
 import sys
 import pandas as pd

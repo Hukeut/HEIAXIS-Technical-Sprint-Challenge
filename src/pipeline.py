@@ -1,16 +1,3 @@
-"""
-HEIAXIS Early Signal Intelligence -- prototype pipeline entry point.
-
-Run:
-    python3 src/pipeline.py
-
-Loads the synthetic dataset from ../data, cleans and validates it,
-builds features, runs both detectors, and writes ranked outputs to
-../output/. Prints a data-quality report and a summary to the console.
-
-In short: this is the single entry point that ties every other module
-together, load, clean, engineer, detect, write, print, in that order.
-"""
 import os
 import sys
 import pandas as pd
@@ -18,7 +5,11 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(__file__))
 from cleaning import load_raw, clean_all
 from features import build_student_features
-from signals import build_student_flags, build_continuity_gaps, build_office_caseload_summary
+from signals import (
+    build_student_flags, build_continuity_gaps, build_office_caseload_summary,
+    build_department_bottleneck_summary, build_baseline_continuity_gaps,
+    build_action_plan_summary, build_student_review_list,
+)
 
 HERE = os.path.dirname(__file__)
 DATA_DIR = os.path.join(HERE, "..", "data")
@@ -48,6 +39,18 @@ def main():
     continuity_gaps.to_csv(os.path.join(OUTPUT_DIR, "continuity_gaps.csv"), index=False)
     office_summary.to_csv(os.path.join(OUTPUT_DIR, "office_caseload_summary.csv"), index=False)
 
+    dept_bottleneck = build_department_bottleneck_summary(
+        cleaned["service_interactions"], cleaned["departments"])
+    baseline_gaps = build_baseline_continuity_gaps(
+        cleaned["service_interactions"], cleaned["action_plans"], dept_bottleneck)
+    action_plan_summary = build_action_plan_summary(cleaned["action_plans"])
+    student_review_list = build_student_review_list(baseline_gaps)
+
+    dept_bottleneck.to_csv(os.path.join(OUTPUT_DIR, "department_bottleneck_summary.csv"), index=False)
+    baseline_gaps.to_csv(os.path.join(OUTPUT_DIR, "baseline_continuity_gaps.csv"), index=False)
+    action_plan_summary.to_csv(os.path.join(OUTPUT_DIR, "action_plan_summary.csv"), index=False)
+    student_review_list.to_csv(os.path.join(OUTPUT_DIR, "student_review_list.csv"), index=False)
+
     with open(os.path.join(OUTPUT_DIR, "data_quality_report.txt"), "w") as f:
         for k, v in report.items():
             f.write(f"{k}: {v}\n")
@@ -68,6 +71,28 @@ def main():
 
     print("\n--- Office caseload context (bonus, not one of the two required outputs) ---")
     print(office_summary.to_string(index=False))
+
+    print("\n" + "=" * 70)
+    print("Baseline Audit (Week 1) -- same run, extended schema")
+    print("=" * 70)
+
+    print("\n--- Department bottleneck summary ---")
+    print(dept_bottleneck.to_string(index=False))
+
+    print(f"\n--- Continuity gaps, broadened ({len(baseline_gaps)} found) ---")
+    if len(baseline_gaps):
+        print(baseline_gaps["gap_type"].value_counts().to_string())
+        print()
+        print(baseline_gaps.head(10)[["gap_type", "student_id", "department", "confidence",
+                                        "priority", "days_elapsed"]].to_string(index=False))
+
+    print("\n--- Action-plan summary ---")
+    print(action_plan_summary.to_string(index=False))
+
+    print(f"\n--- Student review list ({len(student_review_list)} students) ---")
+    if len(student_review_list):
+        print(student_review_list.head(10)[["student_id", "departments_involved",
+                                              "leading_issue", "confidence", "priority"]].to_string(index=False))
 
     print(f"\nWrote outputs to {os.path.abspath(OUTPUT_DIR)}/")
 

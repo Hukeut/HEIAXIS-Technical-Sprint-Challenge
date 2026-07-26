@@ -110,9 +110,23 @@ def test_data_quality_report_counts_match_actual_changes():
 
 def test_data_quality_report_has_no_unexpectedly_dropped_rows():
     _, report, _ = _setup()
+    # The original five Early Signal Intelligence tables never contain a
+    # genuinely unknown student_id by construction, generate_data.py never
+    # injects one there. A nonzero count here would mean cleaning.py's
+    # foreign-key check is firing on good data, a real bug.
+    original_tables = ("engagement.", "belonging.", "care.", "outcomes.")
     for key, value in report.items():
-        if key.endswith("_dropped_unknown_student"):
+        if key.endswith("_dropped_unknown_student") and key.startswith(original_tables):
             assert value == 0, f"unexpected orphaned rows: {key} = {value}"
+
+    # service_interactions.csv is the opposite case: it deliberately
+    # injects a handful of unknown student_id rows as part of its
+    # required messiness (see docs/baseline_audit_data_model.md). This
+    # confirms cleaning.py actually catches and reports them rather than
+    # silently missing the deliberate messiness.
+    assert report["service_interactions.rows_dropped_unknown_student"] > 0, \
+        "expected the deliberately injected unknown-student rows in " \
+        "service_interactions.csv to be caught and reported"
 
 
 def test_normalize_office_handles_all_known_variants():

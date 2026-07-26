@@ -1,21 +1,3 @@
-"""
-Cleaning & validation for the HEIAXIS Early Signal Intelligence prototype.
-
-Loads the raw synthetic CSVs and returns cleaned DataFrames plus a
-data-quality report (dict of counts) describing what was found and how
-it was handled. Nothing is silently dropped or altered without being
-counted in the report -- the report is printed by pipeline.py and is
-part of the "clean and validate" requirement, not an afterthought.
-
-In short: this module is where every deliberate imperfection injected
-by generate_data.py gets caught and accounted for. Out-of-range
-attendance values are capped rather than left as garbage. Negative
-login counts become missing, not silently zeroed, since a negative
-reading is a bad ETL value, not evidence of zero activity. Office
-names are canonicalized through a lookup table. Duplicate care
-interaction rows are dropped. Every one of these actions is counted in
-the report this module returns, nothing is silently altered.
-"""
 import os
 import pandas as pd
 import numpy as np
@@ -43,6 +25,19 @@ def normalize_office(raw):
     return CANONICAL_OFFICES.get(key, str(raw).strip())
 
 
+def normalize_department(raw):
+    if pd.isna(raw):
+        return "Unknown"
+    key = str(raw).strip().lower()
+    return CANONICAL_OFFICES.get(key, "Unknown")
+
+
+def normalize_status(raw):
+    if pd.isna(raw):
+        return "Unknown"
+    return str(raw).strip().lower()
+
+
 def load_raw(data_dir):
     return dict(
         students=pd.read_csv(os.path.join(data_dir, "students.csv")),
@@ -52,6 +47,9 @@ def load_raw(data_dir):
         care=pd.read_csv(os.path.join(data_dir, "care_interactions.csv")),
         outcomes=pd.read_csv(os.path.join(data_dir, "weekly_outcome.csv")),
         calendar=pd.read_csv(os.path.join(data_dir, "academic_calendar.csv")),
+        departments=pd.read_csv(os.path.join(data_dir, "departments.csv")),
+        service_interactions=pd.read_csv(os.path.join(data_dir, "service_interactions.csv")),
+        action_plans=pd.read_csv(os.path.join(data_dir, "action_plans.csv")),
     )
 
 
@@ -115,6 +113,68 @@ def clean_all(raw):
     report["outcomes.rows_dropped_unknown_student"] = int(unknown.sum())
     outcomes = outcomes[~unknown].reset_index(drop=True)
 
+    departments = raw["departments"].copy()
+
+    si = raw["service_interactions"].copy()
+
+    si["department_raw"] = si["department"]
+    si["department"] = si["department"].apply(normalize_department)
+    report["service_interactions.department_names_normalized"] = int(
+        (si["department_raw"] != si["department"]).sum())
+    report["service_interactions.rows_with_unrecognized_department"] = int(
+        (si["department"] == "Unknown").sum())
+
+    si["status_raw"] = si["status"]
+    si["status"] = si["status"].apply(normalize_status)
+    report["service_interactions.status_values_normalized"] = int(
+        (si["status_raw"] != si["status"]).sum())
+
+    before = len(si)
+    dedupe_cols = ["workflow_id", "student_id", "date_opened", "department",
+                   "interaction_type", "status"]
+    si = si.drop_duplicates(subset=dedupe_cols, keep="first")
+    report["service_interactions.duplicate_rows_removed"] = before - len(si)
+
+    si["assigned_owner"] = si["assigned_owner"].fillna("").astype(str).str.strip()
+    report["service_interactions.rows_missing_owner"] = int((si["assigned_owner"] == "").sum())
+
+    unknown_owner = (si["assigned_owner"] != "") & (~si["assigned_owner"].isin(staff["staff_id"]))
+    report["service_interactions.owner_not_in_staff_roster"] = int(unknown_owner.sum())
+
+    si["date_opened"] = pd.to_datetime(si["date_opened"], errors="coerce")
+    si["date_closed"] = pd.to_datetime(si["date_closed"], errors="coerce")
+
+    bad_order = si["date_closed"].notna() & (si["date_closed"] < si["date_opened"])
+    report["service_interactions.date_closed_before_date_opened_treated_as_missing"] = int(bad_order.sum())
+    si.loc[bad_order, "date_closed"] = pd.NaT
+
+    unknown = ~si["student_id"].isin(known_students)
+    report["service_interactions.rows_dropped_unknown_student"] = int(unknown.sum())
+    si = si[~unknown].reset_index(drop=True)
+
+    ap = raw["action_plans"].copy()
+
+    ap["department_raw"] = ap["department"]
+    ap["department"] = ap["department"].apply(normalize_department)
+    report["action_plans.department_names_normalized"] = int(
+        (ap["department_raw"] != ap["department"]).sum())
+
+    unknown = ~ap["student_id"].isin(known_students)
+    report["action_plans.rows_dropped_unknown_student"] = int(unknown.sum())
+    ap = ap[~unknown].reset_index(drop=True)
+
+    ap["date_created"] = pd.to_datetime(ap["date_created"], errors="coerce")
+    ap["target_completion_date"] = pd.to_datetime(ap["target_completion_date"], errors="coerce")
+    ap["actual_completion_date"] = pd.to_datetime(ap["actual_completion_date"], errors="coerce")
+
+    out_of_range = (ap["completion_percentage"] < 0) | (ap["completion_percentage"] > 100)
+    report["action_plans.completion_percentage_out_of_range_capped"] = int(out_of_range.sum())
+    ap["completion_percentage"] = ap["completion_percentage"].clip(lower=0, upper=100)
+
+    inconsistent = (ap["completion_status"] == "completed") & (ap["completion_percentage"] != 100)
+    report["action_plans.completion_status_inconsistent_with_percentage"] = int(inconsistent.sum())
+
     cleaned = dict(students=students, staff=staff, engagement=eng, belonging=bel,
-                   care=care, outcomes=outcomes, calendar=calendar)
+                   care=care, outcomes=outcomes, calendar=calendar,
+                   departments=departments, service_interactions=si, action_plans=ap)
     return cleaned, report

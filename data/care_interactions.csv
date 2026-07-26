@@ -1,0 +1,579 @@
+interaction_id,student_id,date,office,interaction_type,response_status,referral_status,handoff_owner,note_category
+C00381,S0462,2026-03-18,ResLife,warm_handoff,n_a,n_a,ST018,social
+C00311,S0360,2026-03-11,Counseling,outreach,responded,n_a,,financial
+C00172,S0202,2026-03-19,dean of students,referral,n_a,open,,academic
+C00420,S0518,2026-03-11,Counseling,outreach,responded,n_a,,wellbeing
+C00379,S0455,2026-02-19,Counseling Center,outreach,no_response,n_a,,academic
+C00289,S0328,2026-03-11,financial aid,staff_note,n_a,n_a,,wellbeing
+C00068,S0076,2026-03-13,Financial Aid,staff_note,n_a,n_a,,social
+C00533,S0657,2026-03-03,Counseling  ,outreach,responded,n_a,,behavioral
+C00179,S0205,2026-03-18,residential life,referral,n_a,closed,,wellbeing
+C00502,S0617,2026-03-19,dean of students,referral,n_a,open,,wellbeing
+C00239,S0267,2026-03-13,financial aid,referral,n_a,open,,financial
+C00226,S0256,2026-02-02,Residential Life,warm_handoff,n_a,n_a,,academic
+C00459,S0557,2026-03-09,dean of students,staff_note,n_a,n_a,,academic
+C00359,S0433,2026-02-17,ResLife,warm_handoff,n_a,n_a,ST017,social
+C00492,S0604,2026-02-09,ResLife,warm_handoff,n_a,n_a,ST018,behavioral
+C00380,S0462,2026-02-10,Residential Life,outreach,no_response,n_a,,social
+C00335,S0398,2026-03-04,Counseling  ,outreach,responded,n_a,,social
+C00065,S0069,2026-02-27,residential life,referral,n_a,open,,financial
+C00278,S0316,2026-02-16,financial aid,outreach,pending,n_a,,social
+C00564,S0695,2026-02-24,Financial Aid,referral,n_a,open,,academic
+C00246,S0275,2026-02-23,Financial Aid,outreach,pending,n_a,,behavioral
+C00511,S0628,2026-03-05,counseling,outreach,responded,n_a,,financial
+C00079,S0087,2026-03-05,Counseling  ,outreach,responded,n_a,,financial
+C00232,S0264,2026-03-06,ResLife,outreach,pending,n_a,,behavioral
+C00175,S0202,2026-02-04,FinAid,warm_handoff,n_a,n_a,,social
+C00306,S0352,2026-02-11,academic advising,outreach,responded,n_a,,behavioral
+C00528,S0647,2026-02-06,Academic Advising,staff_note,n_a,n_a,,financial
+C00240,S0267,2026-03-16,Financial Aid,outreach,responded,n_a,,social
+C00027,S0020,2026-02-09,Counseling Center,referral,n_a,open,,behavioral
+C00337,S0403,2026-03-16,dean of students,outreach,responded,n_a,,social
+C00567,S0699,2026-02-02,DOS,referral,n_a,open,,wellbeing
+C00534,S0657,2026-02-16,Counseling  ,outreach,no_response,n_a,,academic
+C00422,S0522,2026-03-19,Academic Advising,warm_handoff,n_a,n_a,ST007,social
+C00134,S0161,2026-03-03,counseling,staff_note,n_a,n_a,,social
+C00210,S0230,2026-02-17,financial aid,referral,n_a,open,,academic
+C00263,S0295,2026-02-25,residential life,outreach,responded,n_a,,financial
+C00384,S0472,2026-02-02,financial aid,referral,n_a,closed,,financial
+C00297,S0338,2026-02-04,counseling,staff_note,n_a,n_a,,wellbeing
+C00438,S0536,2026-02-16,Academic Advising,outreach,responded,n_a,,academic
+C00300,S0344,2026-02-26,DOS,referral,n_a,open,,social
+C00482,S0591,2026-02-12,Counseling  ,referral,n_a,open,,social
+C00031,S0027,2026-03-02,FinAid,warm_handoff,n_a,n_a,,academic
+C00425,S0526,2026-02-03,residential life,staff_note,n_a,n_a,,wellbeing
+C00089,S0103,2026-03-10,DOS,staff_note,n_a,n_a,,academic
+C00394,S0480,2026-03-13,dean of students,referral,n_a,closed,,wellbeing
+C00120,S0143,2026-03-02,academic advising,staff_note,n_a,n_a,,social
+C00521,S0635,2026-03-06,DOS,referral,n_a,closed,,academic
+C00485,S0595,2026-02-27,Counseling Center,referral,n_a,closed,,social
+C00498,S0613,2026-03-13,Acad. Advising,outreach,no_response,n_a,,academic
+C00158,S0186,2026-02-12,financial aid,referral,n_a,open,,behavioral
+C00250,S0277,2026-03-11,ResLife,outreach,pending,n_a,,wellbeing
+C00423,S0525,2026-02-17,Counseling Center,referral,n_a,closed,,wellbeing
+C00231,S0264,2026-02-16,Financial Aid,outreach,no_response,n_a,,behavioral
+C00117,S0142,2026-02-04,FinAid,referral,n_a,closed,,behavioral
+C00288,S0327,2026-03-17,Academic Advising,staff_note,n_a,n_a,,social
+C00294,S0334,2026-02-11,residential life,warm_handoff,n_a,n_a,,academic
+C00141,S0167,2026-02-19,academic advising,outreach,no_response,n_a,,social
+C00391,S0479,2026-03-12,FinAid,outreach,no_response,n_a,,wellbeing
+C00046,S0044,2026-02-10,Acad. Advising,warm_handoff,n_a,n_a,ST006,financial
+C00150,S0178,2026-02-20,Residential Life,staff_note,n_a,n_a,,social
+C00032,S0028,2026-03-10,dean of students,outreach,no_response,n_a,,social
+C00251,S0284,2026-02-24,Dean of Students,staff_note,n_a,n_a,,financial
+C00468,S0563,2026-02-10,Dean of Students,outreach,no_response,n_a,,financial
+C00515,S0631,2026-03-10,Academic Advising,warm_handoff,n_a,n_a,ST005,financial
+C00078,S0085,2026-02-27,Counseling,outreach,no_response,n_a,,wellbeing
+C00185,S0211,2026-02-18,Residential Life,warm_handoff,n_a,n_a,,behavioral
+C00223,S0251,2026-02-04,Acad. Advising,staff_note,n_a,n_a,,financial
+C00462,S0559,2026-03-19,Residential Life,outreach,no_response,n_a,,financial
+C00113,S0135,2026-03-09,Counseling  ,warm_handoff,n_a,n_a,ST002,academic
+C00522,S0640,2026-02-17,Residential Life,staff_note,n_a,n_a,,social
+C00527,S0647,2026-03-16,Financial Aid,warm_handoff,n_a,n_a,ST011,wellbeing
+C00578,S0555,2026-02-03,financial aid,outreach,no_response,n_a,,wellbeing
+C00292,S0333,2026-02-04,academic advising,outreach,responded,n_a,,social
+C00021,S0017,2026-03-02,Acad. Advising,outreach,responded,n_a,,academic
+C00070,S0081,2026-02-27,counseling,outreach,no_response,n_a,,financial
+C00061,S0065,2026-02-10,Counseling Center,warm_handoff,n_a,n_a,ST004,academic
+C00516,S0631,2026-02-23,Academic Advising,outreach,no_response,n_a,,social
+C00187,S0211,2026-03-02,Residential Life,staff_note,n_a,n_a,,financial
+C00255,S0290,2026-02-25,financial aid,staff_note,n_a,n_a,,academic
+C00176,S0204,2026-03-16,ResLife,referral,n_a,open,,financial
+C00296,S0337,2026-03-10,Counseling  ,referral,n_a,open,,behavioral
+C00574,S0017,2026-03-02,Acad. Advising,outreach,responded,n_a,,academic
+C00180,S0206,2026-02-05,Counseling,outreach,responded,n_a,,behavioral
+C00048,S0046,2026-03-03,Acad. Advising,referral,n_a,closed,,behavioral
+C00405,S0498,2026-03-17,Academic Advising,outreach,no_response,n_a,,academic
+C00434,S0531,2026-03-17,ResLife,outreach,responded,n_a,,academic
+C00123,S0148,2026-02-25,dean of students,referral,n_a,open,,financial
+C00508,S0623,2026-02-11,Academic Advising,outreach,responded,n_a,,social
+C00447,S0539,2026-02-11,financial aid,outreach,no_response,n_a,,social
+C00001,S0001,2026-02-09,Financial Aid,referral,n_a,open,,wellbeing
+C00053,S0052,2026-02-26,Dean of Students,referral,n_a,open,,behavioral
+C00010,S0007,2026-02-02,Academic Advising,outreach,pending,n_a,,behavioral
+C00111,S0134,2026-02-12,Academic Advising,outreach,no_response,n_a,,academic
+C00241,S0273,2026-03-18,Dean of Students,staff_note,n_a,n_a,,academic
+C00457,S0555,2026-02-11,Dean of Students,outreach,no_response,n_a,,behavioral
+C00467,S0563,2026-03-03,residential life,warm_handoff,n_a,n_a,,social
+C00549,S0674,2026-03-04,DOS,referral,n_a,open,,academic
+C00497,S0611,2026-02-23,dean of students,outreach,responded,n_a,,social
+C00009,S0007,2026-03-20,Financial Aid,referral,n_a,open,,behavioral
+C00156,S0181,2026-03-09,DOS,outreach,no_response,n_a,,social
+C00125,S0151,2026-03-19,Residential Life,staff_note,n_a,n_a,,behavioral
+C00051,S0052,2026-02-09,financial aid,outreach,no_response,n_a,,wellbeing
+C00325,S0383,2026-02-11,Acad. Advising,staff_note,n_a,n_a,,behavioral
+C00531,S0650,2026-02-25,financial aid,staff_note,n_a,n_a,,behavioral
+C00480,S0587,2026-02-10,Residential Life,referral,n_a,open,,social
+C00277,S0310,2026-03-17,ResLife,referral,n_a,closed,,behavioral
+C00256,S0293,2026-02-16,FinAid,referral,n_a,open,,wellbeing
+C00118,S0142,2026-03-03,Dean of Students,referral,n_a,closed,,social
+C00395,S0480,2026-02-09,residential life,outreach,no_response,n_a,,behavioral
+C00323,S0383,2026-02-12,Financial Aid,referral,n_a,closed,,financial
+C00568,S0700,2026-03-05,DOS,outreach,pending,n_a,,financial
+C00363,S0435,2026-03-03,academic advising,referral,n_a,open,,social
+C00352,S0425,2026-03-12,Dean of Students,outreach,responded,n_a,,financial
+C00007,S0006,2026-02-10,Counseling,outreach,responded,n_a,,wellbeing
+C00399,S0489,2026-02-23,FinAid,warm_handoff,n_a,n_a,ST012,behavioral
+C00465,S0561,2026-02-17,academic advising,outreach,pending,n_a,,behavioral
+C00556,S0684,2026-02-23,Financial Aid,outreach,responded,n_a,,academic
+C00060,S0065,2026-02-18,Acad. Advising,staff_note,n_a,n_a,,wellbeing
+C00503,S0619,2026-03-04,DOS,staff_note,n_a,n_a,,academic
+C00026,S0020,2026-02-27,FinAid,warm_handoff,n_a,n_a,ST012,financial
+C00375,S0449,2026-03-03,Residential Life,outreach,pending,n_a,,social
+C00541,S0671,2026-02-13,Financial Aid,outreach,no_response,n_a,,wellbeing
+C00416,S0515,2026-02-09,counseling,referral,n_a,open,,academic
+C00500,S0617,2026-02-11,academic advising,referral,n_a,open,,financial
+C00109,S0134,2026-03-13,ResLife,staff_note,n_a,n_a,,financial
+C00557,S0684,2026-02-20,ResLife,outreach,responded,n_a,,academic
+C00189,S0216,2026-02-12,Counseling  ,warm_handoff,n_a,n_a,,academic
+C00213,S0238,2026-02-26,Dean of Students,referral,n_a,open,,social
+C00298,S0339,2026-03-09,FinAid,warm_handoff,n_a,n_a,ST011,academic
+C00404,S0498,2026-03-09,counseling,outreach,no_response,n_a,,academic
+C00491,S0604,2026-02-02,ResLife,outreach,responded,n_a,,wellbeing
+C00249,S0276,2026-02-11,Acad. Advising,warm_handoff,n_a,n_a,ST010,wellbeing
+C00181,S0207,2026-02-24,ResLife,outreach,pending,n_a,,financial
+C00431,S0528,2026-02-09,dean of students,referral,n_a,open,,social
+C00377,S0455,2026-03-17,Residential Life,staff_note,n_a,n_a,,behavioral
+C00099,S0120,2026-02-19,Acad. Advising,outreach,responded,n_a,,academic
+C00495,S0605,2026-03-02,counseling,outreach,no_response,n_a,,wellbeing
+C00229,S0259,2026-02-10,Academic Advising,outreach,pending,n_a,,wellbeing
+C00204,S0225,2026-02-16,residential life,outreach,responded,n_a,,social
+C00159,S0186,2026-02-18,Residential Life,warm_handoff,n_a,n_a,ST018,behavioral
+C00124,S0150,2026-02-18,DOS,outreach,no_response,n_a,,social
+C00403,S0497,2026-02-16,residential life,outreach,no_response,n_a,,financial
+C00540,S0669,2026-03-04,Dean of Students,outreach,responded,n_a,,social
+C00504,S0619,2026-03-16,ResLife,warm_handoff,n_a,n_a,ST017,social
+C00101,S0121,2026-03-18,counseling,warm_handoff,n_a,n_a,ST002,wellbeing
+C00445,S0539,2026-03-06,FinAid,staff_note,n_a,n_a,,academic
+C00576,S0190,2026-03-03,FinAid,staff_note,n_a,n_a,,social
+C00024,S0020,2026-02-10,counseling,outreach,no_response,n_a,,social
+C00169,S0199,2026-02-02,residential life,staff_note,n_a,n_a,,financial
+C00305,S0352,2026-02-25,academic advising,staff_note,n_a,n_a,,wellbeing
+C00138,S0166,2026-03-12,ResLife,warm_handoff,n_a,n_a,ST017,financial
+C00282,S0322,2026-02-11,financial aid,outreach,no_response,n_a,,academic
+C00472,S0568,2026-03-05,academic advising,outreach,no_response,n_a,,social
+C00104,S0122,2026-03-13,ResLife,outreach,no_response,n_a,,wellbeing
+C00424,S0525,2026-03-18,residential life,outreach,responded,n_a,,financial
+C00233,S0264,2026-02-12,Acad. Advising,referral,n_a,open,,academic
+C00106,S0122,2026-02-02,Counseling  ,referral,n_a,open,,academic
+C00028,S0025,2026-02-10,Dean of Students,warm_handoff,n_a,n_a,ST014,financial
+C00383,S0466,2026-02-10,Dean of Students,warm_handoff,n_a,n_a,ST014,behavioral
+C00044,S0041,2026-03-02,residential life,outreach,responded,n_a,,academic
+C00198,S0222,2026-02-24,Academic Advising,referral,n_a,open,,academic
+C00356,S0429,2026-02-19,residential life,outreach,responded,n_a,,social
+C00186,S0211,2026-03-05,Academic Advising,referral,n_a,open,,behavioral
+C00040,S0036,2026-02-11,DOS,outreach,no_response,n_a,,financial
+C00330,S0387,2026-02-19,Financial Aid,referral,n_a,closed,,behavioral
+C00064,S0067,2026-02-13,Financial Aid,outreach,no_response,n_a,,behavioral
+C00477,S0574,2026-03-04,dean of students,warm_handoff,n_a,n_a,,behavioral
+C00565,S0699,2026-02-18,FinAid,referral,n_a,open,,social
+C00272,S0308,2026-02-20,FinAid,outreach,pending,n_a,,behavioral
+C00200,S0222,2026-03-05,DOS,outreach,no_response,n_a,,social
+C00022,S0017,2026-03-18,Acad. Advising,outreach,responded,n_a,,behavioral
+C00129,S0157,2026-02-03,FinAid,referral,n_a,open,,wellbeing
+C00524,S0640,2026-03-11,Financial Aid,staff_note,n_a,n_a,,social
+C00412,S0509,2026-02-05,academic advising,outreach,responded,n_a,,social
+C00496,S0605,2026-02-18,Acad. Advising,warm_handoff,n_a,n_a,,behavioral
+C00329,S0385,2026-03-19,FinAid,outreach,responded,n_a,,wellbeing
+C00067,S0073,2026-03-19,FinAid,referral,n_a,closed,,financial
+C00444,S0539,2026-02-05,ResLife,outreach,pending,n_a,,social
+C00041,S0036,2026-02-25,financial aid,outreach,no_response,n_a,,social
+C00357,S0429,2026-02-13,FinAid,staff_note,n_a,n_a,,financial
+C00433,S0528,2026-02-27,financial aid,staff_note,n_a,n_a,,behavioral
+C00149,S0177,2026-02-25,FinAid,staff_note,n_a,n_a,,academic
+C00012,S0007,2026-02-17,DOS,outreach,pending,n_a,,academic
+C00345,S0417,2026-03-17,academic advising,outreach,responded,n_a,,social
+C00143,S0169,2026-03-12,Acad. Advising,staff_note,n_a,n_a,,wellbeing
+C00456,S0555,2026-02-03,financial aid,outreach,no_response,n_a,,wellbeing
+C00260,S0294,2026-03-13,Counseling,staff_note,n_a,n_a,,behavioral
+C00105,S0122,2026-02-10,Acad. Advising,outreach,no_response,n_a,,behavioral
+C00349,S0423,2026-02-20,ResLife,referral,n_a,closed,,social
+C00165,S0198,2026-02-19,Residential Life,referral,n_a,open,,academic
+C00243,S0273,2026-02-02,Financial Aid,staff_note,n_a,n_a,,social
+C00442,S0537,2026-03-11,residential life,outreach,no_response,n_a,,financial
+C00304,S0352,2026-02-23,Acad. Advising,outreach,no_response,n_a,,financial
+C00192,S0216,2026-02-16,financial aid,referral,n_a,open,,financial
+C00023,S0019,2026-02-23,Counseling,warm_handoff,n_a,n_a,ST003,behavioral
+C00478,S0579,2026-03-19,DOS,referral,n_a,closed,,social
+C00571,S0007,2026-02-02,Academic Advising,outreach,pending,n_a,,behavioral
+C00509,S0628,2026-03-09,Acad. Advising,outreach,pending,n_a,,academic
+C00452,S0548,2026-03-04,Counseling,referral,n_a,open,,social
+C00487,S0598,2026-03-05,Residential Life,referral,n_a,open,,wellbeing
+C00013,S0008,2026-03-17,Counseling  ,outreach,responded,n_a,,social
+C00455,S0552,2026-03-16,ResLife,warm_handoff,n_a,n_a,ST016,financial
+C00228,S0257,2026-02-05,FinAid,warm_handoff,n_a,n_a,ST011,behavioral
+C00493,S0605,2026-02-27,Counseling  ,referral,n_a,open,,social
+C00543,S0671,2026-02-09,ResLife,outreach,pending,n_a,,wellbeing
+C00353,S0428,2026-02-03,Dean of Students,warm_handoff,n_a,n_a,ST015,academic
+C00286,S0326,2026-03-09,academic advising,outreach,no_response,n_a,,behavioral
+C00270,S0306,2026-03-11,dean of students,outreach,no_response,n_a,,wellbeing
+C00440,S0536,2026-02-25,Financial Aid,outreach,no_response,n_a,,social
+C00107,S0126,2026-03-10,counseling,referral,n_a,closed,,financial
+C00319,S0379,2026-02-11,Dean of Students,outreach,responded,n_a,,academic
+C00145,S0171,2026-02-02,Academic Advising,warm_handoff,n_a,n_a,ST006,financial
+C00573,S0360,2026-03-11,Counseling,outreach,responded,n_a,,financial
+C00140,S0166,2026-02-18,Counseling,referral,n_a,closed,,behavioral
+C00093,S0111,2026-02-13,Residential Life,outreach,responded,n_a,,wellbeing
+C00387,S0476,2026-03-03,Residential Life,outreach,no_response,n_a,,academic
+C00254,S0290,2026-03-16,Academic Advising,outreach,pending,n_a,,behavioral
+C00474,S0570,2026-02-12,financial aid,outreach,responded,n_a,,academic
+C00042,S0041,2026-03-04,Academic Advising,outreach,responded,n_a,,academic
+C00018,S0013,2026-02-11,Residential Life,warm_handoff,n_a,n_a,ST016,financial
+C00167,S0198,2026-02-11,Residential Life,referral,n_a,open,,social
+C00279,S0316,2026-03-20,Counseling  ,staff_note,n_a,n_a,,academic
+C00058,S0061,2026-03-04,Acad. Advising,warm_handoff,n_a,n_a,ST009,wellbeing
+C00221,S0248,2026-02-24,Residential Life,staff_note,n_a,n_a,,behavioral
+C00501,S0617,2026-02-04,Counseling  ,outreach,responded,n_a,,wellbeing
+C00084,S0096,2026-02-13,Financial Aid,outreach,no_response,n_a,,wellbeing
+C00052,S0052,2026-02-19,DOS,referral,n_a,open,,wellbeing
+C00338,S0407,2026-03-13,FinAid,referral,n_a,open,,financial
+C00177,S0204,2026-02-06,counseling,warm_handoff,n_a,n_a,,social
+C00280,S0320,2026-03-13,Dean of Students,referral,n_a,closed,,wellbeing
+C00554,S0683,2026-02-27,ResLife,referral,n_a,closed,,social
+C00152,S0179,2026-03-02,Residential Life,warm_handoff,n_a,n_a,ST017,wellbeing
+C00406,S0498,2026-02-25,Dean of Students,referral,n_a,open,,financial
+C00121,S0148,2026-03-19,Dean of Students,warm_handoff,n_a,n_a,ST015,wellbeing
+C00208,S0227,2026-03-03,ResLife,outreach,no_response,n_a,,behavioral
+C00054,S0057,2026-02-06,Academic Advising,warm_handoff,n_a,n_a,ST007,behavioral
+C00449,S0542,2026-03-17,Residential Life,warm_handoff,n_a,n_a,ST017,academic
+C00327,S0385,2026-03-10,Academic Advising,warm_handoff,n_a,n_a,ST007,behavioral
+C00537,S0661,2026-03-09,Acad. Advising,staff_note,n_a,n_a,,academic
+C00470,S0567,2026-02-06,Counseling  ,outreach,responded,n_a,,social
+C00197,S0220,2026-03-11,Dean of Students,outreach,no_response,n_a,,academic
+C00096,S0112,2026-02-04,DOS,outreach,responded,n_a,,financial
+C00427,S0527,2026-02-06,FinAid,outreach,responded,n_a,,academic
+C00008,S0006,2026-02-26,Dean of Students,outreach,pending,n_a,,wellbeing
+C00126,S0154,2026-02-09,Residential Life,warm_handoff,n_a,n_a,ST017,social
+C00033,S0028,2026-03-20,counseling,referral,n_a,open,,wellbeing
+C00098,S0120,2026-02-27,Acad. Advising,outreach,no_response,n_a,,social
+C00050,S0052,2026-03-02,residential life,warm_handoff,n_a,n_a,,wellbeing
+C00062,S0065,2026-02-24,Financial Aid,referral,n_a,closed,,academic
+C00170,S0199,2026-02-04,Academic Advising,outreach,responded,n_a,,academic
+C00499,S0613,2026-03-02,academic advising,referral,n_a,closed,,financial
+C00191,S0216,2026-02-03,financial aid,referral,n_a,open,,social
+C00407,S0498,2026-03-06,Dean of Students,outreach,no_response,n_a,,academic
+C00005,S0004,2026-02-18,counseling,referral,n_a,closed,,financial
+C00285,S0326,2026-03-02,Dean of Students,referral,n_a,closed,,wellbeing
+C00464,S0561,2026-02-24,Counseling  ,staff_note,n_a,n_a,,behavioral
+C00448,S0542,2026-02-09,residential life,outreach,pending,n_a,,wellbeing
+C00264,S0297,2026-02-26,Residential Life,outreach,no_response,n_a,,financial
+C00525,S0642,2026-03-12,Acad. Advising,warm_handoff,n_a,n_a,ST008,wellbeing
+C00004,S0002,2026-02-24,ResLife,outreach,responded,n_a,,academic
+C00266,S0301,2026-03-02,Academic Advising,staff_note,n_a,n_a,,social
+C00372,S0446,2026-02-13,Acad. Advising,warm_handoff,n_a,n_a,ST009,wellbeing
+C00402,S0495,2026-03-05,DOS,outreach,responded,n_a,,wellbeing
+C00216,S0239,2026-02-20,FinAid,referral,n_a,open,,social
+C00257,S0293,2026-03-05,counseling,outreach,responded,n_a,,academic
+C00343,S0411,2026-02-20,Counseling,staff_note,n_a,n_a,,financial
+C00274,S0309,2026-03-13,FinAid,referral,n_a,closed,,wellbeing
+C00494,S0605,2026-03-03,Dean of Students,outreach,no_response,n_a,,financial
+C00066,S0072,2026-03-11,Residential Life,staff_note,n_a,n_a,,wellbeing
+C00182,S0210,2026-02-11,counseling,referral,n_a,closed,,academic
+C00057,S0061,2026-03-03,Counseling Center,warm_handoff,n_a,n_a,,wellbeing
+C00135,S0161,2026-02-13,residential life,outreach,no_response,n_a,,financial
+C00173,S0202,2026-02-24,Academic Advising,referral,n_a,open,,financial
+C00401,S0492,2026-02-04,DOS,outreach,responded,n_a,,financial
+C00094,S0111,2026-02-12,DOS,referral,n_a,closed,,social
+C00559,S0688,2026-02-09,Counseling Center,outreach,no_response,n_a,,wellbeing
+C00163,S0190,2026-03-03,FinAid,staff_note,n_a,n_a,,social
+C00215,S0238,2026-03-10,Residential Life,outreach,no_response,n_a,,wellbeing
+C00275,S0309,2026-03-12,counseling,warm_handoff,n_a,n_a,ST003,social
+C00100,S0121,2026-02-10,Academic Advising,outreach,no_response,n_a,,social
+C00411,S0508,2026-03-02,Counseling Center,referral,n_a,closed,,social
+C00408,S0505,2026-03-13,Residential Life,referral,n_a,closed,,financial
+C00441,S0537,2026-03-19,Academic Advising,staff_note,n_a,n_a,,financial
+C00039,S0035,2026-02-24,DOS,outreach,pending,n_a,,behavioral
+C00236,S0266,2026-03-13,Counseling Center,warm_handoff,n_a,n_a,,financial
+C00426,S0526,2026-03-09,Financial Aid,outreach,responded,n_a,,wellbeing
+C00336,S0399,2026-02-23,DOS,referral,n_a,closed,,academic
+C00194,S0217,2026-03-18,Residential Life,warm_handoff,n_a,n_a,,wellbeing
+C00016,S0010,2026-02-03,Financial Aid,referral,n_a,closed,,wellbeing
+C00340,S0407,2026-02-18,Financial Aid,outreach,no_response,n_a,,financial
+C00295,S0335,2026-02-05,FinAid,staff_note,n_a,n_a,,behavioral
+C00510,S0628,2026-02-16,academic advising,referral,n_a,closed,,academic
+C00563,S0692,2026-03-20,FinAid,referral,n_a,open,,financial
+C00371,S0446,2026-02-25,DOS,referral,n_a,open,,academic
+C00267,S0303,2026-03-09,Financial Aid,warm_handoff,n_a,n_a,ST013,wellbeing
+C00166,S0198,2026-02-10,academic advising,warm_handoff,n_a,n_a,ST010,academic
+C00074,S0083,2026-02-12,residential life,staff_note,n_a,n_a,,behavioral
+C00539,S0664,2026-02-03,Academic Advising,outreach,no_response,n_a,,financial
+C00350,S0425,2026-03-11,FinAid,outreach,responded,n_a,,wellbeing
+C00218,S0239,2026-02-27,academic advising,referral,n_a,open,,academic
+C00507,S0623,2026-03-12,Acad. Advising,outreach,responded,n_a,,social
+C00019,S0016,2026-03-19,Counseling  ,referral,n_a,closed,,behavioral
+C00151,S0179,2026-03-11,Counseling  ,warm_handoff,n_a,n_a,ST004,wellbeing
+C00523,S0640,2026-02-06,dean of students,referral,n_a,open,,social
+C00047,S0045,2026-02-27,dean of students,referral,n_a,closed,,behavioral
+C00206,S0226,2026-03-18,DOS,outreach,responded,n_a,,behavioral
+C00178,S0204,2026-02-13,dean of students,outreach,no_response,n_a,,financial
+C00235,S0266,2026-02-06,counseling,referral,n_a,open,,social
+C00339,S0407,2026-02-25,Counseling,outreach,no_response,n_a,,behavioral
+C00063,S0067,2026-03-10,dean of students,staff_note,n_a,n_a,,academic
+C00283,S0322,2026-03-05,Counseling  ,referral,n_a,open,,academic
+C00555,S0684,2026-03-06,residential life,staff_note,n_a,n_a,,financial
+C00020,S0016,2026-02-26,financial aid,outreach,responded,n_a,,financial
+C00341,S0407,2026-03-10,ResLife,referral,n_a,open,,academic
+C00326,S0385,2026-02-20,Academic Advising,outreach,no_response,n_a,,social
+C00038,S0035,2026-02-12,financial aid,staff_note,n_a,n_a,,financial
+C00332,S0392,2026-03-10,academic advising,referral,n_a,closed,,wellbeing
+C00147,S0174,2026-02-12,residential life,referral,n_a,open,,academic
+C00308,S0358,2026-02-19,dean of students,referral,n_a,open,,wellbeing
+C00291,S0330,2026-03-19,Counseling  ,staff_note,n_a,n_a,,academic
+C00529,S0647,2026-02-10,residential life,staff_note,n_a,n_a,,financial
+C00558,S0684,2026-03-06,ResLife,outreach,pending,n_a,,behavioral
+C00358,S0433,2026-03-05,residential life,referral,n_a,closed,,behavioral
+C00284,S0325,2026-03-17,DOS,warm_handoff,n_a,n_a,ST014,social
+C00314,S0365,2026-03-03,Dean of Students,referral,n_a,open,,behavioral
+C00429,S0527,2026-02-19,Counseling  ,staff_note,n_a,n_a,,social
+C00144,S0169,2026-03-18,DOS,outreach,no_response,n_a,,wellbeing
+C00082,S0091,2026-02-02,Counseling Center,outreach,no_response,n_a,,academic
+C00334,S0398,2026-02-10,residential life,outreach,responded,n_a,,academic
+C00219,S0246,2026-02-26,Acad. Advising,referral,n_a,open,,academic
+C00551,S0676,2026-02-17,Counseling,staff_note,n_a,n_a,,social
+C00259,S0293,2026-03-17,ResLife,warm_handoff,n_a,n_a,,social
+C00530,S0650,2026-02-02,Financial Aid,staff_note,n_a,n_a,,behavioral
+C00055,S0057,2026-03-18,Academic Advising,outreach,no_response,n_a,,behavioral
+C00544,S0672,2026-02-11,residential life,referral,n_a,closed,,behavioral
+C00328,S0385,2026-02-20,Dean of Students,referral,n_a,open,,behavioral
+C00479,S0587,2026-02-02,Dean of Students,staff_note,n_a,n_a,,social
+C00276,S0310,2026-03-18,FinAid,referral,n_a,closed,,wellbeing
+C00532,S0652,2026-02-04,Counseling Center,staff_note,n_a,n_a,,academic
+C00365,S0444,2026-02-26,dean of students,outreach,responded,n_a,,behavioral
+C00160,S0187,2026-02-16,Counseling  ,referral,n_a,closed,,behavioral
+C00262,S0295,2026-02-17,Academic Advising,warm_handoff,n_a,n_a,ST008,behavioral
+C00545,S0672,2026-03-12,dean of students,staff_note,n_a,n_a,,academic
+C00572,S0330,2026-03-19,Counseling  ,staff_note,n_a,n_a,,academic
+C00382,S0466,2026-03-20,ResLife,referral,n_a,closed,,academic
+C00091,S0108,2026-03-18,academic advising,outreach,no_response,n_a,,academic
+C00373,S0447,2026-02-12,counseling,outreach,responded,n_a,,behavioral
+C00413,S0512,2026-03-02,residential life,staff_note,n_a,n_a,,financial
+C00362,S0435,2026-03-11,Dean of Students,warm_handoff,n_a,n_a,ST015,wellbeing
+C00242,S0273,2026-03-16,Academic Advising,outreach,no_response,n_a,,behavioral
+C00253,S0289,2026-02-24,Financial Aid,outreach,responded,n_a,,wellbeing
+C00115,S0141,2026-03-17,financial aid,outreach,no_response,n_a,,wellbeing
+C00309,S0358,2026-02-23,residential life,outreach,responded,n_a,,academic
+C00195,S0217,2026-02-11,Acad. Advising,staff_note,n_a,n_a,,academic
+C00388,S0476,2026-02-04,Residential Life,referral,n_a,open,,social
+C00562,S0692,2026-02-17,Academic Advising,staff_note,n_a,n_a,,wellbeing
+C00146,S0174,2026-02-26,Residential Life,referral,n_a,open,,financial
+C00517,S0632,2026-03-06,FinAid,outreach,responded,n_a,,social
+C00108,S0130,2026-02-18,FinAid,outreach,responded,n_a,,behavioral
+C00271,S0308,2026-02-24,DOS,outreach,no_response,n_a,,behavioral
+C00247,S0275,2026-03-03,Dean of Students,referral,n_a,closed,,behavioral
+C00361,S0435,2026-02-12,counseling,warm_handoff,n_a,n_a,,social
+C00316,S0365,2026-03-13,residential life,staff_note,n_a,n_a,,social
+C00518,S0633,2026-03-06,DOS,outreach,no_response,n_a,,wellbeing
+C00385,S0472,2026-02-11,financial aid,outreach,responded,n_a,,financial
+C00112,S0134,2026-03-19,Residential Life,warm_handoff,n_a,n_a,ST016,academic
+C00183,S0210,2026-02-24,Academic Advising,outreach,pending,n_a,,social
+C00006,S0006,2026-02-20,financial aid,warm_handoff,n_a,n_a,ST011,wellbeing
+C00552,S0683,2026-02-06,financial aid,outreach,responded,n_a,,social
+C00199,S0222,2026-02-19,Counseling Center,outreach,no_response,n_a,,financial
+C00461,S0557,2026-02-25,residential life,outreach,no_response,n_a,,financial
+C00238,S0267,2026-03-12,FinAid,outreach,no_response,n_a,,financial
+C00463,S0559,2026-02-20,financial aid,referral,n_a,closed,,social
+C00083,S0096,2026-02-27,FinAid,referral,n_a,closed,,social
+C00225,S0255,2026-02-11,Counseling  ,outreach,no_response,n_a,,wellbeing
+C00430,S0528,2026-02-11,Financial Aid,outreach,no_response,n_a,,wellbeing
+C00369,S0446,2026-03-03,residential life,referral,n_a,open,,academic
+C00476,S0574,2026-02-24,dean of students,outreach,responded,n_a,,behavioral
+C00466,S0561,2026-02-04,counseling,outreach,responded,n_a,,academic
+C00548,S0674,2026-02-09,residential life,outreach,no_response,n_a,,behavioral
+C00475,S0570,2026-03-03,ResLife,staff_note,n_a,n_a,,behavioral
+C00132,S0160,2026-03-13,ResLife,outreach,no_response,n_a,,financial
+C00029,S0025,2026-02-12,Acad. Advising,referral,n_a,closed,,financial
+C00553,S0683,2026-03-02,FinAid,outreach,responded,n_a,,wellbeing
+C00419,S0515,2026-02-06,dean of students,outreach,responded,n_a,,academic
+C00217,S0239,2026-02-05,Acad. Advising,referral,n_a,open,,financial
+C00418,S0515,2026-03-04,academic advising,outreach,pending,n_a,,financial
+C00193,S0217,2026-03-04,residential life,outreach,no_response,n_a,,wellbeing
+C00512,S0629,2026-03-19,Counseling  ,outreach,no_response,n_a,,social
+C00214,S0238,2026-02-12,Academic Advising,outreach,no_response,n_a,,social
+C00347,S0417,2026-03-17,FinAid,warm_handoff,n_a,n_a,ST012,behavioral
+C00355,S0429,2026-03-05,financial aid,staff_note,n_a,n_a,,academic
+C00075,S0084,2026-02-05,dean of students,outreach,no_response,n_a,,financial
+C00454,S0551,2026-02-06,FinAid,referral,n_a,closed,,behavioral
+C00056,S0059,2026-03-18,residential life,outreach,responded,n_a,,social
+C00137,S0161,2026-02-05,Acad. Advising,referral,n_a,open,,social
+C00076,S0084,2026-02-26,DOS,referral,n_a,closed,,behavioral
+C00519,S0633,2026-02-04,Dean of Students,outreach,responded,n_a,,academic
+C00030,S0027,2026-03-13,Academic Advising,outreach,responded,n_a,,wellbeing
+C00153,S0179,2026-02-17,Dean of Students,warm_handoff,n_a,n_a,ST014,social
+C00505,S0619,2026-02-09,Counseling  ,warm_handoff,n_a,n_a,ST001,academic
+C00154,S0180,2026-02-02,Counseling,referral,n_a,closed,,social
+C00414,S0513,2026-02-10,Dean of Students,outreach,no_response,n_a,,social
+C00224,S0255,2026-03-05,Dean of Students,staff_note,n_a,n_a,,behavioral
+C00244,S0273,2026-02-25,FinAid,outreach,responded,n_a,,behavioral
+C00139,S0166,2026-02-02,FinAid,referral,n_a,closed,,academic
+C00227,S0256,2026-02-25,Counseling  ,outreach,no_response,n_a,,social
+C00307,S0355,2026-03-03,ResLife,outreach,pending,n_a,,wellbeing
+C00432,S0528,2026-03-13,Acad. Advising,outreach,no_response,n_a,,financial
+C00566,S0699,2026-02-11,Financial Aid,warm_handoff,n_a,n_a,ST011,academic
+C00201,S0222,2026-03-06,ResLife,referral,n_a,open,,financial
+C00560,S0688,2026-03-19,academic advising,referral,n_a,closed,,social
+C00095,S0112,2026-02-16,FinAid,referral,n_a,closed,,financial
+C00025,S0020,2026-02-25,financial aid,referral,n_a,open,,social
+C00513,S0629,2026-02-20,academic advising,staff_note,n_a,n_a,,academic
+C00174,S0202,2026-02-25,counseling,outreach,responded,n_a,,social
+C00546,S0672,2026-03-16,Acad. Advising,staff_note,n_a,n_a,,behavioral
+C00080,S0087,2026-02-11,DOS,warm_handoff,n_a,n_a,ST014,wellbeing
+C00460,S0557,2026-03-03,dean of students,outreach,no_response,n_a,,wellbeing
+C00386,S0476,2026-02-19,FinAid,warm_handoff,n_a,n_a,,wellbeing
+C00569,S0700,2026-03-12,Counseling Center,outreach,responded,n_a,,behavioral
+C00268,S0303,2026-02-26,financial aid,referral,n_a,closed,,academic
+C00389,S0476,2026-03-10,DOS,staff_note,n_a,n_a,,wellbeing
+C00322,S0382,2026-02-05,Counseling Center,outreach,responded,n_a,,behavioral
+C00114,S0140,2026-03-04,dean of students,referral,n_a,closed,,behavioral
+C00142,S0169,2026-03-04,academic advising,outreach,responded,n_a,,wellbeing
+C00103,S0121,2026-03-06,counseling,staff_note,n_a,n_a,,academic
+C00049,S0049,2026-02-24,Counseling  ,outreach,pending,n_a,,social
+C00299,S0344,2026-02-20,residential life,outreach,responded,n_a,,wellbeing
+C00378,S0455,2026-02-23,Acad. Advising,outreach,no_response,n_a,,behavioral
+C00220,S0246,2026-02-06,DOS,warm_handoff,n_a,n_a,ST015,financial
+C00043,S0041,2026-03-10,counseling,outreach,pending,n_a,,social
+C00535,S0661,2026-02-12,Counseling  ,outreach,responded,n_a,,social
+C00086,S0099,2026-02-27,counseling,referral,n_a,closed,,financial
+C00269,S0306,2026-03-10,residential life,outreach,no_response,n_a,,academic
+C00342,S0411,2026-02-06,Financial Aid,referral,n_a,open,,academic
+C00451,S0547,2026-03-02,financial aid,outreach,no_response,n_a,,wellbeing
+C00317,S0369,2026-03-11,counseling,outreach,responded,n_a,,financial
+C00209,S0229,2026-03-19,Academic Advising,warm_handoff,n_a,n_a,ST007,academic
+C00360,S0433,2026-03-17,dean of students,referral,n_a,closed,,academic
+C00490,S0601,2026-02-16,dean of students,outreach,no_response,n_a,,financial
+C00188,S0212,2026-03-02,Dean of Students,referral,n_a,open,,behavioral
+C00014,S0009,2026-02-23,Counseling Center,outreach,responded,n_a,,academic
+C00190,S0216,2026-02-20,dean of students,outreach,no_response,n_a,,financial
+C00130,S0159,2026-02-11,Residential Life,outreach,responded,n_a,,wellbeing
+C00486,S0598,2026-02-05,DOS,staff_note,n_a,n_a,,wellbeing
+C00526,S0645,2026-02-17,Financial Aid,outreach,pending,n_a,,behavioral
+C00538,S0664,2026-03-20,ResLife,outreach,no_response,n_a,,social
+C00302,S0348,2026-02-16,financial aid,warm_handoff,n_a,n_a,ST013,academic
+C00203,S0225,2026-03-12,Counseling  ,referral,n_a,open,,academic
+C00184,S0210,2026-03-09,financial aid,outreach,responded,n_a,,social
+C00011,S0007,2026-03-09,counseling,referral,n_a,open,,behavioral
+C00458,S0557,2026-02-16,Residential Life,staff_note,n_a,n_a,,financial
+C00148,S0176,2026-02-04,financial aid,outreach,pending,n_a,,behavioral
+C00331,S0388,2026-03-03,Acad. Advising,outreach,responded,n_a,,social
+C00315,S0365,2026-03-10,residential life,referral,n_a,open,,financial
+C00577,S0085,2026-02-27,Counseling,outreach,no_response,n_a,,wellbeing
+C00547,S0673,2026-03-17,financial aid,staff_note,n_a,n_a,,academic
+C00506,S0620,2026-02-26,DOS,referral,n_a,closed,,academic
+C00037,S0035,2026-02-16,Financial Aid,outreach,no_response,n_a,,academic
+C00202,S0225,2026-03-12,ResLife,staff_note,n_a,n_a,,social
+C00003,S0002,2026-02-19,FinAid,staff_note,n_a,n_a,,behavioral
+C00489,S0598,2026-02-13,dean of students,outreach,no_response,n_a,,behavioral
+C00071,S0081,2026-03-12,Counseling Center,warm_handoff,n_a,n_a,ST002,academic
+C00119,S0143,2026-03-09,Acad. Advising,referral,n_a,open,,behavioral
+C00127,S0155,2026-03-09,Acad. Advising,staff_note,n_a,n_a,,academic
+C00045,S0042,2026-02-06,Residential Life,referral,n_a,closed,,wellbeing
+C00333,S0395,2026-02-25,residential life,staff_note,n_a,n_a,,financial
+C00471,S0568,2026-03-03,Financial Aid,warm_handoff,n_a,n_a,ST013,social
+C00310,S0360,2026-02-17,DOS,outreach,no_response,n_a,,wellbeing
+C00561,S0692,2026-03-19,counseling,referral,n_a,open,,academic
+C00367,S0445,2026-02-17,Academic Advising,outreach,responded,n_a,,social
+C00366,S0444,2026-03-02,Acad. Advising,outreach,no_response,n_a,,wellbeing
+C00303,S0351,2026-03-20,Counseling,outreach,responded,n_a,,financial
+C00453,S0548,2026-03-09,Counseling Center,outreach,no_response,n_a,,wellbeing
+C00443,S0537,2026-02-16,dean of students,warm_handoff,n_a,n_a,,wellbeing
+C00131,S0160,2026-02-13,Academic Advising,outreach,no_response,n_a,,financial
+C00081,S0090,2026-03-13,counseling,referral,n_a,closed,,financial
+C00483,S0592,2026-02-16,Dean of Students,staff_note,n_a,n_a,,financial
+C00128,S0157,2026-03-05,Financial Aid,warm_handoff,n_a,n_a,,financial
+C00077,S0084,2026-02-23,Acad. Advising,outreach,responded,n_a,,academic
+C00110,S0134,2026-02-11,Financial Aid,referral,n_a,open,,behavioral
+C00252,S0289,2026-02-12,Residential Life,warm_handoff,n_a,n_a,ST016,wellbeing
+C00421,S0518,2026-02-05,Financial Aid,warm_handoff,n_a,n_a,ST013,behavioral
+C00348,S0419,2026-03-09,financial aid,warm_handoff,n_a,n_a,ST012,financial
+C00230,S0259,2026-02-26,FinAid,outreach,no_response,n_a,,financial
+C00344,S0411,2026-03-16,Dean of Students,staff_note,n_a,n_a,,wellbeing
+C00368,S0445,2026-03-17,ResLife,staff_note,n_a,n_a,,financial
+C00157,S0186,2026-02-18,FinAid,outreach,no_response,n_a,,financial
+C00370,S0446,2026-02-10,counseling,outreach,responded,n_a,,wellbeing
+C00321,S0382,2026-03-11,Counseling Center,referral,n_a,closed,,academic
+C00437,S0532,2026-03-06,FinAid,warm_handoff,n_a,n_a,ST013,behavioral
+C00222,S0251,2026-03-17,residential life,outreach,no_response,n_a,,wellbeing
+C00293,S0334,2026-02-09,Counseling,outreach,no_response,n_a,,social
+C00428,S0527,2026-03-05,Academic Advising,staff_note,n_a,n_a,,financial
+C00575,S0122,2026-02-02,Counseling  ,referral,n_a,open,,academic
+C00320,S0382,2026-03-03,Counseling  ,outreach,no_response,n_a,,behavioral
+C00102,S0121,2026-02-24,Academic Advising,outreach,no_response,n_a,,behavioral
+C00324,S0383,2026-02-25,Residential Life,warm_handoff,n_a,n_a,ST017,academic
+C00136,S0161,2026-03-05,dean of students,staff_note,n_a,n_a,,academic
+C00397,S0486,2026-02-05,Academic Advising,outreach,responded,n_a,,behavioral
+C00073,S0081,2026-02-04,Counseling Center,referral,n_a,open,,social
+C00122,S0148,2026-02-23,Counseling,outreach,responded,n_a,,financial
+C00090,S0108,2026-02-06,Counseling  ,staff_note,n_a,n_a,,wellbeing
+C00376,S0455,2026-02-13,Academic Advising,outreach,responded,n_a,,wellbeing
+C00265,S0297,2026-02-26,Acad. Advising,outreach,responded,n_a,,wellbeing
+C00415,S0514,2026-03-11,residential life,outreach,no_response,n_a,,financial
+C00261,S0295,2026-02-18,residential life,referral,n_a,closed,,financial
+C00015,S0009,2026-02-19,FinAid,staff_note,n_a,n_a,,social
+C00396,S0483,2026-03-11,Counseling,outreach,no_response,n_a,,social
+C00171,S0201,2026-02-19,counseling,staff_note,n_a,n_a,,behavioral
+C00162,S0190,2026-02-12,Residential Life,outreach,no_response,n_a,,wellbeing
+C00287,S0326,2026-02-19,Academic Advising,outreach,no_response,n_a,,academic
+C00398,S0487,2026-02-17,Financial Aid,staff_note,n_a,n_a,,social
+C00313,S0364,2026-03-16,academic advising,warm_handoff,n_a,n_a,ST006,academic
+C00092,S0109,2026-02-03,ResLife,staff_note,n_a,n_a,,financial
+C00237,S0266,2026-03-04,academic advising,outreach,responded,n_a,,behavioral
+C00473,S0568,2026-02-13,academic advising,warm_handoff,n_a,n_a,ST007,behavioral
+C00400,S0492,2026-03-13,residential life,warm_handoff,n_a,n_a,ST018,academic
+C00273,S0308,2026-03-19,financial aid,staff_note,n_a,n_a,,social
+C00133,S0160,2026-02-24,ResLife,outreach,no_response,n_a,,behavioral
+C00234,S0266,2026-03-05,FinAid,outreach,responded,n_a,,academic
+C00488,S0598,2026-03-05,residential life,outreach,no_response,n_a,,behavioral
+C00168,S0198,2026-02-12,financial aid,referral,n_a,open,,social
+C00059,S0061,2026-03-05,ResLife,staff_note,n_a,n_a,,social
+C00481,S0591,2026-02-13,financial aid,outreach,responded,n_a,,social
+C00116,S0141,2026-02-03,DOS,outreach,no_response,n_a,,social
+C00390,S0477,2026-03-10,Counseling,staff_note,n_a,n_a,,financial
+C00312,S0360,2026-02-10,Academic Advising,referral,n_a,open,,social
+C00069,S0080,2026-03-12,Counseling Center,referral,n_a,closed,,wellbeing
+C00035,S0032,2026-03-03,Residential Life,referral,n_a,closed,,academic
+C00484,S0593,2026-02-11,residential life,outreach,pending,n_a,,social
+C00002,S0002,2026-02-27,Counseling,warm_handoff,n_a,n_a,ST003,financial
+C00088,S0103,2026-02-04,DOS,warm_handoff,n_a,n_a,ST015,behavioral
+C00196,S0217,2026-03-05,dean of students,outreach,no_response,n_a,,academic
+C00364,S0444,2026-02-04,counseling,warm_handoff,n_a,n_a,,financial
+C00520,S0634,2026-02-25,Acad. Advising,referral,n_a,closed,,academic
+C00417,S0515,2026-03-04,Financial Aid,warm_handoff,n_a,n_a,ST013,social
+C00097,S0115,2026-02-05,DOS,outreach,responded,n_a,,wellbeing
+C00536,S0661,2026-02-16,dean of students,outreach,no_response,n_a,,behavioral
+C00290,S0328,2026-02-09,Counseling  ,warm_handoff,n_a,n_a,ST003,behavioral
+C00036,S0033,2026-02-16,Acad. Advising,referral,n_a,closed,,financial
+C00155,S0181,2026-03-12,counseling,outreach,no_response,n_a,,social
+C00212,S0235,2026-02-02,Residential Life,referral,n_a,open,,wellbeing
+C00248,S0275,2026-02-23,Residential Life,warm_handoff,n_a,n_a,ST017,social
+C00392,S0479,2026-02-18,DOS,staff_note,n_a,n_a,,social
+C00207,S0226,2026-02-23,Dean of Students,referral,n_a,closed,,financial
+C00514,S0629,2026-02-12,ResLife,outreach,pending,n_a,,behavioral
+C00409,S0505,2026-02-19,FinAid,warm_handoff,n_a,n_a,ST013,behavioral
+C00301,S0345,2026-03-19,dean of students,outreach,responded,n_a,,social
+C00393,S0480,2026-03-20,dean of students,referral,n_a,closed,,academic
+C00354,S0428,2026-02-05,financial aid,outreach,no_response,n_a,,financial
+C00450,S0545,2026-03-11,academic advising,outreach,responded,n_a,,financial
+C00469,S0564,2026-02-25,dean of students,referral,n_a,closed,,behavioral
+C00439,S0536,2026-03-16,Counseling,outreach,responded,n_a,,academic
+C00436,S0532,2026-02-17,Academic Advising,outreach,responded,n_a,,academic
+C00550,S0676,2026-03-03,counseling,referral,n_a,open,,social
+C00446,S0539,2026-03-17,Dean of Students,staff_note,n_a,n_a,,academic
+C00542,S0671,2026-02-18,ResLife,referral,n_a,open,,behavioral
+C00164,S0192,2026-02-06,DOS,outreach,responded,n_a,,academic
+C00085,S0098,2026-02-19,Residential Life,warm_handoff,n_a,n_a,ST018,academic
+C00245,S0274,2026-03-17,residential life,outreach,no_response,n_a,,financial
+C00258,S0293,2026-02-10,financial aid,outreach,no_response,n_a,,academic
+C00017,S0013,2026-03-20,DOS,outreach,no_response,n_a,,wellbeing
+C00161,S0190,2026-03-12,Academic Advising,outreach,responded,n_a,,social
+C00087,S0100,2026-02-17,DOS,outreach,responded,n_a,,financial
+C00034,S0028,2026-03-05,financial aid,outreach,no_response,n_a,,wellbeing
+C00374,S0448,2026-02-05,Counseling Center,warm_handoff,n_a,n_a,ST001,academic
+C00346,S0417,2026-03-05,Counseling,referral,n_a,closed,,academic
+C00281,S0320,2026-02-02,residential life,warm_handoff,n_a,n_a,ST017,social
+C00072,S0081,2026-03-04,ResLife,referral,n_a,open,,social
+C00410,S0505,2026-02-10,FinAid,staff_note,n_a,n_a,,academic
+C00205,S0226,2026-02-19,FinAid,outreach,responded,n_a,,behavioral
+C00318,S0377,2026-02-06,Residential Life,referral,n_a,closed,,behavioral
+C00211,S0230,2026-03-19,Counseling Center,outreach,responded,n_a,,social
+C00435,S0531,2026-03-12,FinAid,outreach,responded,n_a,,financial
+C00351,S0425,2026-03-05,academic advising,outreach,no_response,n_a,,wellbeing
+C00570,S0700,2026-02-16,Academic Advising,outreach,responded,n_a,,financial

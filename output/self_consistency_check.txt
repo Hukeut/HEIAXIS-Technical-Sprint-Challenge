@@ -1,0 +1,29 @@
+SELF-CONSISTENCY CHECK (circular -- see docstring / evaluation_logic.md)
+======================================================================
+
+Student disconnection detector vs. seeded archetype:
+                       flagged  total  rate
+archetype                                  
+care_gap                    16     84   19%
+disconnecting              111    111  100%
+dropped_course              28     28  100%
+improving                    0     64    0%
+noisy_false_flag_bait        5     55    9%
+stable                       5    358    1%
+
+Continuity gap detector vs. seeded archetype:
+                       flagged  total rate
+archetype                                 
+care_gap                    65     84  77%
+disconnecting                8    111   7%
+dropped_course               2     28   7%
+improving                    6     64   9%
+noisy_false_flag_bait        1     55   2%
+stable                       5    358   1%
+
+Read as: 'disconnecting' and 'dropped_course' archetypes should have high
+flag rates (that's what the detector is meant to catch). 'stable' and
+'noisy_false_flag_bait' should have LOW flag rates (that's the false-
+positive check). 'care_gap' should have a high gap_flagged rate. None of
+this proves the detector will work on real data -- it only proves the
+code does what I intended it to do on data I built to match that intent.

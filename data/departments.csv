@@ -1,0 +1,6 @@
+department_id,department_name,staff_count,service_area
+DPT01,Counseling,4,Mental health and personal support
+DPT02,Academic Advising,6,Course planning and academic standing
+DPT03,Financial Aid,3,"Billing, aid, and financial holds"
+DPT04,Dean of Students,2,"Conduct, crisis response, and student welfare"
+DPT05,Residential Life,3,Housing and dorm-related issues

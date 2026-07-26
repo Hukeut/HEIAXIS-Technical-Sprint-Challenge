@@ -1,0 +1,701 @@
+student_id,cohort,program,class_year,enrollment_status
+S0001,Fall2025,Computer Science,Freshman,active
+S0002,Fall2022,Psychology,Senior,active
+S0003,Fall2024,Psychology,Sophomore,active
+S0004,Fall2025,Computer Science,Freshman,active
+S0005,Fall2023,Business,Junior,active
+S0006,Fall2023,Undeclared,Junior,active
+S0007,Fall2022,Engineering,Senior,active
+S0008,Fall2025,Biology,Freshman,active
+S0009,Fall2023,Sociology,Junior,active
+S0010,Fall2025,Engineering,Freshman,active
+S0011,Fall2023,Psychology,Junior,active
+S0012,Fall2024,Sociology,Sophomore,active
+S0013,Fall2023,Biology,Junior,active
+S0014,Fall2023,Sociology,Junior,active
+S0015,Fall2024,Computer Science,Sophomore,active
+S0016,Fall2025,Engineering,Freshman,active
+S0017,Fall2024,Psychology,Sophomore,active
+S0018,Fall2023,Biology,Junior,active
+S0019,Fall2024,Engineering,Sophomore,active
+S0020,Fall2025,Sociology,Freshman,active
+S0021,Fall2023,Business,Junior,active
+S0022,Fall2024,Business,Sophomore,active
+S0023,Fall2023,Undeclared,Junior,active
+S0024,Fall2022,Biology,Senior,active
+S0025,Fall2022,Engineering,Senior,active
+S0026,Fall2024,Psychology,Sophomore,active
+S0027,Fall2023,Undeclared,Junior,active
+S0028,Fall2022,Biology,Senior,active
+S0029,Fall2022,Psychology,Senior,active
+S0030,Fall2025,Business,Freshman,active
+S0031,Fall2022,Psychology,Senior,active
+S0032,Fall2022,Biology,Senior,active
+S0033,Fall2023,Biology,Junior,active
+S0034,Fall2025,Sociology,Freshman,active
+S0035,Fall2023,Business,Junior,active
+S0036,Fall2025,Computer Science,Freshman,active
+S0037,Fall2022,Psychology,Senior,active
+S0038,Fall2023,Engineering,Junior,active
+S0039,Fall2024,Sociology,Sophomore,active
+S0040,Fall2023,Business,Junior,active
+S0041,Fall2024,Undeclared,Sophomore,active
+S0042,Fall2024,Sociology,Sophomore,active
+S0043,Fall2025,Sociology,Freshman,active
+S0044,Fall2025,Biology,Freshman,active
+S0045,Fall2023,Computer Science,Junior,active
+S0046,Fall2025,Psychology,Freshman,active
+S0047,Fall2025,Biology,Freshman,active
+S0048,Fall2024,Undeclared,Sophomore,active
+S0049,Fall2024,Biology,Sophomore,active
+S0050,Fall2022,Sociology,Senior,active
+S0051,Fall2024,Undeclared,Sophomore,active
+S0052,Fall2023,Biology,Junior,active
+S0053,Fall2022,Undeclared,Senior,active
+S0054,Fall2025,Psychology,Freshman,active
+S0055,Fall2024,Undeclared,Sophomore,active
+S0056,Fall2025,Business,Freshman,active
+S0057,Fall2024,Business,Sophomore,active
+S0058,Fall2023,Business,Junior,active
+S0059,Fall2023,Psychology,Junior,active
+S0060,Fall2024,Psychology,Sophomore,active
+S0061,Fall2022,Undeclared,Senior,active
+S0062,Fall2022,Biology,Senior,active
+S0063,Fall2022,Business,Senior,active
+S0064,Fall2022,Biology,Senior,active
+S0065,Fall2025,Business,Freshman,active
+S0066,Fall2023,Engineering,Junior,active
+S0067,Fall2024,Business,Sophomore,active
+S0068,Fall2022,Undeclared,Senior,active
+S0069,Fall2023,Psychology,Junior,active
+S0070,Fall2025,Sociology,Freshman,active
+S0071,Fall2025,Sociology,Freshman,active
+S0072,Fall2025,Undeclared,Freshman,active
+S0073,Fall2024,Sociology,Sophomore,active
+S0074,Fall2022,Biology,Senior,active
+S0075,Fall2025,Biology,Freshman,active
+S0076,Fall2022,Business,Senior,active
+S0077,Fall2022,Sociology,Senior,active
+S0078,Fall2022,Engineering,Senior,active
+S0079,Fall2024,Computer Science,Sophomore,active
+S0080,Fall2025,Undeclared,Freshman,active
+S0081,Fall2025,Business,Freshman,active
+S0082,Fall2024,Undeclared,Sophomore,active
+S0083,Fall2025,Undeclared,Freshman,active
+S0084,Fall2025,Business,Freshman,active
+S0085,Fall2022,Psychology,Senior,active
+S0086,Fall2024,Undeclared,Sophomore,active
+S0087,Fall2025,Business,Freshman,active
+S0088,Fall2023,Undeclared,Junior,active
+S0089,Fall2023,Psychology,Junior,active
+S0090,Fall2024,Biology,Sophomore,active
+S0091,Fall2022,Computer Science,Senior,active
+S0092,Fall2025,Sociology,Freshman,active
+S0093,Fall2025,Undeclared,Freshman,active
+S0094,Fall2023,Psychology,Junior,active
+S0095,Fall2025,Computer Science,Freshman,active
+S0096,Fall2023,Computer Science,Junior,active
+S0097,Fall2023,Sociology,Junior,active
+S0098,Fall2025,Sociology,Freshman,active
+S0099,Fall2023,Undeclared,Junior,active
+S0100,Fall2024,Business,Sophomore,active
+S0101,Fall2024,Business,Sophomore,active
+S0102,Fall2024,Undeclared,Sophomore,active
+S0103,Fall2023,Psychology,Junior,active
+S0104,Fall2025,Computer Science,Freshman,active
+S0105,Fall2023,Biology,Junior,active
+S0106,Fall2024,Computer Science,Sophomore,active
+S0107,Fall2024,Computer Science,Sophomore,active
+S0108,Fall2022,Undeclared,Senior,active
+S0109,Fall2025,Business,Freshman,active
+S0110,Fall2024,Engineering,Sophomore,active
+S0111,Fall2023,Sociology,Junior,active
+S0112,Fall2022,Psychology,Senior,active
+S0113,Fall2023,Computer Science,Junior,active
+S0114,Fall2025,Sociology,Freshman,active
+S0115,Fall2024,Psychology,Sophomore,active
+S0116,Fall2022,Computer Science,Senior,active
+S0117,Fall2024,Engineering,Sophomore,active
+S0118,Fall2024,Psychology,Sophomore,active
+S0119,Fall2024,Sociology,Sophomore,active
+S0120,Fall2024,Business,Sophomore,active
+S0121,Fall2022,Computer Science,Senior,active
+S0122,Fall2024,Sociology,Sophomore,active
+S0123,Fall2025,Sociology,Freshman,active
+S0124,Fall2022,Business,Senior,active
+S0125,Fall2022,Sociology,Senior,active
+S0126,Fall2024,Sociology,Sophomore,active
+S0127,Fall2024,Engineering,Sophomore,active
+S0128,Fall2025,Computer Science,Freshman,active
+S0129,Fall2023,Computer Science,Junior,active
+S0130,Fall2023,Biology,Junior,active
+S0131,Fall2023,Business,Junior,active
+S0132,Fall2025,Computer Science,Freshman,active
+S0133,Fall2023,Biology,Junior,active
+S0134,Fall2022,Computer Science,Senior,active
+S0135,Fall2025,Undeclared,Freshman,active
+S0136,Fall2024,Undeclared,Sophomore,active
+S0137,Fall2022,Engineering,Senior,active
+S0138,Fall2024,Sociology,Sophomore,active
+S0139,Fall2023,Business,Junior,active
+S0140,Fall2025,Engineering,Freshman,active
+S0141,Fall2023,Computer Science,Junior,active
+S0142,Fall2022,Computer Science,Senior,active
+S0143,Fall2024,Undeclared,Sophomore,active
+S0144,Fall2022,Engineering,Senior,active
+S0145,Fall2023,Psychology,Junior,active
+S0146,Fall2025,Sociology,Freshman,active
+S0147,Fall2022,Psychology,Senior,active
+S0148,Fall2023,Undeclared,Junior,active
+S0149,Fall2024,Biology,Sophomore,active
+S0150,Fall2024,Sociology,Sophomore,active
+S0151,Fall2023,Computer Science,Junior,active
+S0152,Fall2024,Sociology,Sophomore,active
+S0153,Fall2024,Psychology,Sophomore,active
+S0154,Fall2024,Business,Sophomore,active
+S0155,Fall2025,Undeclared,Freshman,active
+S0156,Fall2024,Engineering,Sophomore,active
+S0157,Fall2022,Biology,Senior,active
+S0158,Fall2025,Psychology,Freshman,active
+S0159,Fall2025,Sociology,Freshman,active
+S0160,Fall2024,Psychology,Sophomore,active
+S0161,Fall2022,Engineering,Senior,active
+S0162,Fall2025,Psychology,Freshman,active
+S0163,Fall2022,Sociology,Senior,active
+S0164,Fall2023,Undeclared,Junior,active
+S0165,Fall2022,Biology,Senior,active
+S0166,Fall2022,Undeclared,Senior,active
+S0167,Fall2022,Engineering,Senior,active
+S0168,Fall2024,Sociology,Sophomore,active
+S0169,Fall2022,Computer Science,Senior,active
+S0170,Fall2022,Computer Science,Senior,active
+S0171,Fall2024,Computer Science,Sophomore,active
+S0172,Fall2025,Computer Science,Freshman,active
+S0173,Fall2022,Psychology,Senior,active
+S0174,Fall2024,Engineering,Sophomore,active
+S0175,Fall2023,Biology,Junior,active
+S0176,Fall2025,Biology,Freshman,active
+S0177,Fall2022,Biology,Senior,active
+S0178,Fall2025,Undeclared,Freshman,active
+S0179,Fall2022,Sociology,Senior,active
+S0180,Fall2023,Computer Science,Junior,active
+S0181,Fall2022,Sociology,Senior,active
+S0182,Fall2024,Engineering,Sophomore,active
+S0183,Fall2022,Computer Science,Senior,active
+S0184,Fall2023,Biology,Junior,active
+S0185,Fall2022,Sociology,Senior,active
+S0186,Fall2022,Sociology,Senior,active
+S0187,Fall2025,Undeclared,Freshman,active
+S0188,Fall2025,Undeclared,Freshman,active
+S0189,Fall2024,Biology,Sophomore,active
+S0190,Fall2025,Psychology,Freshman,active
+S0191,Fall2024,Computer Science,Sophomore,active
+S0192,Fall2022,Computer Science,Senior,active
+S0193,Fall2022,Sociology,Senior,active
+S0194,Fall2022,Business,Senior,active
+S0195,Fall2025,Undeclared,Freshman,active
+S0196,Fall2024,Computer Science,Sophomore,active
+S0197,Fall2025,Sociology,Freshman,active
+S0198,Fall2024,Psychology,Sophomore,active
+S0199,Fall2024,Undeclared,Sophomore,active
+S0200,Fall2025,Biology,Freshman,active
+S0201,Fall2022,Psychology,Senior,active
+S0202,Fall2023,Sociology,Junior,active
+S0203,Fall2025,Undeclared,Freshman,active
+S0204,Fall2023,Psychology,Junior,active
+S0205,Fall2023,Business,Junior,active
+S0206,Fall2022,Biology,Senior,active
+S0207,Fall2025,Psychology,Freshman,active
+S0208,Fall2024,Sociology,Sophomore,active
+S0209,Fall2023,Sociology,Junior,active
+S0210,Fall2025,Undeclared,Freshman,active
+S0211,Fall2025,Undeclared,Freshman,active
+S0212,Fall2023,Biology,Junior,active
+S0213,Fall2023,Engineering,Junior,active
+S0214,Fall2022,Biology,Senior,active
+S0215,Fall2022,Computer Science,Senior,active
+S0216,Fall2024,Biology,Sophomore,active
+S0217,Fall2023,Engineering,Junior,active
+S0218,Fall2022,Undeclared,Senior,active
+S0219,Fall2023,Sociology,Junior,active
+S0220,Fall2025,Psychology,Freshman,active
+S0221,Fall2024,Biology,Sophomore,active
+S0222,Fall2022,Undeclared,Senior,active
+S0223,Fall2023,Biology,Junior,active
+S0224,Fall2023,Psychology,Junior,active
+S0225,Fall2023,Computer Science,Junior,active
+S0226,Fall2023,Engineering,Junior,active
+S0227,Fall2024,Undeclared,Sophomore,active
+S0228,Fall2022,Engineering,Senior,active
+S0229,Fall2024,Sociology,Sophomore,active
+S0230,Fall2022,Engineering,Senior,active
+S0231,Fall2025,Business,Freshman,active
+S0232,Fall2024,Biology,Sophomore,active
+S0233,Fall2023,Undeclared,Junior,active
+S0234,Fall2023,Undeclared,Junior,active
+S0235,Fall2023,Engineering,Junior,active
+S0236,Fall2023,Biology,Junior,active
+S0237,Fall2025,Psychology,Freshman,active
+S0238,Fall2025,Computer Science,Freshman,active
+S0239,Fall2024,Sociology,Sophomore,active
+S0240,Fall2022,Engineering,Senior,active
+S0241,Fall2023,Undeclared,Junior,active
+S0242,Fall2024,Sociology,Sophomore,active
+S0243,Fall2024,Computer Science,Sophomore,active
+S0244,Fall2024,Engineering,Sophomore,active
+S0245,Fall2023,Business,Junior,active
+S0246,Fall2022,Psychology,Senior,active
+S0247,Fall2023,Business,Junior,active
+S0248,Fall2023,Biology,Junior,active
+S0249,Fall2023,Business,Junior,active
+S0250,Fall2025,Biology,Freshman,active
+S0251,Fall2022,Biology,Senior,active
+S0252,Fall2025,Engineering,Freshman,active
+S0253,Fall2023,Sociology,Junior,active
+S0254,Fall2025,Psychology,Freshman,active
+S0255,Fall2024,Biology,Sophomore,active
+S0256,Fall2022,Biology,Senior,active
+S0257,Fall2022,Computer Science,Senior,active
+S0258,Fall2025,Undeclared,Freshman,active
+S0259,Fall2025,Engineering,Freshman,active
+S0260,Fall2024,Psychology,Sophomore,active
+S0261,Fall2024,Business,Sophomore,active
+S0262,Fall2025,Undeclared,Freshman,active
+S0263,Fall2022,Biology,Senior,active
+S0264,Fall2023,Biology,Junior,active
+S0265,Fall2023,Computer Science,Junior,active
+S0266,Fall2025,Biology,Freshman,active
+S0267,Fall2024,Computer Science,Sophomore,active
+S0268,Fall2024,Undeclared,Sophomore,active
+S0269,Fall2024,Computer Science,Sophomore,active
+S0270,Fall2023,Psychology,Junior,active
+S0271,Fall2023,Sociology,Junior,active
+S0272,Fall2023,Biology,Junior,active
+S0273,Fall2022,Computer Science,Senior,active
+S0274,Fall2025,Undeclared,Freshman,active
+S0275,Fall2023,Engineering,Junior,active
+S0276,Fall2025,Business,Freshman,active
+S0277,Fall2025,Engineering,Freshman,active
+S0278,Fall2023,Engineering,Junior,active
+S0279,Fall2024,Sociology,Sophomore,active
+S0280,Fall2022,Engineering,Senior,active
+S0281,Fall2022,Psychology,Senior,active
+S0282,Fall2025,Biology,Freshman,active
+S0283,Fall2023,Biology,Junior,active
+S0284,Fall2024,Business,Sophomore,active
+S0285,Fall2022,Engineering,Senior,active
+S0286,Fall2025,Biology,Freshman,active
+S0287,Fall2023,Computer Science,Junior,active
+S0288,Fall2022,Sociology,Senior,active
+S0289,Fall2025,Sociology,Freshman,active
+S0290,Fall2022,Undeclared,Senior,active
+S0291,Fall2023,Psychology,Junior,active
+S0292,Fall2022,Biology,Senior,active
+S0293,Fall2023,Psychology,Junior,active
+S0294,Fall2022,Computer Science,Senior,active
+S0295,Fall2025,Biology,Freshman,active
+S0296,Fall2024,Engineering,Sophomore,active
+S0297,Fall2025,Computer Science,Freshman,active
+S0298,Fall2024,Business,Sophomore,active
+S0299,Fall2022,Business,Senior,active
+S0300,Fall2024,Engineering,Sophomore,active
+S0301,Fall2023,Engineering,Junior,active
+S0302,Fall2022,Computer Science,Senior,active
+S0303,Fall2024,Biology,Sophomore,active
+S0304,Fall2022,Psychology,Senior,active
+S0305,Fall2024,Undeclared,Sophomore,active
+S0306,Fall2022,Computer Science,Senior,active
+S0307,Fall2023,Sociology,Junior,active
+S0308,Fall2023,Computer Science,Junior,active
+S0309,Fall2022,Undeclared,Senior,active
+S0310,Fall2022,Biology,Senior,active
+S0311,Fall2022,Undeclared,Senior,active
+S0312,Fall2024,Computer Science,Sophomore,active
+S0313,Fall2022,Psychology,Senior,active
+S0314,Fall2022,Sociology,Senior,active
+S0315,Fall2022,Engineering,Senior,active
+S0316,Fall2022,Sociology,Senior,active
+S0317,Fall2024,Engineering,Sophomore,active
+S0318,Fall2024,Business,Sophomore,active
+S0319,Fall2023,Undeclared,Junior,active
+S0320,Fall2022,Sociology,Senior,active
+S0321,Fall2025,Biology,Freshman,active
+S0322,Fall2024,Biology,Sophomore,active
+S0323,Fall2023,Sociology,Junior,active
+S0324,Fall2022,Engineering,Senior,active
+S0325,Fall2023,Sociology,Junior,active
+S0326,Fall2022,Sociology,Senior,active
+S0327,Fall2022,Engineering,Senior,active
+S0328,Fall2025,Business,Freshman,active
+S0329,Fall2023,Engineering,Junior,active
+S0330,Fall2025,Engineering,Freshman,active
+S0331,Fall2025,Business,Freshman,active
+S0332,Fall2023,Engineering,Junior,active
+S0333,Fall2023,Business,Junior,active
+S0334,Fall2023,Computer Science,Junior,active
+S0335,Fall2024,Psychology,Sophomore,active
+S0336,Fall2024,Undeclared,Sophomore,active
+S0337,Fall2022,Business,Senior,active
+S0338,Fall2022,Psychology,Senior,active
+S0339,Fall2024,Psychology,Sophomore,active
+S0340,Fall2022,Computer Science,Senior,active
+S0341,Fall2022,Business,Senior,active
+S0342,Fall2024,Engineering,Sophomore,active
+S0343,Fall2023,Computer Science,Junior,active
+S0344,Fall2023,Biology,Junior,active
+S0345,Fall2024,Computer Science,Sophomore,active
+S0346,Fall2022,Sociology,Senior,active
+S0347,Fall2023,Biology,Junior,active
+S0348,Fall2023,Engineering,Junior,active
+S0349,Fall2022,Sociology,Senior,active
+S0350,Fall2025,Undeclared,Freshman,active
+S0351,Fall2022,Engineering,Senior,active
+S0352,Fall2024,Computer Science,Sophomore,active
+S0353,Fall2024,Computer Science,Sophomore,active
+S0354,Fall2023,Undeclared,Junior,active
+S0355,Fall2024,Engineering,Sophomore,active
+S0356,Fall2025,Engineering,Freshman,active
+S0357,Fall2025,Biology,Freshman,active
+S0358,Fall2024,Engineering,Sophomore,active
+S0359,Fall2023,Computer Science,Junior,active
+S0360,Fall2024,Psychology,Sophomore,active
+S0361,Fall2023,Undeclared,Junior,active
+S0362,Fall2024,Computer Science,Sophomore,active
+S0363,Fall2022,Sociology,Senior,active
+S0364,Fall2023,Computer Science,Junior,active
+S0365,Fall2025,Biology,Freshman,active
+S0366,Fall2022,Psychology,Senior,active
+S0367,Fall2023,Sociology,Junior,active
+S0368,Fall2025,Biology,Freshman,active
+S0369,Fall2022,Business,Senior,active
+S0370,Fall2023,Engineering,Junior,active
+S0371,Fall2023,Sociology,Junior,active
+S0372,Fall2022,Psychology,Senior,active
+S0373,Fall2023,Undeclared,Junior,active
+S0374,Fall2025,Psychology,Freshman,active
+S0375,Fall2023,Biology,Junior,active
+S0376,Fall2024,Business,Sophomore,active
+S0377,Fall2023,Business,Junior,active
+S0378,Fall2025,Business,Freshman,active
+S0379,Fall2024,Undeclared,Sophomore,active
+S0380,Fall2022,Computer Science,Senior,active
+S0381,Fall2024,Engineering,Sophomore,active
+S0382,Fall2025,Engineering,Freshman,active
+S0383,Fall2022,Undeclared,Senior,active
+S0384,Fall2025,Computer Science,Freshman,active
+S0385,Fall2022,Psychology,Senior,active
+S0386,Fall2023,Psychology,Junior,active
+S0387,Fall2023,Engineering,Junior,active
+S0388,Fall2023,Engineering,Junior,active
+S0389,Fall2024,Computer Science,Sophomore,active
+S0390,Fall2022,Sociology,Senior,active
+S0391,Fall2025,Psychology,Freshman,active
+S0392,Fall2024,Computer Science,Sophomore,active
+S0393,Fall2024,Sociology,Sophomore,active
+S0394,Fall2024,Sociology,Sophomore,active
+S0395,Fall2024,Sociology,Sophomore,active
+S0396,Fall2025,Psychology,Freshman,active
+S0397,Fall2024,Psychology,Sophomore,active
+S0398,Fall2024,Sociology,Sophomore,active
+S0399,Fall2025,Sociology,Freshman,active
+S0400,Fall2024,Computer Science,Sophomore,active
+S0401,Fall2024,Business,Sophomore,active
+S0402,Fall2022,Psychology,Senior,active
+S0403,Fall2025,Engineering,Freshman,active
+S0404,Fall2023,Sociology,Junior,active
+S0405,Fall2022,Business,Senior,active
+S0406,Fall2025,Undeclared,Freshman,active
+S0407,Fall2023,Sociology,Junior,active
+S0408,Fall2025,Business,Freshman,active
+S0409,Fall2022,Sociology,Senior,active
+S0410,Fall2022,Business,Senior,active
+S0411,Fall2025,Biology,Freshman,active
+S0412,Fall2024,Computer Science,Sophomore,active
+S0413,Fall2023,Computer Science,Junior,active
+S0414,Fall2023,Undeclared,Junior,active
+S0415,Fall2022,Undeclared,Senior,active
+S0416,Fall2025,Engineering,Freshman,active
+S0417,Fall2024,Engineering,Sophomore,active
+S0418,Fall2022,Psychology,Senior,active
+S0419,Fall2022,Biology,Senior,active
+S0420,Fall2023,Business,Junior,active
+S0421,Fall2023,Engineering,Junior,active
+S0422,Fall2022,Psychology,Senior,active
+S0423,Fall2025,Sociology,Freshman,active
+S0424,Fall2023,Business,Junior,active
+S0425,Fall2025,Undeclared,Freshman,active
+S0426,Fall2023,Undeclared,Junior,active
+S0427,Fall2023,Biology,Junior,active
+S0428,Fall2022,Sociology,Senior,active
+S0429,Fall2025,Engineering,Freshman,active
+S0430,Fall2023,Undeclared,Junior,active
+S0431,Fall2024,Undeclared,Sophomore,active
+S0432,Fall2024,Biology,Sophomore,active
+S0433,Fall2023,Computer Science,Junior,active
+S0434,Fall2024,Computer Science,Sophomore,active
+S0435,Fall2025,Sociology,Freshman,active
+S0436,Fall2023,Engineering,Junior,active
+S0437,Fall2023,Computer Science,Junior,active
+S0438,Fall2025,Computer Science,Freshman,active
+S0439,Fall2022,Psychology,Senior,active
+S0440,Fall2025,Engineering,Freshman,active
+S0441,Fall2024,Undeclared,Sophomore,active
+S0442,Fall2023,Biology,Junior,active
+S0443,Fall2023,Computer Science,Junior,active
+S0444,Fall2025,Undeclared,Freshman,active
+S0445,Fall2024,Psychology,Sophomore,active
+S0446,Fall2025,Business,Freshman,active
+S0447,Fall2022,Engineering,Senior,active
+S0448,Fall2022,Biology,Senior,active
+S0449,Fall2025,Sociology,Freshman,active
+S0450,Fall2023,Business,Junior,active
+S0451,Fall2022,Undeclared,Senior,active
+S0452,Fall2025,Computer Science,Freshman,active
+S0453,Fall2025,Undeclared,Freshman,active
+S0454,Fall2024,Computer Science,Sophomore,active
+S0455,Fall2023,Sociology,Junior,active
+S0456,Fall2025,Business,Freshman,active
+S0457,Fall2024,Biology,Sophomore,active
+S0458,Fall2024,Undeclared,Sophomore,active
+S0459,Fall2023,Sociology,Junior,active
+S0460,Fall2025,Sociology,Freshman,active
+S0461,Fall2025,Biology,Freshman,active
+S0462,Fall2022,Undeclared,Senior,active
+S0463,Fall2022,Engineering,Senior,active
+S0464,Fall2025,Biology,Freshman,active
+S0465,Fall2022,Psychology,Senior,active
+S0466,Fall2025,Computer Science,Freshman,active
+S0467,Fall2024,Business,Sophomore,active
+S0468,Fall2025,Biology,Freshman,active
+S0469,Fall2023,Computer Science,Junior,active
+S0470,Fall2024,Sociology,Sophomore,active
+S0471,Fall2025,Engineering,Freshman,active
+S0472,Fall2023,Psychology,Junior,active
+S0473,Fall2024,Sociology,Sophomore,active
+S0474,Fall2023,Psychology,Junior,active
+S0475,Fall2024,Undeclared,Sophomore,active
+S0476,Fall2025,Engineering,Freshman,active
+S0477,Fall2022,Sociology,Senior,active
+S0478,Fall2022,Undeclared,Senior,active
+S0479,Fall2023,Undeclared,Junior,active
+S0480,Fall2023,Engineering,Junior,active
+S0481,Fall2022,Business,Senior,active
+S0482,Fall2023,Computer Science,Junior,active
+S0483,Fall2025,Computer Science,Freshman,active
+S0484,Fall2025,Biology,Freshman,active
+S0485,Fall2023,Sociology,Junior,active
+S0486,Fall2025,Sociology,Freshman,active
+S0487,Fall2022,Undeclared,Senior,active
+S0488,Fall2025,Undeclared,Freshman,active
+S0489,Fall2024,Sociology,Sophomore,active
+S0490,Fall2024,Biology,Sophomore,active
+S0491,Fall2025,Biology,Freshman,active
+S0492,Fall2023,Sociology,Junior,active
+S0493,Fall2024,Business,Sophomore,active
+S0494,Fall2022,Engineering,Senior,active
+S0495,Fall2024,Undeclared,Sophomore,active
+S0496,Fall2022,Computer Science,Senior,active
+S0497,Fall2025,Computer Science,Freshman,active
+S0498,Fall2023,Engineering,Junior,active
+S0499,Fall2022,Business,Senior,active
+S0500,Fall2024,Engineering,Sophomore,active
+S0501,Fall2024,Undeclared,Sophomore,active
+S0502,Fall2022,Computer Science,Senior,active
+S0503,Fall2025,Engineering,Freshman,active
+S0504,Fall2023,Biology,Junior,active
+S0505,Fall2025,Engineering,Freshman,active
+S0506,Fall2023,Biology,Junior,active
+S0507,Fall2024,Computer Science,Sophomore,active
+S0508,Fall2022,Computer Science,Senior,active
+S0509,Fall2024,Psychology,Sophomore,active
+S0510,Fall2025,Sociology,Freshman,active
+S0511,Fall2025,Undeclared,Freshman,active
+S0512,Fall2024,Sociology,Sophomore,active
+S0513,Fall2024,Psychology,Sophomore,active
+S0514,Fall2024,Engineering,Sophomore,active
+S0515,Fall2022,Business,Senior,active
+S0516,Fall2024,Engineering,Sophomore,active
+S0517,Fall2023,Undeclared,Junior,active
+S0518,Fall2022,Sociology,Senior,active
+S0519,Fall2023,Psychology,Junior,active
+S0520,Fall2022,Sociology,Senior,active
+S0521,Fall2023,Psychology,Junior,active
+S0522,Fall2022,Undeclared,Senior,active
+S0523,Fall2022,Computer Science,Senior,active
+S0524,Fall2024,Biology,Sophomore,active
+S0525,Fall2024,Sociology,Sophomore,active
+S0526,Fall2022,Business,Senior,active
+S0527,Fall2025,Undeclared,Freshman,active
+S0528,Fall2025,Undeclared,Freshman,active
+S0529,Fall2024,Sociology,Sophomore,active
+S0530,Fall2024,Undeclared,Sophomore,active
+S0531,Fall2024,Business,Sophomore,active
+S0532,Fall2025,Computer Science,Freshman,active
+S0533,Fall2023,Biology,Junior,active
+S0534,Fall2023,Business,Junior,active
+S0535,Fall2025,Computer Science,Freshman,active
+S0536,Fall2023,Engineering,Junior,active
+S0537,Fall2025,Psychology,Freshman,active
+S0538,Fall2022,Sociology,Senior,active
+S0539,Fall2022,Psychology,Senior,active
+S0540,Fall2025,Business,Freshman,active
+S0541,Fall2024,Psychology,Sophomore,active
+S0542,Fall2022,Engineering,Senior,active
+S0543,Fall2024,Computer Science,Sophomore,active
+S0544,Fall2024,Business,Sophomore,active
+S0545,Fall2022,Sociology,Senior,active
+S0546,Fall2022,Sociology,Senior,active
+S0547,Fall2024,Business,Sophomore,active
+S0548,Fall2022,Computer Science,Senior,active
+S0549,Fall2024,Computer Science,Sophomore,active
+S0550,Fall2025,Psychology,Freshman,active
+S0551,Fall2025,Computer Science,Freshman,active
+S0552,Fall2025,Undeclared,Freshman,active
+S0553,Fall2025,Biology,Freshman,active
+S0554,Fall2023,Computer Science,Junior,active
+S0555,Fall2025,Computer Science,Freshman,active
+S0556,Fall2025,Engineering,Freshman,active
+S0557,Fall2023,Engineering,Junior,active
+S0558,Fall2023,Computer Science,Junior,active
+S0559,Fall2022,Psychology,Senior,active
+S0560,Fall2024,Biology,Sophomore,active
+S0561,Fall2022,Business,Senior,active
+S0562,Fall2025,Psychology,Freshman,active
+S0563,Fall2023,Business,Junior,active
+S0564,Fall2022,Undeclared,Senior,active
+S0565,Fall2022,Undeclared,Senior,active
+S0566,Fall2024,Sociology,Sophomore,active
+S0567,Fall2025,Sociology,Freshman,active
+S0568,Fall2023,Computer Science,Junior,active
+S0569,Fall2022,Computer Science,Senior,active
+S0570,Fall2022,Engineering,Senior,active
+S0571,Fall2023,Biology,Junior,active
+S0572,Fall2022,Biology,Senior,active
+S0573,Fall2023,Sociology,Junior,active
+S0574,Fall2022,Engineering,Senior,active
+S0575,Fall2024,Undeclared,Sophomore,active
+S0576,Fall2025,Computer Science,Freshman,active
+S0577,Fall2023,Engineering,Junior,active
+S0578,Fall2022,Undeclared,Senior,active
+S0579,Fall2023,Biology,Junior,active
+S0580,Fall2023,Engineering,Junior,active
+S0581,Fall2023,Biology,Junior,active
+S0582,Fall2025,Sociology,Freshman,active
+S0583,Fall2022,Engineering,Senior,active
+S0584,Fall2024,Sociology,Sophomore,active
+S0585,Fall2022,Psychology,Senior,active
+S0586,Fall2024,Business,Sophomore,active
+S0587,Fall2023,Computer Science,Junior,active
+S0588,Fall2025,Undeclared,Freshman,active
+S0589,Fall2022,Engineering,Senior,active
+S0590,Fall2022,Computer Science,Senior,active
+S0591,Fall2024,Undeclared,Sophomore,active
+S0592,Fall2023,Biology,Junior,active
+S0593,Fall2025,Psychology,Freshman,active
+S0594,Fall2022,Psychology,Senior,active
+S0595,Fall2025,Undeclared,Freshman,active
+S0596,Fall2022,Computer Science,Senior,active
+S0597,Fall2023,Undeclared,Junior,active
+S0598,Fall2024,Biology,Sophomore,active
+S0599,Fall2025,Sociology,Freshman,active
+S0600,Fall2022,Engineering,Senior,active
+S0601,Fall2023,Sociology,Junior,active
+S0602,Fall2025,Engineering,Freshman,active
+S0603,Fall2023,Computer Science,Junior,active
+S0604,Fall2024,Engineering,Sophomore,active
+S0605,Fall2024,Undeclared,Sophomore,active
+S0606,Fall2024,Psychology,Sophomore,active
+S0607,Fall2025,Biology,Freshman,active
+S0608,Fall2023,Undeclared,Junior,active
+S0609,Fall2024,Undeclared,Sophomore,active
+S0610,Fall2025,Business,Freshman,active
+S0611,Fall2022,Engineering,Senior,active
+S0612,Fall2022,Sociology,Senior,active
+S0613,Fall2024,Business,Sophomore,active
+S0614,Fall2025,Engineering,Freshman,active
+S0615,Fall2023,Engineering,Junior,active
+S0616,Fall2024,Sociology,Sophomore,active
+S0617,Fall2022,Psychology,Senior,active
+S0618,Fall2025,Sociology,Freshman,active
+S0619,Fall2024,Undeclared,Sophomore,active
+S0620,Fall2023,Psychology,Junior,active
+S0621,Fall2023,Psychology,Junior,active
+S0622,Fall2023,Undeclared,Junior,active
+S0623,Fall2024,Computer Science,Sophomore,active
+S0624,Fall2023,Undeclared,Junior,active
+S0625,Fall2025,Computer Science,Freshman,active
+S0626,Fall2024,Psychology,Sophomore,active
+S0627,Fall2023,Undeclared,Junior,active
+S0628,Fall2025,Undeclared,Freshman,active
+S0629,Fall2025,Business,Freshman,active
+S0630,Fall2023,Engineering,Junior,active
+S0631,Fall2022,Sociology,Senior,active
+S0632,Fall2022,Business,Senior,active
+S0633,Fall2023,Undeclared,Junior,active
+S0634,Fall2022,Computer Science,Senior,active
+S0635,Fall2022,Sociology,Senior,active
+S0636,Fall2025,Business,Freshman,active
+S0637,Fall2022,Biology,Senior,active
+S0638,Fall2024,Computer Science,Sophomore,active
+S0639,Fall2023,Engineering,Junior,active
+S0640,Fall2023,Sociology,Junior,active
+S0641,Fall2023,Psychology,Junior,active
+S0642,Fall2023,Business,Junior,active
+S0643,Fall2023,Business,Junior,active
+S0644,Fall2025,Psychology,Freshman,active
+S0645,Fall2022,Biology,Senior,active
+S0646,Fall2024,Sociology,Sophomore,active
+S0647,Fall2023,Undeclared,Junior,active
+S0648,Fall2022,Psychology,Senior,active
+S0649,Fall2022,Biology,Senior,active
+S0650,Fall2025,Biology,Freshman,active
+S0651,Fall2022,Biology,Senior,active
+S0652,Fall2023,Psychology,Junior,active
+S0653,Fall2022,Computer Science,Senior,active
+S0654,Fall2022,Sociology,Senior,active
+S0655,Fall2025,Business,Freshman,active
+S0656,Fall2023,Computer Science,Junior,active
+S0657,Fall2025,Computer Science,Freshman,active
+S0658,Fall2024,Undeclared,Sophomore,active
+S0659,Fall2025,Computer Science,Freshman,active
+S0660,Fall2023,Biology,Junior,active
+S0661,Fall2025,Undeclared,Freshman,active
+S0662,Fall2022,Business,Senior,active
+S0663,Fall2023,Computer Science,Junior,active
+S0664,Fall2022,Psychology,Senior,active
+S0665,Fall2025,Business,Freshman,active
+S0666,Fall2022,Computer Science,Senior,active
+S0667,Fall2024,Psychology,Sophomore,active
+S0668,Fall2023,Undeclared,Junior,active
+S0669,Fall2023,Undeclared,Junior,active
+S0670,Fall2022,Undeclared,Senior,active
+S0671,Fall2022,Computer Science,Senior,active
+S0672,Fall2023,Computer Science,Junior,active
+S0673,Fall2023,Biology,Junior,active
+S0674,Fall2025,Engineering,Freshman,active
+S0675,Fall2024,Computer Science,Sophomore,active
+S0676,Fall2022,Undeclared,Senior,active
+S0677,Fall2022,Engineering,Senior,active
+S0678,Fall2024,Engineering,Sophomore,active
+S0679,Fall2025,Engineering,Freshman,active
+S0680,Fall2023,Biology,Junior,active
+S0681,Fall2024,Biology,Sophomore,active
+S0682,Fall2022,Sociology,Senior,active
+S0683,Fall2025,Engineering,Freshman,active
+S0684,Fall2024,Undeclared,Sophomore,active
+S0685,Fall2022,Engineering,Senior,active
+S0686,Fall2024,Computer Science,Sophomore,active
+S0687,Fall2023,Undeclared,Junior,active
+S0688,Fall2023,Engineering,Junior,active
+S0689,Fall2024,Psychology,Sophomore,active
+S0690,Fall2024,Computer Science,Sophomore,active
+S0691,Fall2023,Computer Science,Junior,active
+S0692,Fall2022,Engineering,Senior,active
+S0693,Fall2023,Computer Science,Junior,active
+S0694,Fall2022,Undeclared,Senior,active
+S0695,Fall2023,Biology,Junior,active
+S0696,Fall2024,Sociology,Sophomore,active
+S0697,Fall2025,Computer Science,Freshman,active
+S0698,Fall2023,Biology,Junior,active
+S0699,Fall2024,Psychology,Sophomore,active
+S0700,Fall2023,Computer Science,Junior,active

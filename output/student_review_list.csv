@@ -1,0 +1,138 @@
+student_id,departments_involved,leading_issue,days_elapsed,confidence,priority,reason
+S0131,Dean of Students,incomplete_or_overdue_action_plan,49,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0334,Dean of Students + Financial Aid + Residential Life,unowned_workflow_step,49,High,High,Handoff at Residential Life has no assigned_owner -- nobody on record is accountable for it.
+S0446,Dean of Students + Residential Life,uncoordinated_multi_department,49,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Dean of Students, Residential Life) with no indication either department is aware of the other."
+S0640,Academic Advising + Dean of Students + Residential Life,uncoordinated_multi_department,49,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Dean of Students) with no indication either department is aware of the other."
+S0007,Dean of Students,incomplete_or_overdue_action_plan,48,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0266,Dean of Students + Financial Aid,incomplete_or_overdue_action_plan,48,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0435,Counseling + Dean of Students + Financial Aid,incomplete_or_overdue_action_plan,48,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0455,Academic Advising + Residential Life,uncoordinated_multi_department,48,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Residential Life) with no indication either department is aware of the other."
+S0498,Counseling + Dean of Students,uncoordinated_multi_department,48,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Counseling, Dean of Students) with no indication either department is aware of the other."
+S0693,Financial Aid,incomplete_or_overdue_action_plan,48,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0020,Counseling + Dean of Students + Financial Aid + Residential Life + Unknown,uncoordinated_multi_department,47,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Financial Aid, Residential Life) with no indication either department is aware of the other."
+S0081,Academic Advising + Financial Aid,uncoordinated_multi_department,47,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Financial Aid) with no indication either department is aware of the other."
+S0122,Counseling + Dean of Students + Residential Life,uncoordinated_multi_department,47,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Counseling, Dean of Students) with no indication either department is aware of the other."
+S0238,Counseling + Dean of Students + Financial Aid,incomplete_or_overdue_action_plan,47,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0671,Dean of Students + Financial Aid,uncoordinated_multi_department,47,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Dean of Students, Financial Aid) with no indication either department is aware of the other."
+S0108,Dean of Students + Financial Aid,incomplete_or_overdue_action_plan,46,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0143,Counseling + Dean of Students + Financial Aid,incomplete_or_overdue_action_plan,46,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0160,Academic Advising + Financial Aid,incomplete_or_overdue_action_plan,46,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0411,Counseling + Financial Aid,incomplete_or_overdue_action_plan,46,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0539,Academic Advising + Residential Life,uncoordinated_multi_department,46,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Residential Life) with no indication either department is aware of the other."
+S0297,Academic Advising + Financial Aid,uncoordinated_multi_department,45,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Financial Aid) with no indication either department is aware of the other."
+S0322,Counseling + Dean of Students + Financial Aid,uncoordinated_multi_department,45,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Counseling, Dean of Students) with no indication either department is aware of the other."
+S0015,Dean of Students,incomplete_or_overdue_action_plan,42,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0027,Academic Advising + Financial Aid + Residential Life,incomplete_or_overdue_action_plan,42,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0217,Counseling + Residential Life,incomplete_or_overdue_action_plan,42,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0239,Counseling + Financial Aid,uncoordinated_multi_department,42,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Counseling, Financial Aid) with no indication either department is aware of the other."
+S0246,Academic Advising + Counseling + Residential Life,uncoordinated_multi_department,42,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Counseling) with no indication either department is aware of the other."
+S0602,Dean of Students,incomplete_or_overdue_action_plan,42,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0684,Academic Advising + Dean of Students + Financial Aid,unowned_workflow_step,42,High,High,Check in at Dean of Students has no assigned_owner -- nobody on record is accountable for it.
+S0035,Financial Aid + Residential Life,incomplete_or_overdue_action_plan,41,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0225,Academic Advising + Dean of Students + Financial Aid,stale_open_referral,41,High,High,"Referral opened 41 days ago at Dean of Students is still open, past the 21-day threshold."
+S0248,Dean of Students,incomplete_or_overdue_action_plan,41,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0555,Counseling + Residential Life,stale_open_referral,41,High,High,"Referral opened 41 days ago at Residential Life is still open, past the 21-day threshold."
+S0595,Residential Life,incomplete_or_overdue_action_plan,41,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0676,Counseling + Dean of Students,incomplete_or_overdue_action_plan,41,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0657,Financial Aid + Residential Life,incomplete_or_overdue_action_plan,40,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0148,Academic Advising + Dean of Students + Residential Life,unowned_workflow_step,39,High,High,Check in at Residential Life has no assigned_owner -- nobody on record is accountable for it.
+S0256,Academic Advising + Dean of Students,uncoordinated_multi_department,39,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Dean of Students) with no indication either department is aware of the other."
+S0348,Residential Life,incomplete_or_overdue_action_plan,39,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0385,Academic Advising + Financial Aid,stale_open_referral,39,High,High,"Referral opened 39 days ago at Financial Aid is still open, past the 21-day threshold."
+S0515,Financial Aid + Residential Life,uncoordinated_multi_department,39,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Financial Aid, Residential Life) with no indication either department is aware of the other."
+S0211,Financial Aid + Residential Life,incomplete_or_overdue_action_plan,38,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0365,Dean of Students,incomplete_or_overdue_action_plan,38,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0056,Dean of Students,incomplete_or_overdue_action_plan,35,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0342,Financial Aid,incomplete_or_overdue_action_plan,35,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0352,Financial Aid,incomplete_or_overdue_action_plan,35,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0537,Academic Advising + Counseling + Financial Aid,uncoordinated_multi_department,35,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Counseling, Financial Aid) with no indication either department is aware of the other."
+S0664,Dean of Students,incomplete_or_overdue_action_plan,35,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0121,Financial Aid + Residential Life,unowned_workflow_step,34,High,High,Handoff at Residential Life has no assigned_owner -- nobody on record is accountable for it.
+S0126,Residential Life,incomplete_or_overdue_action_plan,34,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0134,Dean of Students + Financial Aid,stale_open_referral,34,High,High,"Referral opened 34 days ago at Dean of Students is still open, past the 21-day threshold."
+S0267,Residential Life,incomplete_or_overdue_action_plan,34,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0548,Academic Advising + Dean of Students + Residential Life,uncoordinated_multi_department,34,High,High,"Student has active, unresolved activity open simultaneously in 3 different departments (Academic Advising, Dean of Students, Residential Life) with no indication either department is aware of the other."
+S0036,Academic Advising + Financial Aid + Residential Life,uncoordinated_multi_department,33,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Financial Aid) with no indication either department is aware of the other."
+S0222,Counseling + Dean of Students,uncoordinated_multi_department,33,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Counseling, Dean of Students) with no indication either department is aware of the other."
+S0692,Financial Aid + Residential Life,uncoordinated_multi_department,33,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Financial Aid, Residential Life) with no indication either department is aware of the other."
+S0049,Residential Life,incomplete_or_overdue_action_plan,32,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0273,Academic Advising + Counseling + Residential Life,uncoordinated_multi_department,32,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Counseling) with no indication either department is aware of the other."
+S0316,Dean of Students + Residential Life,unowned_workflow_step,32,High,High,Handoff at Dean of Students has no assigned_owner -- nobody on record is accountable for it.
+S0360,Dean of Students + Residential Life,unowned_workflow_step,32,High,High,Check in at Dean of Students has no assigned_owner -- nobody on record is accountable for it.
+S0084,Financial Aid,incomplete_or_overdue_action_plan,31,High,High,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0407,Residential Life,unowned_workflow_step,31,High,High,Check in at Residential Life has no assigned_owner -- nobody on record is accountable for it.
+S0591,Academic Advising + Counseling + Financial Aid + Residential Life,uncoordinated_multi_department,31,High,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Financial Aid) with no indication either department is aware of the other."
+S0034,Residential Life,incomplete_or_overdue_action_plan,28,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0192,Dean of Students,incomplete_or_overdue_action_plan,28,High,High,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0699,Academic Advising + Residential Life,incomplete_or_overdue_action_plan,28,High,High,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0052,Academic Advising + Dean of Students,uncoordinated_multi_department,27,Medium,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Dean of Students) with no indication either department is aware of the other."
+S0528,Academic Advising + Dean of Students + Financial Aid,uncoordinated_multi_department,26,Medium,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Dean of Students, Financial Aid) with no indication either department is aware of the other."
+S0264,Academic Advising + Dean of Students,uncoordinated_multi_department,25,Medium,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Dean of Students) with no indication either department is aware of the other."
+S0061,Academic Advising + Counseling + Residential Life,uncoordinated_multi_department,24,Medium,High,"Student has active, unresolved activity open simultaneously in 3 different departments (Academic Advising, Counseling, Residential Life) with no indication either department is aware of the other."
+S0444,Academic Advising + Counseling + Dean of Students,uncoordinated_multi_department,24,Medium,High,"Student has active, unresolved activity open simultaneously in 3 different departments (Academic Advising, Counseling, Dean of Students) with no indication either department is aware of the other."
+S0157,Academic Advising + Dean of Students + Residential Life,uncoordinated_multi_department,18,Medium,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Dean of Students, Residential Life) with no indication either department is aware of the other."
+S0174,Counseling + Financial Aid + Residential Life,uncoordinated_multi_department,12,Low,High,"Student has active, unresolved activity open simultaneously in 2 different departments (Counseling, Residential Life) with no indication either department is aware of the other."
+S0574,Academic Advising + Counseling + Financial Aid,uncoordinated_multi_department,10,Low,High,"Student has active, unresolved activity open simultaneously in 3 different departments (Academic Advising, Counseling, Financial Aid) with no indication either department is aware of the other."
+S0333,Academic Advising,incomplete_or_overdue_action_plan,49,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0557,Academic Advising,stale_open_referral,49,High,Medium,"Referral opened 49 days ago at Academic Advising is still open, past the 21-day threshold."
+S0624,Counseling,incomplete_or_overdue_action_plan,48,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0202,Academic Advising,incomplete_or_overdue_action_plan,47,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0230,Counseling + Residential Life,incomplete_or_overdue_action_plan,47,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0478,Academic Advising,incomplete_or_overdue_action_plan,47,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0057,Counseling,incomplete_or_overdue_action_plan,46,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0132,Academic Advising,incomplete_or_overdue_action_plan,42,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0563,Academic Advising,stale_open_referral,42,High,Medium,"Referral opened 42 days ago at Academic Advising is still open, past the 21-day threshold."
+S0206,Academic Advising,incomplete_or_overdue_action_plan,40,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0581,Academic Advising,incomplete_or_overdue_action_plan,40,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0002,Academic Advising + Residential Life,incomplete_or_overdue_action_plan,38,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0065,Academic Advising,incomplete_or_overdue_action_plan,38,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0216,Academic Advising + Counseling + Financial Aid,incomplete_or_overdue_action_plan,38,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0330,Counseling,incomplete_or_overdue_action_plan,38,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0009,Academic Advising,incomplete_or_overdue_action_plan,33,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0582,Academic Advising,incomplete_or_overdue_action_plan,32,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0224,Academic Advising,incomplete_or_overdue_action_plan,31,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0312,Academic Advising,incomplete_or_overdue_action_plan,31,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0617,Academic Advising + Financial Aid,incomplete_or_overdue_action_plan,31,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0111,Counseling,incomplete_or_overdue_action_plan,28,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0120,Academic Advising,incomplete_or_overdue_action_plan,28,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0571,Academic Advising,incomplete_or_overdue_action_plan,28,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0181,Counseling + Dean of Students + Residential Life,incomplete_or_overdue_action_plan,27,High,Medium,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0272,Counseling,incomplete_or_overdue_action_plan,27,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0067,Counseling,unowned_workflow_step,26,High,Medium,Check in at Counseling has no assigned_owner -- nobody on record is accountable for it.
+S0303,Counseling,incomplete_or_overdue_action_plan,26,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0257,Counseling,incomplete_or_overdue_action_plan,25,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0417,Dean of Students,incomplete_or_overdue_action_plan,25,High,Medium,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0599,Counseling,incomplete_or_overdue_action_plan,25,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0298,Counseling,incomplete_or_overdue_action_plan,24,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0518,Financial Aid,incomplete_or_overdue_action_plan,24,High,Medium,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0587,Dean of Students + Residential Life,incomplete_or_overdue_action_plan,24,High,Medium,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0672,Counseling,incomplete_or_overdue_action_plan,24,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0354,Counseling,incomplete_or_overdue_action_plan,21,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0103,Financial Aid,unowned_workflow_step,19,High,Medium,Referral at Financial Aid has no assigned_owner -- nobody on record is accountable for it.
+S0205,Dean of Students,incomplete_or_overdue_action_plan,19,High,Medium,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0388,Dean of Students,incomplete_or_overdue_action_plan,19,High,Medium,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0033,Financial Aid,incomplete_or_overdue_action_plan,18,High,Medium,Action plan at Financial Aid passed its target completion date with no actual_completion_date recorded.
+S0463,Dean of Students,incomplete_or_overdue_action_plan,18,High,Medium,Action plan at Dean of Students passed its target completion date with no actual_completion_date recorded.
+S0026,Counseling,incomplete_or_overdue_action_plan,17,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0028,Financial Aid,unowned_workflow_step,14,High,Medium,Handoff at Financial Aid has no assigned_owner -- nobody on record is accountable for it.
+S0472,Counseling,incomplete_or_overdue_action_plan,14,High,Medium,Action plan at Counseling passed its target completion date with no actual_completion_date recorded.
+S0114,Residential Life,incomplete_or_overdue_action_plan,13,High,Medium,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0176,Residential Life,incomplete_or_overdue_action_plan,13,High,Medium,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0251,Residential Life,incomplete_or_overdue_action_plan,10,High,Medium,Action plan at Residential Life passed its target completion date with no actual_completion_date recorded.
+S0395,Academic Advising,incomplete_or_overdue_action_plan,10,High,Medium,Action plan at Academic Advising passed its target completion date with no actual_completion_date recorded.
+S0293,Dean of Students + Residential Life,stale_open_referral,26,Medium,Medium,"Referral opened 26 days ago at Residential Life is still open, past the 21-day threshold."
+S0476,Academic Advising + Counseling,uncoordinated_multi_department,21,Medium,Medium,"Student has active, unresolved activity open simultaneously in 2 different departments (Academic Advising, Counseling) with no indication either department is aware of the other."
+S0412,Residential Life,incomplete_or_overdue_action_plan,19,Medium,Medium,Action plan at Residential Life is marked incomplete (17% complete).
+S0085,Dean of Students,incomplete_or_overdue_action_plan,13,Medium,Medium,Action plan at Dean of Students is marked incomplete (7% complete).
+S0551,Residential Life,incomplete_or_overdue_action_plan,13,Medium,Medium,Action plan at Residential Life is marked incomplete (25% complete).
+S0590,Residential Life,incomplete_or_overdue_action_plan,13,Medium,Medium,Action plan at Residential Life is marked incomplete (13% complete).
+S0427,Residential Life,incomplete_or_overdue_action_plan,12,Medium,Medium,Action plan at Residential Life is marked incomplete (37% complete).
+S0440,Residential Life,incomplete_or_overdue_action_plan,11,Medium,Medium,Action plan at Residential Life is marked incomplete (49% complete).
+S0198,Dean of Students,unowned_workflow_step,8,Medium,Medium,Referral at Dean of Students has no assigned_owner -- nobody on record is accountable for it.
+S0136,Residential Life,incomplete_or_overdue_action_plan,6,Medium,Medium,Action plan at Residential Life is marked incomplete (36% complete).
+S0567,Financial Aid,incomplete_or_overdue_action_plan,5,Medium,Medium,Action plan at Financial Aid is marked incomplete (9% complete).
+S0161,Financial Aid,unowned_workflow_step,4,Medium,Medium,Referral at Financial Aid has no assigned_owner -- nobody on record is accountable for it.
+S0307,Counseling,incomplete_or_overdue_action_plan,26,Medium,Low,Action plan at Counseling is marked incomplete (35% complete).
+S0339,Academic Advising,incomplete_or_overdue_action_plan,18,Medium,Low,Action plan at Academic Advising is marked incomplete (17% complete).
+S0221,Counseling,incomplete_or_overdue_action_plan,12,Medium,Low,Action plan at Counseling is marked incomplete (5% complete).
+S0090,Academic Advising,incomplete_or_overdue_action_plan,11,Medium,Low,Action plan at Academic Advising is marked incomplete (10% complete).

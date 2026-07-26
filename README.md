@@ -12,7 +12,7 @@ The reasoning behind every major decision, what's included, what's deliberately 
 heiaxis-sprint/
 ├── README.md
 ├── requirements.txt      the three dependencies: pandas, numpy, flask
-├── data/                 synthetic dataset (7 CSV tables)
+├── data/                 synthetic dataset (10 CSV tables, see below)
 ├── src/
 │   ├── generate_data.py  synthetic data generator
 │   ├── cleaning.py       load, clean, validate
@@ -22,8 +22,9 @@ heiaxis-sprint/
 │   ├── api.py            read-only JSON API in front of output/
 │   └── self_consistency_check.py
 ├── tests/
-│   ├── test_pipeline.py  Tier 1: unit-level and boundary-condition tests
-│   └── test_system.py    Tier 2: end-to-end, regression, and edge-case tests
+│   ├── test_pipeline.py       Tier 1: unit-level and boundary-condition tests
+│   ├── test_system.py         Tier 2: end-to-end, regression, and edge-case tests
+│   └── test_baseline_audit.py Week 1 Baseline Audit tests (37 tests)
 ├── output/               generated on each pipeline.py run
 └── docs/
     ├── product_interpretation_memo.md
@@ -32,8 +33,13 @@ heiaxis-sprint/
     ├── evaluation_logic.md
     ├── testing_strategy.md
     ├── architecture.md
-    └── api.md
+    ├── api.md
+    ├── baseline_audit_planning_note.md
+    ├── baseline_audit_data_model.md
+    └── baseline_audit_week1_summary.md
 ```
+
+The `data/` folder holds the original seven Early Signal Intelligence tables (students, staff, engagement, belonging, care interactions, weekly outcome, academic calendar) plus three Baseline Audit tables added in Week 1 of the current sprint phase: `departments.csv`, `service_interactions.csv`, and `action_plans.csv`. See `docs/baseline_audit_data_model.md` for how the two sets of tables relate to each other.
 
 ## Running the Prototype
 
@@ -42,22 +48,26 @@ Requires Python 3.9+. Three third-party dependencies, all pinned in `requirement
 ```bash
 cd heiaxis-sprint
 
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate     # on Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-python3 src/generate_data.py          # regenerate the synthetic dataset (already included)
-python3 src/pipeline.py               # clean, engineer features, detect signals, write output/
-python3 tests/test_pipeline.py        # Tier 1: unit and boundary-condition tests
-python3 tests/test_system.py          # Tier 2: end-to-end, regression, and edge-case tests
-python3 src/self_consistency_check.py # optional, self-consistency check against generator ground truth
+python src/generate_data.py          # regenerate the synthetic dataset (already included)
+python src/pipeline.py               # clean, engineer features, detect signals, write output/
+python tests/test_pipeline.py        # Tier 1: unit and boundary-condition tests
+python tests/test_system.py          # Tier 2: end-to-end, regression, and edge-case tests
+python src/self_consistency_check.py # optional, self-consistency check against generator ground truth
 
-python3 src/api.py                    # optional, serves output/ as JSON, see docs/api.md
+python src/api.py                    # optional, serves output/ as JSON, see docs/api.md
 ```
 
 ### Trying the API
 
-`python3 src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000` (flask is installed as part of `pip install -r requirements.txt` above). It only reads whatever is already in `output/`, so run `python3 src/pipeline.py` at least once first. Once it's running:
+`python src/api.py` starts a local Flask dev server, by default at `http://127.0.0.1:5000` (flask is installed as part of `pip install -r requirements.txt` above). It only reads whatever is already in `output/`, so run `python src/pipeline.py` at least once first.
+
+The easiest way to explore it: open `http://127.0.0.1:5000` in a browser. The front page explains the project in a few sentences and lists a button for every other route, with a one-line description of what each one shows, so there's no need to memorize paths or type `curl` commands to look around.
+
+For scripting, every route also works directly, and the JSON ones are meant for exactly that:
 
 ```bash
 curl http://127.0.0.1:5000/health
@@ -71,11 +81,9 @@ curl http://127.0.0.1:5000/data-quality-report
 
 Full endpoint reference, including query parameters and error responses, is in `docs/api.md`.
 
-Note: visiting `http://127.0.0.1:5000` alone (the bare root URL) in a browser will show a 404, there is no route registered at `/`, only the specific paths above. That's expected, not a bug, always include a path, e.g. `http://127.0.0.1:5000/health`.
-
 ## What You'll See When You Run It
 
-`python3 src/pipeline.py` prints a data-quality report first (what was capped, nulled, deduplicated, or dropped during cleaning, and why), followed by a preview of both required outputs and a bonus one, then writes four files to `output/`:
+`python src/pipeline.py` prints a data-quality report first (what was capped, nulled, deduplicated, or dropped during cleaning, and why), followed by a preview of both required outputs and a bonus one, then writes four files to `output/`:
 
 - **`flagged_students.csv`**: one row per student flagged for attention, with `confidence` (High/Medium/Low), `n_sources_declined`, `leading_signal` (the single steepest-declining source), and a `reason` string spelling out every declining source in plain language, for example `"class participation down 38% vs. own early-term baseline; attendance down 26%..."`.
 - **`continuity_gaps.csv`**: one row per institutional gap, with `gap_type` (`stale_open_referral`, `unanswered_outreach_no_escalation`, `unowned_handoff`, or `uncoordinated_multi_office`), `confidence`, `weeks_elapsed`, and a `reason` explaining what was left unresolved and for how long.
@@ -83,6 +91,12 @@ Note: visiting `http://127.0.0.1:5000` alone (the bare root URL) in a browser wi
 - **`data_quality_report.txt`**: the same cleaning summary printed to the console, saved for reference.
 
 Every row on both required outputs carries its own explanation and confidence level rather than a bare flag, so a reviewer can see why a student or a case was surfaced without opening the code. This is only possible because no machine learning or AI sits behind these outputs: each `reason` string is a direct readout of the exact fields and thresholds that triggered it, not an approximation of what a model was picking up on. A fitted model could likely rank risk more precisely, but its output would be a score to interpret rather than a reason to check, and given that a wrong flag here reaches a human who may act on it, being able to fully justify every single row mattered more than squeezing out extra accuracy.
+
+## Baseline Audit Sprint (In Progress)
+
+This repository is now also the basis for a second, follow-on evaluation: extending Early Signal Intelligence into a "Baseline Audit" that looks at institutional workflow health more broadly, department bottlenecks, action-plan follow-through, and continuity gaps across a richer schema, rather than only the original two outputs. It continues from this same codebase rather than starting a new one, per that sprint's own instructions.
+
+Week 1 is complete: `generate_data.py` and `cleaning.py` were extended with three new tables (`departments.csv`, `service_interactions.csv`, `action_plans.csv`) and their validation, additive only, the original five tables and both Early Signal Intelligence outputs are unaffected and still reproduce their exact seed-42 baseline. `python src/pipeline.py` now also builds and writes all four required Week 1 outputs (department bottleneck summary, broadened continuity gaps, action-plan summary, student review list), each with its own test coverage in `tests/test_baseline_audit.py` (37 tests). `docs/baseline_audit_planning_note.md`, `docs/baseline_audit_data_model.md`, and `docs/baseline_audit_week1_summary.md` cover the planning, schema reasoning, and assumptions/limitations behind this phase. Week 2 (the API) hasn't started yet.
 
 ## Current Scope and What I'd Add Next
 
@@ -101,3 +115,6 @@ One thing I'd still want to add given more time: a lightweight, still-explainabl
 - **`docs/testing_strategy.md`**: why the tests exist and what they actually protect, the two-tier test plan, and what real bugs the edge-case tests already caught.
 - **`docs/architecture.md`**: how this fits into a real HEIAXIS system end to end, stage by stage, with the options and scaling path considered at each one.
 - **`docs/api.md`**: the read-only JSON API in front of the pipeline's output, framework choice, scope, and the endpoint reference.
+- **`docs/baseline_audit_planning_note.md`**: the one-page plan submitted before writing any Baseline Audit code, scope, time allocation, technical choices, and risks.
+- **`docs/baseline_audit_data_model.md`**: how the Baseline Audit tables relate to the original schema, and how workflow, case, referral, handoff, interaction, assignment, and signal are distinguished.
+- **`docs/baseline_audit_week1_summary.md`**: the short assumptions-and-limitations summary the Week 1 checkpoint asks for.

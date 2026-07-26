@@ -1,36 +1,3 @@
-"""
-HEIAXIS Early Signal Intelligence - Synthetic Data Generator
-==============================================================
-Generates a synthetic, non-identifiable dataset representing ~700 students
-over 7 weeks, across five student-facing sources plus two reference tables.
-
-No real student data is used or referenced. All IDs, names of offices,
-and values are fabricated.
-
-Design note on "ground truth":
-Each student is secretly assigned one generation ARCHETYPE (stable,
-disconnecting, care_gap, improving, dropped_course, noisy_false_flag_bait).
-The archetype drives how their weekly rows are generated. This lets us
-later sanity-check whether our detection logic (built independently of
-this generator) recovers something like the intended pattern -- while
-being explicit that this is a *self-consistency* check, not real
-validation (see docs/evaluation_logic.md).
-
-The archetype is written to data/_ground_truth_archetypes.csv, kept
-separate from the "operational" tables and clearly marked as
-generator-only -- a real prototype would never have access to this file.
-
-In short: this script is the source of every realistic imperfection the
-rest of the pipeline has to handle. It creates 700 synthetic students
-across a 7-week term, plus an unevenly staffed roster across five
-offices, and secretly assigns each student one of six archetypes
-(stable, disconnecting, care_gap, improving, dropped_course,
-noisy_false_flag_bait) that drives their weekly values in every table
-below. Realistic data-quality problems, out-of-range attendance values,
-negative login counts, inconsistent office-name casing, duplicate
-interaction rows, and missing survey responses, are injected on
-purpose, so cleaning.py has real work to do downstream.
-"""
 
 import csv
 import random
@@ -40,7 +7,7 @@ random.seed(42)
 
 N_STUDENTS = 700
 N_WEEKS = 7
-START_DATE = date(2026, 2, 2)  #I chose this date but we agree it depends schools
+START_DATE = date(2026, 2, 2)
 
 PROGRAMS = ["Business", "Psychology", "Computer Science", "Biology",
             "Undeclared", "Engineering", "Sociology"]
@@ -78,17 +45,46 @@ ARCHETYPE_WEIGHTS = {
     "noisy_false_flag_bait": 0.06,
 }
 
+DEPARTMENT_IDS = {
+    "Counseling": "DPT01",
+    "Academic Advising": "DPT02",
+    "Financial Aid": "DPT03",
+    "Dean of Students": "DPT04",
+    "Residential Life": "DPT05",
+}
+DEPARTMENT_SERVICE_AREAS = {
+    "Counseling": "Mental health and personal support",
+    "Academic Advising": "Course planning and academic standing",
+    "Financial Aid": "Billing, aid, and financial holds",
+    "Dean of Students": "Conduct, crisis response, and student welfare",
+    "Residential Life": "Housing and dorm-related issues",
+}
+DEPARTMENT_STAFF_COUNTS = {
+    "Counseling": 4,
+    "Academic Advising": 6,
+    "Financial Aid": 3,
+    "Dean of Students": 2,
+    "Residential Life": 3,
+}
+
+STATUS_VARIANTS = {
+    "open": ["open", "Open", "OPEN"],
+    "closed": ["closed", "Closed", "closed "],
+    "pending": ["pending", "Pending"],
+}
+SERVICE_INTERACTION_TYPES = ["referral", "handoff", "check_in"]
+SOURCE_PRIORITIES = ["low", "medium", "high", "urgent"]
+COHORT_BY_CLASS_YEAR = {
+    "Freshman": "Fall2025",
+    "Sophomore": "Fall2024",
+    "Junior": "Fall2023",
+    "Senior": "Fall2022",
+}
+UNKNOWN_STUDENT_IDS = ["S9999", "S0000"]
+UNKNOWN_DEPARTMENT_NAMES = ["IT Helpdesk", "Unknown Dept"]
+
 
 def weighted_choice(weights_dict):
-    """Pick one key from a dict of weights, proportionally to its weight.
-
-    Args:
-        weights_dict: Mapping of choice -> probability weight. Weights are
-            expected to sum to (approximately) 1.0, but this isn't enforced.
-
-    Returns:
-        One of the dict's keys, selected at random according to its weight.
-    """
     r = random.random()
     cum = 0.0
     for k, w in weights_dict.items():
@@ -99,30 +95,10 @@ def weighted_choice(weights_dict):
 
 
 def clamp(v, lo, hi):
-    """Restrict a value to the inclusive range [lo, hi].
-
-    Args:
-        v: The value to clamp.
-        lo: The minimum allowed value.
-        hi: The maximum allowed value.
-
-    Returns:
-        v itself if already within range, otherwise the nearer bound.
-    """
     return max(lo, min(hi, v))
 
 
 def generate_staff():
-    """Build the synthetic staff roster across the five canonical offices.
-
-    Staffing is deliberately uneven per office (see counts_per_office
-    below), so that per-office caseload pressure is a real, discoverable
-    pattern in the generated data rather than a flat baseline.
-
-    Returns:
-        A list of dicts, one per staff member, with keys staff_id, office,
-        and role.
-    """
     staff = []
     staff_id = 1
     counts_per_office = {
@@ -144,22 +120,7 @@ def generate_staff():
     return staff
 
 
-
 def generate_students():
-    """Create the synthetic student roster and assign each a hidden archetype.
-
-    The archetype (drawn from ARCHETYPE_WEIGHTS) is not written to any
-    operational table -- it silently drives how that student's rows are
-    generated in every other generate_* function below, and is written
-    separately to _ground_truth_archetypes.csv for self-consistency
-    checking only (see module docstring).
-
-    Returns:
-        A tuple (students, archetypes):
-            students: list of dicts with student_id, program, class_year,
-                and enrollment_status.
-            archetypes: dict mapping student_id -> archetype name.
-    """
     students = []
     archetypes = {}
     for i in range(1, N_STUDENTS + 1):
@@ -169,33 +130,31 @@ def generate_students():
         enrollment_status = "active"
         if archetype == "dropped_course":
             enrollment_status = "active"
+        program = random.choice(PROGRAMS)
+        class_year = random.choice(CLASS_YEARS)
         students.append({
             "student_id": sid,
-            "program": random.choice(PROGRAMS),
-            "class_year": random.choice(CLASS_YEARS),
+            "cohort": COHORT_BY_CLASS_YEAR[class_year],
+            "program": program,
+            "class_year": class_year,
             "enrollment_status": enrollment_status,
         })
     return students, archetypes
 
 
+def generate_departments():
+    departments = []
+    for name in CANONICAL_OFFICES:
+        departments.append({
+            "department_id": DEPARTMENT_IDS[name],
+            "department_name": name,
+            "staff_count": DEPARTMENT_STAFF_COUNTS[name],
+            "service_area": DEPARTMENT_SERVICE_AREAS[name],
+        })
+    return departments
+
 
 def generate_engagement(students, archetypes):
-    """Generate weekly attendance/LMS/participation rows for every student.
-
-    Each student's values drift over the term according to their
-    archetype (e.g. steadily declining for "disconnecting", flat but low
-    for "noisy_false_flag_bait"), then have Gaussian noise and a small
-    amount of deliberate data-quality noise (out-of-range attendance,
-    negative logins) layered on top for the cleaning step to catch.
-
-    Args:
-        students: List of student dicts, as returned by generate_students().
-        archetypes: Mapping of student_id -> archetype name.
-
-    Returns:
-        A list of dicts, one row per student per week, matching the
-        engagement_weekly.csv schema.
-    """
     rows = []
     for s in students:
         sid = s["student_id"]
@@ -230,7 +189,7 @@ def generate_engagement(students, archetypes):
             participation = clamp(base_participation + drift * 8 + random.gauss(0, 0.8), 0, 10)
 
             if random.random() < 0.01:
-                attendance = round(attendance + random.choice([0.15, 0.25]), 2)  # can exceed 1.0
+                attendance = round(attendance + random.choice([0.15, 0.25]), 2)
             if random.random() < 0.005:
                 logins = -abs(logins)
 
@@ -246,24 +205,7 @@ def generate_engagement(students, archetypes):
     return rows
 
 
-
 def generate_belonging(students, archetypes):
-    """Generate weekly pulse-survey rows for every student.
-
-    Survey response is itself modeled as a signal, not just noise: a
-    "disconnecting" student's response rate declines over the term. Weeks
-    with no submission are written with blank belonging_score and
-    peer_interaction_count rather than an imputed value, so the cleaning
-    and feature-engineering steps have real missingness to handle.
-
-    Args:
-        students: List of student dicts, as returned by generate_students().
-        archetypes: Mapping of student_id -> archetype name.
-
-    Returns:
-        A list of dicts, one row per student per week, matching the
-        belonging_pulse.csv schema.
-    """
     rows = []
     for s in students:
         sid = s["student_id"]
@@ -309,29 +251,7 @@ def generate_belonging(students, archetypes):
     return rows
 
 
-
 def generate_care_interactions(students, archetypes, staff):
-    """Generate care/support interaction events (outreach, referrals, etc.).
-
-    The number and shape of interactions per student depends on
-    archetype: "care_gap" students get more interactions, biased toward
-    open referrals, unanswered outreach, and unowned handoffs, since for
-    that archetype it's the institution's response -- not the student's
-    own behavior -- that's meant to be the signal. A small number of
-    duplicate rows are appended afterward to simulate a realistic
-    multi-office ETL artifact.
-
-    Args:
-        students: List of student dicts, as returned by generate_students().
-        archetypes: Mapping of student_id -> archetype name.
-        staff: List of staff dicts, as returned by generate_staff(), used
-            to assign handoff owners within the correct office.
-
-    Returns:
-        A list of dicts, one row per interaction event (including the
-        appended duplicates), matching the care_interactions.csv schema,
-        shuffled so rows aren't grouped by student.
-    """
     rows = []
     interaction_id = 1
     staff_by_office = {}
@@ -353,7 +273,7 @@ def generate_care_interactions(students, archetypes, staff):
             n_interactions = random.choices([0, 1], weights=[0.6, 0.4])[0]
         elif arch == "stable":
             n_interactions = random.choices([0, 1], weights=[0.85, 0.15])[0]
-        else:  # noisy_false_flag_bait
+        else:
             n_interactions = random.choices([0, 1], weights=[0.7, 0.3])[0]
 
         for _ in range(n_interactions):
@@ -389,7 +309,7 @@ def generate_care_interactions(students, archetypes, staff):
             elif itype == "warm_handoff":
                 office_staff = staff_by_office.get(office_canon, [])
                 if arch == "care_gap" and random.random() < 0.5:
-                    handoff_owner = ""  # unowned handoff -- the signal
+                    handoff_owner = ""
                 elif office_staff:
                     handoff_owner = random.choice(office_staff)
 
@@ -420,24 +340,203 @@ def generate_care_interactions(students, archetypes, staff):
     return rows
 
 
+def generate_service_interactions(students, archetypes, staff):
+    rows = []
+    interaction_id = 1
+    workflow_id = 1
+    staff_by_office = {}
+    for st in staff:
+        staff_by_office.setdefault(st["office"], []).append(st["staff_id"])
+
+    for s in students:
+        sid = s["student_id"]
+        arch = archetypes[sid]
+
+        if arch == "care_gap":
+            n_workflows = random.randint(2, 3)
+        elif arch == "disconnecting":
+            n_workflows = random.choices([0, 1, 2], weights=[0.5, 0.35, 0.15])[0]
+        elif arch == "improving":
+            n_workflows = random.randint(1, 2)
+        elif arch == "dropped_course":
+            n_workflows = random.choices([0, 1], weights=[0.6, 0.4])[0]
+        elif arch == "stable":
+            n_workflows = random.choices([0, 1], weights=[0.85, 0.15])[0]
+        else:
+            n_workflows = random.choices([0, 1], weights=[0.7, 0.3])[0]
+
+        for _ in range(n_workflows):
+            wf_id = f"WF{workflow_id:05d}"
+            workflow_id += 1
+
+            department_canon = random.choice(CANONICAL_OFFICES)
+            department_raw = random.choice(OFFICE_VARIANTS[department_canon])
+            n_steps = random.choices([1, 2, 3], weights=[0.55, 0.3, 0.15])[0]
+
+            week = random.randint(1, N_WEEKS)
+            open_date = START_DATE + timedelta(weeks=week - 1, days=random.randint(0, 4))
+
+            resolved = True
+            if arch == "care_gap" and random.random() < 0.65:
+                resolved = False
+
+            for step_idx in range(n_steps):
+                step_date = open_date + timedelta(days=step_idx * random.randint(1, 4))
+
+                itype = random.choices(
+                    SERVICE_INTERACTION_TYPES, weights=[0.45, 0.3, 0.25]
+                )[0]
+
+                status_key = "closed" if resolved else "open"
+                if not resolved and random.random() < 0.1:
+                    status_key = "pending"
+                status = random.choice(STATUS_VARIANTS[status_key])
+
+                date_closed = ""
+                if resolved:
+                    close_lag = random.randint(1, 21)
+                    close_date = step_date + timedelta(days=close_lag)
+                    date_closed = close_date.isoformat()
+                    if random.random() < 0.01:
+                        date_closed = (step_date - timedelta(days=random.randint(1, 5))).isoformat()
+
+                assigned_owner = ""
+                office_staff = staff_by_office.get(department_canon, [])
+                if not (arch == "care_gap" and random.random() < 0.5):
+                    if office_staff:
+                        assigned_owner = random.choice(office_staff)
+
+                referred_to_department = ""
+                referral_source = ""
+                if itype == "referral":
+                    referral_source = random.choice(CANONICAL_OFFICES + ["self", "faculty"])
+                    if random.random() < 0.4:
+                        referred_to_department = random.choice(
+                            [o for o in CANONICAL_OFFICES if o != department_canon]
+                        )
+
+                student_id_field = sid
+                if random.random() < 0.004:
+                    student_id_field = random.choice(UNKNOWN_STUDENT_IDS)
+
+                department_field = department_raw
+                if random.random() < 0.004:
+                    department_field = random.choice(UNKNOWN_DEPARTMENT_NAMES)
+
+                rows.append({
+                    "interaction_id": f"SI{interaction_id:05d}",
+                    "workflow_id": wf_id,
+                    "student_id": student_id_field,
+                    "date_opened": step_date.isoformat(),
+                    "date_closed": date_closed,
+                    "department": department_field,
+                    "service_category": random.choice(NOTE_CATEGORIES),
+                    "interaction_type": itype,
+                    "status": status,
+                    "source_priority": random.choice(SOURCE_PRIORITIES),
+                    "assigned_owner": assigned_owner,
+                    "referral_source": referral_source,
+                    "referred_to_department": referred_to_department,
+                })
+                interaction_id += 1
+
+    n_dupes = max(1, int(len(rows) * 0.015))
+    for _ in range(n_dupes):
+        dup = dict(random.choice(rows))
+        dup["interaction_id"] = f"SI{interaction_id:05d}"
+        interaction_id += 1
+        rows.append(dup)
+
+    for i in range(3):
+        rows[i]["student_id"] = random.choice(UNKNOWN_STUDENT_IDS)
+    for i in range(3, 6):
+        rows[i]["department"] = random.choice(UNKNOWN_DEPARTMENT_NAMES)
+
+    random.shuffle(rows)
+    return rows
+
+
+def generate_action_plans(students, archetypes):
+    rows = []
+    plan_id = 1
+    for s in students:
+        sid = s["student_id"]
+        arch = archetypes[sid]
+
+        if arch == "care_gap":
+            n_plans = random.choices([0, 1, 2], weights=[0.3, 0.4, 0.3])[0]
+        elif arch in ("disconnecting", "dropped_course"):
+            n_plans = random.choices([0, 1], weights=[0.6, 0.4])[0]
+        elif arch == "improving":
+            n_plans = random.choices([0, 1], weights=[0.4, 0.6])[0]
+        else:
+            n_plans = random.choices([0, 1], weights=[0.85, 0.15])[0]
+
+        for _ in range(n_plans):
+            department_canon = random.choice(CANONICAL_OFFICES)
+            week = random.randint(1, N_WEEKS)
+            created = START_DATE + timedelta(weeks=week - 1, days=random.randint(0, 4))
+            target_days = random.randint(7, 28)
+            target = created + timedelta(days=target_days)
+
+            if arch == "care_gap":
+                outcome = random.choices(
+                    ["overdue", "incomplete", "partially_completed"],
+                    weights=[0.45, 0.3, 0.25],
+                )[0]
+            elif arch == "improving":
+                outcome = random.choices(
+                    ["completed", "partially_completed"], weights=[0.7, 0.3]
+                )[0]
+            else:
+                outcome = random.choices(
+                    ["completed", "partially_completed", "incomplete", "overdue"],
+                    weights=[0.5, 0.2, 0.15, 0.15],
+                )[0]
+
+            actual_completion_date = ""
+            if outcome == "completed":
+                completion_status = "completed"
+                completion_percentage = 100
+                lag = random.randint(0, target_days - 1) if target_days > 1 else 0
+                actual_completion_date = (target - timedelta(days=lag)).isoformat()
+            elif outcome == "partially_completed":
+                completion_status = "partially_completed"
+                completion_percentage = random.randint(20, 80)
+            elif outcome == "overdue":
+                completion_status = "incomplete"
+                completion_percentage = random.randint(0, 60)
+            else:
+                completion_status = "incomplete"
+                completion_percentage = random.randint(0, 40)
+
+            if random.random() < 0.01:
+                completion_percentage = random.choice([-10, 120, 150])
+            if random.random() < 0.008:
+                completion_status = "completed"
+
+            rows.append({
+                "plan_id": f"AP{plan_id:04d}",
+                "student_id": sid,
+                "department": random.choice(OFFICE_VARIANTS[department_canon]),
+                "date_created": created.isoformat(),
+                "target_completion_date": target.isoformat(),
+                "actual_completion_date": actual_completion_date,
+                "completion_status": completion_status,
+                "completion_percentage": completion_percentage,
+            })
+            plan_id += 1
+
+    if len(rows) >= 5:
+        rows[0]["completion_percentage"] = -10
+        rows[1]["completion_percentage"] = 120
+        rows[2]["completion_status"] = "completed"
+        rows[2]["completion_percentage"] = 55
+
+    return rows
+
 
 def generate_outcomes(students, archetypes):
-    """Generate a weekly institutional status row for every student.
-
-    This field is generated directly from archetype, not inferred from
-    the other tables -- it represents a plausible downstream field an
-    institution would already track (e.g. from a case management system),
-    and is never used as a prediction target by the detection logic in
-    src/signals.py.
-
-    Args:
-        students: List of student dicts, as returned by generate_students().
-        archetypes: Mapping of student_id -> archetype name.
-
-    Returns:
-        A list of dicts, one row per student per week, matching the
-        weekly_outcome.csv schema.
-    """
     rows = []
     for s in students:
         sid = s["student_id"]
@@ -453,23 +552,13 @@ def generate_outcomes(students, archetypes):
                 status = "improved" if week >= 5 else "referred"
             elif arch == "dropped_course":
                 status = "dropped_course" if week >= 4 else "no_action_needed"
-            else:  # noisy_false_flag_bait
+            else:
                 status = "no_action_needed"
             rows.append({"student_id": sid, "week_number": week, "status": status})
     return rows
 
 
-
 def write_csv(path, rows, fieldnames):
-    """Write a list of dicts to a CSV file with a fixed column order.
-
-    Args:
-        path: Destination file path.
-        rows: List of dicts to write, one per output row.
-        fieldnames: Column names, in the order they should appear in the
-            file. Any dict keys not listed here are silently ignored by
-            csv.DictWriter.
-    """
     with open(path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -477,13 +566,6 @@ def write_csv(path, rows, fieldnames):
 
 
 def main():
-    """Generate the full synthetic dataset and write every CSV to data/.
-
-    Orchestrates all the generate_* functions above in dependency order,
-    writes each table to data/ (including the generator-only
-    _ground_truth_archetypes.csv, see module docstring), and prints a
-    summary of row counts and archetype distribution to stdout.
-    """
     import os
     out_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     os.makedirs(out_dir, exist_ok=True)
@@ -496,8 +578,12 @@ def main():
     outcomes = generate_outcomes(students, archetypes)
     calendar_rows = [{"week_number": k, "week_label": v} for k, v in CALENDAR.items()]
 
+    departments = generate_departments()
+    service_interactions = generate_service_interactions(students, archetypes, staff)
+    action_plans = generate_action_plans(students, archetypes)
+
     write_csv(os.path.join(out_dir, "students.csv"), students,
-              ["student_id", "program", "class_year", "enrollment_status"])
+              ["student_id", "cohort", "program", "class_year", "enrollment_status"])
     write_csv(os.path.join(out_dir, "staff.csv"), staff,
               ["staff_id", "office", "role"])
     write_csv(os.path.join(out_dir, "engagement_weekly.csv"), engagement,
@@ -513,6 +599,17 @@ def main():
               ["student_id", "week_number", "status"])
     write_csv(os.path.join(out_dir, "academic_calendar.csv"), calendar_rows,
               ["week_number", "week_label"])
+    write_csv(os.path.join(out_dir, "departments.csv"), departments,
+              ["department_id", "department_name", "staff_count", "service_area"])
+    write_csv(os.path.join(out_dir, "service_interactions.csv"), service_interactions,
+              ["interaction_id", "workflow_id", "student_id", "date_opened", "date_closed",
+               "department", "service_category", "interaction_type", "status",
+               "source_priority", "assigned_owner", "referral_source",
+               "referred_to_department"])
+    write_csv(os.path.join(out_dir, "action_plans.csv"), action_plans,
+              ["plan_id", "student_id", "department", "date_created",
+               "target_completion_date", "actual_completion_date",
+               "completion_status", "completion_percentage"])
 
     gt_rows = [{"student_id": sid, "archetype": arch} for sid, arch in archetypes.items()]
     write_csv(os.path.join(out_dir, "_ground_truth_archetypes.csv"), gt_rows,
@@ -521,6 +618,9 @@ def main():
     print(f"Generated {len(students)} students, {len(engagement)} engagement rows, "
           f"{len(belonging)} belonging rows, {len(care)} care interactions, "
           f"{len(outcomes)} outcome rows.")
+    print(f"Baseline Audit: {len(departments)} departments, "
+          f"{len(service_interactions)} service interactions, "
+          f"{len(action_plans)} action plans.")
     print("Archetype distribution:")
     from collections import Counter
     for k, v in Counter(archetypes.values()).items():
